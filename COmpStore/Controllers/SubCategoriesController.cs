@@ -67,71 +67,72 @@ namespace COmpStore.Controllers
             if (!result)
             {
                 //return new StatusCodeResult(500);
-                throw new Exception("something went wrong when adding a new category");
+                throw new Exception("something went wrong when adding a new subcategory");
             }
 
             //return Ok(Mapper.Map<CategoryDto>(toAdd));
-            return CreatedAtRoute("GetSingleSubCategory", new { id = toAdd.Id }, Mapper.Map<CategoryDto>(toAdd));
+            return CreatedAtRoute("GetSingleSubCategory", new { id = toAdd.Id }, Mapper.Map<SubCategoryDto>(toAdd));
         }
 
-        //// PUT api/customers/{id}
+        // PUT api/customers/{id}
 
-        //[HttpPut]
-        //[Route("{id}")]
-        //public IActionResult UpdateCategory(int id, [FromBody] CategoryUpdateDto updateDto)
-        //{
-        //    if (updateDto == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    var existingCategory = _subCategoryRepository.GetSingle(id);
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult UpdateSubCategory(int id, [FromBody] SubCategoryDto subCategoryDto)
+        {
+            if (subCategoryDto == null)
+            {
+                return BadRequest();
+            }
+            var existingSubCategory = _subCategoryRepository.GetSingleSubCategory(id);
 
-        //    if (existingCategory == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+            subCategoryDto.Id = existingSubCategory.Id;
+            if (existingSubCategory == null)
+            {
+                return NotFound();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    Mapper.Map(updateDto, existingCategory);
+            Mapper.Map(subCategoryDto, existingSubCategory);
 
-        //    _subCategoryRepository.Update(existingCategory);
+            _subCategoryRepository.Update(existingSubCategory);
 
-        //    bool result = _subCategoryRepository.Save();
+            bool result = _subCategoryRepository.Save();
 
-        //    if (!result)
-        //    {
-        //        //return new StatusCodeResult(500);
-        //        throw new Exception($"something went wrong when updating the category with id: {id}");
-        //    }
+            if (!result)
+            {
+                //return new StatusCodeResult(500);
+                throw new Exception($"something went wrong when updating the subcategory with id: {id}");
+            }
 
-        //    return Ok(Mapper.Map<CategoryDto>(existingCategory));
-        //}
+            return Ok(Mapper.Map<SubCategoryDto>(existingSubCategory));
+        }
 
-        //[HttpDelete]
-        //[Route("{id}")]
-        //public IActionResult Remove(int id)
-        //{
-        //    var existingCategory = _subCategoryRepository.GetSingle(id);
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Remove(int id)
+        {
+            var existingSubCategory = _subCategoryRepository.GetSingleSubCategory(id);
 
-        //    if (existingCategory == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (existingSubCategory == null)
+            {
+                return NotFound();
+            }
 
-        //    _subCategoryRepository.Delete(id);
+            _subCategoryRepository.Delete(id);
 
-        //    bool result = _subCategoryRepository.Save();
+            bool result = _subCategoryRepository.Save();
 
-        //    if (!result)
-        //    {
-        //        // return new StatusCodeResult(500);
-        //        throw new Exception($"something went wrong when deleting the category with id: {id}");
-        //    }
+            if (!result)
+            {
+                // return new StatusCodeResult(500);
+                throw new Exception($"something went wrong when deleting the subcategory with id: {id}");
+            }
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
     }
 }

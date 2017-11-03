@@ -39,9 +39,9 @@ namespace COmpStore.Services
             _context.SubCategories.Remove(subCategory);
         }
 
-        public void Update(SubCategory item)
+        public void Update(SubCategory subCategory)
         {
-            _context.SubCategories.Update(item);
+            _context.SubCategories.Update(subCategory);
         }
 
         public bool Save()

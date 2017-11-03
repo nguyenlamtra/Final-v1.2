@@ -1,0 +1,1492 @@
+2017-11-04 02:22:57.891 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:22:58.159 +07:00 [Information] Executed DbCommand ("73"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:23:10.619 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories  
+2017-11-04 02:23:10.769 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 02:23:10.795 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:23:10.936 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-04 02:23:10.994 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:23:11.026 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" in 301.1431ms
+2017-11-04 02:23:11.030 +07:00 [Information] Request finished in 427.4184ms 200 application/json; charset=utf-8
+2017-11-04 02:25:39.740 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:25:39.991 +07:00 [Information] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:25:40.229 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories  
+2017-11-04 02:25:40.372 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 02:25:40.390 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:25:40.514 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-04 02:25:40.572 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:25:40.601 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" in 272.9641ms
+2017-11-04 02:25:40.606 +07:00 [Information] Request finished in 390.4032ms 200 application/json; charset=utf-8
+2017-11-04 02:27:11.507 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 42
+2017-11-04 02:27:11.510 +07:00 [Information] Policy execution failed.
+2017-11-04 02:27:11.512 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:27:11.586 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments (["COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 02:27:15.103 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:27:15.184 +07:00 [Information] Executed DbCommand ("39"ms) [Parameters=["@p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [SubCategories] ([CategoryId], [SubCategoryName])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [SubCategories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-04 02:28:32.911 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 81377.9311ms
+2017-11-04 02:28:32.998 +07:00 [Error] An unhandled exception has occurred: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SubCategory -> CategoryDto
+COmpStore.Schema.Entities.SubCategory -> COmpStore.Dto.CategoryDto
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SubCategory -> CategoryDto
+COmpStore.Schema.Entities.SubCategory -> COmpStore.Dto.CategoryDto
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at COmpStore.Controllers.SubCategoriesController.AddSubCategory(SubCategoryDto subCategoryDto) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\SubCategoriesController.cs:line 74
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 02:28:33.021 +07:00 [Information] Request finished in 81514.3525ms 500 
+2017-11-04 02:29:11.896 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:29:12.103 +07:00 [Information] Executed DbCommand ("62"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:29:12.468 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 42
+2017-11-04 02:29:12.490 +07:00 [Information] Policy execution failed.
+2017-11-04 02:29:12.492 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:29:12.704 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments (["COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 02:29:38.073 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 19:29:24 +00:00".
+2017-11-04 02:29:38.074 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 19:29:26 +00:00".
+2017-11-04 02:29:38.075 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 19:29:26 +00:00".
+2017-11-04 02:29:42.860 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:29:45.315 +07:00 [Information] Executed DbCommand ("39"ms) [Parameters=["@p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [SubCategories] ([CategoryId], [SubCategoryName])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [SubCategories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-04 02:29:50.858 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:29:53.367 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 40772.8964ms
+2017-11-04 02:29:53.375 +07:00 [Information] Request finished in 40921.1962ms 201 application/json; charset=utf-8
+2017-11-04 02:32:50.828 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:32:51.058 +07:00 [Information] Executed DbCommand ("77"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:34:10.831 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:34:11.057 +07:00 [Information] Executed DbCommand ("85"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:34:11.740 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories  
+2017-11-04 02:34:11.884 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 02:34:11.902 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:34:12.030 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-04 02:34:12.101 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:34:12.133 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" in 289.6939ms
+2017-11-04 02:34:12.137 +07:00 [Information] Request finished in 411.2725ms 200 application/json; charset=utf-8
+2017-11-04 02:34:29.908 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 43
+2017-11-04 02:34:29.911 +07:00 [Information] Policy execution failed.
+2017-11-04 02:34:29.913 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:34:29.962 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments ([""]) - ModelState is Invalid
+2017-11-04 02:34:29.966 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:34:29.968 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 39.5905ms
+2017-11-04 02:34:29.972 +07:00 [Information] Request finished in 64.7658ms 400 text/plain; charset=utf-8
+2017-11-04 02:35:54.914 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 51
+2017-11-04 02:35:54.917 +07:00 [Information] Policy execution failed.
+2017-11-04 02:35:54.919 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:35:54.936 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments ([""]) - ModelState is Invalid
+2017-11-04 02:35:54.938 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:35:54.941 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 19.2215ms
+2017-11-04 02:35:54.944 +07:00 [Information] Request finished in 29.7249ms 400 text/plain; charset=utf-8
+2017-11-04 02:36:04.088 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 51
+2017-11-04 02:36:04.090 +07:00 [Information] Policy execution failed.
+2017-11-04 02:36:04.093 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:36:04.108 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments ([""]) - ModelState is Invalid
+2017-11-04 02:36:04.110 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:36:04.112 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 17.1924ms
+2017-11-04 02:36:04.115 +07:00 [Information] Request finished in 26.63ms 400 text/plain; charset=utf-8
+2017-11-04 02:36:07.260 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 51
+2017-11-04 02:36:07.263 +07:00 [Information] Policy execution failed.
+2017-11-04 02:36:07.265 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:36:07.280 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments ([""]) - ModelState is Invalid
+2017-11-04 02:36:07.282 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:36:07.285 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 17.8899ms
+2017-11-04 02:36:07.288 +07:00 [Information] Request finished in 32.2706ms 400 text/plain; charset=utf-8
+2017-11-04 02:36:08.324 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 51
+2017-11-04 02:36:08.326 +07:00 [Information] Policy execution failed.
+2017-11-04 02:36:08.328 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:36:08.348 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments ([""]) - ModelState is Invalid
+2017-11-04 02:36:08.350 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:36:08.353 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 22.2544ms
+2017-11-04 02:36:08.356 +07:00 [Information] Request finished in 36.1767ms 400 text/plain; charset=utf-8
+2017-11-04 02:36:32.876 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:36:33.068 +07:00 [Information] Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:36:49.505 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 42
+2017-11-04 02:36:49.527 +07:00 [Information] Policy execution failed.
+2017-11-04 02:36:49.529 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:36:49.716 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments (["COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 02:37:11.233 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 19:37:09 +00:00".
+2017-11-04 02:37:12.200 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:37:13.373 +07:00 [Information] Executed DbCommand ("47"ms) [Parameters=["@p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [SubCategories] ([CategoryId], [SubCategoryName])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [SubCategories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-04 02:37:18.936 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:37:27.203 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" in 37558.2327ms
+2017-11-04 02:37:27.213 +07:00 [Information] Request finished in 37721.7069ms 201 application/json; charset=utf-8
+2017-11-04 02:48:53.548 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:48:53.789 +07:00 [Information] Executed DbCommand ("92"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:48:58.648 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories  
+2017-11-04 02:48:58.798 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 02:48:58.820 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:48:58.952 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-04 02:48:59.008 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:48:59.040 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetAllSubCategory (COmpStore)" in 284.6642ms
+2017-11-04 02:48:59.044 +07:00 [Information] Request finished in 411.8826ms 200 application/json; charset=utf-8
+2017-11-04 02:49:38.891 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/24 application/json 44
+2017-11-04 02:49:38.894 +07:00 [Information] Policy execution failed.
+2017-11-04 02:49:38.896 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:49:38.969 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["24", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 02:49:50.147 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:49:50.260 +07:00 [Information] Executed DbCommand ("80"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 02:51:03.675 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 84758.8792ms
+2017-11-04 02:51:03.771 +07:00 [Error] An unhandled exception has occurred: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+System.InvalidOperationException: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at COmpStore.Services.SubCategoryRepository.Save() in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Repositories\SubCategoryRepository.cs:line 49
+   at COmpStore.Controllers.SubCategoriesController.UpdateSubCategory(Int32 id, SubCategoryDto subCategoryDto) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\SubCategoriesController.cs:line 102
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 02:51:03.796 +07:00 [Information] Request finished in 84904.9458ms 500 
+2017-11-04 02:57:18.094 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:57:18.315 +07:00 [Information] Executed DbCommand ("66"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 02:57:34.449 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories/24  
+2017-11-04 02:57:34.624 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" with arguments (["24"]) - ModelState is Valid
+2017-11-04 02:57:34.663 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:57:34.835 +07:00 [Information] Executed DbCommand ("41"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 02:57:34.922 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:57:34.939 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" in 370.3849ms
+2017-11-04 02:57:34.943 +07:00 [Information] Request finished in 509.1772ms 200 application/json; charset=utf-8
+2017-11-04 02:58:05.825 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories/17  
+2017-11-04 02:58:05.841 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" with arguments (["17"]) - ModelState is Valid
+2017-11-04 02:58:05.844 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:58:05.868 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 02:58:05.872 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 02:58:05.874 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" in 46.3023ms
+2017-11-04 02:58:05.877 +07:00 [Information] Request finished in 52.1177ms 200 application/json; charset=utf-8
+2017-11-04 02:59:20.114 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 02:59:20.117 +07:00 [Information] Policy execution failed.
+2017-11-04 02:59:20.119 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 02:59:20.162 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 02:59:23.657 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 02:59:23.683 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 02:59:26.285 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 6156.1633ms
+2017-11-04 02:59:26.369 +07:00 [Error] An unhandled exception has occurred: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+System.InvalidOperationException: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at COmpStore.Services.SubCategoryRepository.Save() in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Repositories\SubCategoryRepository.cs:line 49
+   at COmpStore.Controllers.SubCategoriesController.UpdateSubCategory(Int32 id, SubCategoryDto subCategoryDto) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\SubCategoriesController.cs:line 102
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 02:59:26.440 +07:00 [Information] Request finished in 6326.456ms 500 
+2017-11-04 03:02:45.309 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:02:45.526 +07:00 [Information] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 03:02:46.787 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 03:02:46.810 +07:00 [Information] Policy execution failed.
+2017-11-04 03:02:46.813 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 03:02:46.992 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryUpdateDto"]) - ModelState is Valid
+2017-11-04 03:02:50.369 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:02:50.375 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 20:02:49 +00:00".
+2017-11-04 03:02:50.544 +07:00 [Information] Executed DbCommand ("50"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 03:03:03.536 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 16620.1325ms
+2017-11-04 03:03:03.621 +07:00 [Error] An unhandled exception has occurred: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SubCategoryUpdateDto -> SubCategory
+COmpStore.Dto.SubCategoryUpdateDto -> COmpStore.Schema.Entities.SubCategory
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SubCategoryUpdateDto -> SubCategory
+COmpStore.Dto.SubCategoryUpdateDto -> COmpStore.Schema.Entities.SubCategory
+   at lambda_method(Closure , SubCategoryUpdateDto , SubCategory , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TSource,TDestination](TSource source, TDestination destination)
+   at COmpStore.Controllers.SubCategoriesController.UpdateSubCategory(Int32 id, SubCategoryUpdateDto subCategoryDto) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\SubCategoriesController.cs:line 98
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 03:03:03.721 +07:00 [Information] Request finished in 16947.9605ms 500 
+2017-11-04 03:07:18.464 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:07:18.737 +07:00 [Information] Executed DbCommand ("87"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 03:07:21.396 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 03:07:21.418 +07:00 [Information] Policy execution failed.
+2017-11-04 03:07:21.421 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 03:07:21.606 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 03:07:36.520 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:07:36.532 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 20:07:35 +00:00".
+2017-11-04 03:07:36.712 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 03:08:48.914 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 87399.285ms
+2017-11-04 03:08:49.018 +07:00 [Error] An unhandled exception has occurred: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+System.InvalidOperationException: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at COmpStore.Services.SubCategoryRepository.Save() in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Repositories\SubCategoryRepository.cs:line 49
+   at COmpStore.Controllers.SubCategoriesController.UpdateSubCategory(Int32 id, SubCategoryDto subCategoryDto) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\SubCategoriesController.cs:line 102
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 03:08:49.049 +07:00 [Information] Request finished in 87667.4973ms 500 
+2017-11-04 03:10:17.609 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:10:17.827 +07:00 [Information] Executed DbCommand ("70"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 03:11:46.785 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 03:11:46.808 +07:00 [Information] Policy execution failed.
+2017-11-04 03:11:46.810 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 03:11:46.989 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryUpdateDto"]) - ModelState is Valid
+2017-11-04 03:12:00.244 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:12:00.250 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 20:11:58 +00:00".
+2017-11-04 03:12:00.415 +07:00 [Information] Executed DbCommand ("44"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 03:16:04.261 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:16:04.467 +07:00 [Information] Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 03:16:07.458 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 03:16:07.483 +07:00 [Information] Policy execution failed.
+2017-11-04 03:16:07.486 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 03:16:07.661 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 03:16:14.145 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:16:14.312 +07:00 [Information] Executed DbCommand ("40"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 03:28:37.645 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:28:37.855 +07:00 [Information] Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 03:29:02.473 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 03:29:02.495 +07:00 [Information] Policy execution failed.
+2017-11-04 03:29:02.498 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 03:29:02.676 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 03:29:12.098 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:29:12.104 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 20:29:11 +00:00".
+2017-11-04 03:29:12.258 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 03:29:31.220 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 28618.6725ms
+2017-11-04 03:29:31.310 +07:00 [Error] An unhandled exception has occurred: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+System.InvalidOperationException: The property 'Id' on entity type 'SubCategory' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key first delete the dependent and invoke 'SaveChanges' then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at COmpStore.Services.SubCategoryRepository.Save() in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Repositories\SubCategoryRepository.cs:line 49
+   at COmpStore.Controllers.SubCategoriesController.UpdateSubCategory(Int32 id, SubCategoryDto subCategoryDto) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\SubCategoriesController.cs:line 102
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 03:29:31.388 +07:00 [Information] Request finished in 28928.8382ms 500 
+2017-11-04 03:47:05.226 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:47:05.430 +07:00 [Information] Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 03:47:14.944 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 03:47:14.969 +07:00 [Information] Policy execution failed.
+2017-11-04 03:47:14.972 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 03:47:15.152 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 03:47:18.083 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:47:18.087 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 20:47:17 +00:00".
+2017-11-04 03:47:18.241 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 03:47:34.428 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 03:47:38.383 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 23309.6015ms
+2017-11-04 03:47:38.389 +07:00 [Information] Request finished in 23461.3004ms 200 application/json; charset=utf-8
+2017-11-04 03:56:26.740 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:56:26.973 +07:00 [Information] Executed DbCommand ("88"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 03:56:38.366 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 03:56:38.392 +07:00 [Information] Policy execution failed.
+2017-11-04 03:56:38.395 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 03:56:38.595 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 03:57:05.905 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 03:57:05.910 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 20:57:05 +00:00".
+2017-11-04 03:57:06.084 +07:00 [Information] Executed DbCommand ("53"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:00:39.252 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:00:39.489 +07:00 [Information] Executed DbCommand ("77"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:00:39.877 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 04:00:39.899 +07:00 [Information] Policy execution failed.
+2017-11-04 04:00:39.902 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:00:40.085 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryUpdateDto"]) - ModelState is Valid
+2017-11-04 04:00:56.512 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:00:56.538 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:00:43 +00:00".
+2017-11-04 04:00:56.539 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:00:56 +00:00".
+2017-11-04 04:00:56.542 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:00:56 +00:00".
+2017-11-04 04:00:56.718 +07:00 [Information] Executed DbCommand ("40"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:02:56.879 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:02:57.109 +07:00 [Information] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:02:57.451 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 42
+2017-11-04 04:02:57.476 +07:00 [Information] Policy execution failed.
+2017-11-04 04:02:57.479 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:02:57.667 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:03:00.803 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:03:00.829 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:03:00 +00:00".
+2017-11-04 04:03:00.830 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:03:00 +00:00".
+2017-11-04 04:03:00.985 +07:00 [Information] Executed DbCommand ("44"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:03:19.988 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@p2='?', @p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [SubCategories] SET [CategoryId] = @p0, [SubCategoryName] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;"
+2017-11-04 04:03:30.628 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 04:03:34.169 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 36587.4974ms
+2017-11-04 04:03:34.176 +07:00 [Information] Request finished in 36740.5726ms 200 application/json; charset=utf-8
+2017-11-04 04:06:41.687 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:06:41.893 +07:00 [Information] Executed DbCommand ("62"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:07:19.268 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/subcategories application/json 42
+2017-11-04 04:07:19.291 +07:00 [Information] Policy execution failed.
+2017-11-04 04:07:19.293 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:07:19.488 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.AddSubCategory (COmpStore)" with arguments (["COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:07:41.869 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:07:33 +00:00".
+2017-11-04 04:07:49.521 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:08:02.057 +07:00 [Information] Executed DbCommand ("39"ms) [Parameters=["@p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [SubCategories] ([CategoryId], [SubCategoryName])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [SubCategories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-04 04:16:57.071 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:16:57.262 +07:00 [Information] Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:17:49.177 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories/24  
+2017-11-04 04:17:49.356 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" with arguments (["24"]) - ModelState is Valid
+2017-11-04 04:17:49.423 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:17:49.591 +07:00 [Information] Executed DbCommand ("41"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:17:49.660 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 04:17:49.677 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" in 377.3225ms
+2017-11-04 04:17:49.682 +07:00 [Information] Request finished in 520.4561ms 200 application/json; charset=utf-8
+2017-11-04 04:17:56.928 +07:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:2693/api/subcategories/24 application/json 
+2017-11-04 04:17:56.932 +07:00 [Information] Policy execution failed.
+2017-11-04 04:17:56.934 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:17:56.953 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.Remove (COmpStore)" with arguments (["24"]) - ModelState is Valid
+2017-11-04 04:18:01.447 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:18:01.474 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:18:04.150 +07:00 [Information] Executed DbCommand ("39"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:18:06.737 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [SubCategories]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;"
+2017-11-04 04:18:10.715 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 204
+2017-11-04 04:18:10.719 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.Remove (COmpStore)" in 13779.4174ms
+2017-11-04 04:18:10.723 +07:00 [Information] Request finished in 13794.4922ms 204 
+2017-11-04 04:18:28.359 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories/24  
+2017-11-04 04:19:00.556 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" with arguments (["24"]) - ModelState is Valid
+2017-11-04 04:19:00.559 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:19:00.582 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:19:00.585 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-11-04 04:19:00.588 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" in 32225.9566ms
+2017-11-04 04:19:00.591 +07:00 [Information] Request finished in 32231.449ms 404 
+2017-11-04 04:19:06.079 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories/17  
+2017-11-04 04:19:06.095 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" with arguments (["17"]) - ModelState is Valid
+2017-11-04 04:19:06.097 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:19:06.117 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:19:06.120 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 04:19:06.123 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" in 41.1338ms
+2017-11-04 04:19:06.125 +07:00 [Information] Request finished in 46.2787ms 200 application/json; charset=utf-8
+2017-11-04 04:20:31.950 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:20:32.145 +07:00 [Information] Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:20:32.489 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/24 application/json 26
+2017-11-04 04:20:32.510 +07:00 [Information] Policy execution failed.
+2017-11-04 04:20:32.513 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:20:32.699 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["24", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:20:34.773 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:20:34.786 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:20:34 +00:00".
+2017-11-04 04:20:34.955 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:20:45.325 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-11-04 04:20:45.337 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 12721.1755ms
+2017-11-04 04:20:45.346 +07:00 [Information] Request finished in 12870.0413ms 404 
+2017-11-04 04:20:52.123 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/24 application/json 26
+2017-11-04 04:20:52.125 +07:00 [Information] Policy execution failed.
+2017-11-04 04:20:52.127 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:21:11.642 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["24", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:21:16.475 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:21:16.536 +07:00 [Information] Executed DbCommand ("39"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:21:21.947 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-11-04 04:21:21.953 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 29819.8001ms
+2017-11-04 04:21:21.961 +07:00 [Information] Request finished in 29833.6171ms 404 
+2017-11-04 04:21:35.795 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 26
+2017-11-04 04:21:35.797 +07:00 [Information] Policy execution failed.
+2017-11-04 04:21:35.800 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:21:39.965 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:21:52.164 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:21:52.205 +07:00 [Information] Executed DbCommand ("37"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:23:35.315 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:23:35.567 +07:00 [Information] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:23:35.812 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 53
+2017-11-04 04:23:35.834 +07:00 [Information] Policy execution failed.
+2017-11-04 04:23:35.836 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:23:36.001 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", ""]) - ModelState is Invalid
+2017-11-04 04:24:00.262 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:23:57 +00:00".
+2017-11-04 04:24:00.263 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:23:54 +00:00".
+2017-11-04 04:24:00.265 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:23:54 +00:00".
+2017-11-04 04:24:00.269 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 400
+2017-11-04 04:24:00.271 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:23:57 +00:00".
+2017-11-04 04:24:00.273 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:23:56 +00:00".
+2017-11-04 04:24:00.284 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 24349.2446ms
+2017-11-04 04:24:00.296 +07:00 [Information] Request finished in 24496.764ms 400 
+2017-11-04 04:24:38.384 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:24:38.604 +07:00 [Information] Executed DbCommand ("66"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:24:38.799 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 45
+2017-11-04 04:24:38.821 +07:00 [Information] Policy execution failed.
+2017-11-04 04:24:38.824 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:24:39.023 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", ""]) - ModelState is Invalid
+2017-11-04 04:25:01.254 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:24:56 +00:00".
+2017-11-04 04:25:01.254 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:24:56 +00:00".
+2017-11-04 04:25:01.257 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:24:50 +00:00".
+2017-11-04 04:25:01.260 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 400
+2017-11-04 04:25:01.262 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:25:01 +00:00".
+2017-11-04 04:25:01.279 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 22349.5646ms
+2017-11-04 04:25:01.299 +07:00 [Information] Request finished in 22509.3361ms 400 
+2017-11-04 04:25:30.625 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 55
+2017-11-04 04:25:30.627 +07:00 [Information] Policy execution failed.
+2017-11-04 04:25:30.629 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:25:30.656 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", ""]) - ModelState is Invalid
+2017-11-04 04:25:59.274 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:25:59.469 +07:00 [Information] Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:25:59.775 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 54
+2017-11-04 04:25:59.798 +07:00 [Information] Policy execution failed.
+2017-11-04 04:25:59.801 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:25:59.977 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:26:06.375 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:26:06.402 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:26:04 +00:00".
+2017-11-04 04:26:06.403 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:26:06 +00:00".
+2017-11-04 04:26:06.564 +07:00 [Information] Executed DbCommand ("41"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:26:45.779 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=["@p2='?', @p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [SubCategories] SET [CategoryId] = @p0, [SubCategoryName] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;"
+2017-11-04 04:26:59.886 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 04:27:03.694 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 63789.4373ms
+2017-11-04 04:27:03.700 +07:00 [Information] Request finished in 63939.7472ms 200 application/json; charset=utf-8
+2017-11-04 04:28:07.638 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:28:07.856 +07:00 [Information] Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:28:08.285 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 54
+2017-11-04 04:28:08.309 +07:00 [Information] Policy execution failed.
+2017-11-04 04:28:08.311 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:28:08.493 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:28:26.770 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:28:26.801 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:28:24 +00:00".
+2017-11-04 04:28:26.804 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 21:28:26 +00:00".
+2017-11-04 04:28:26.990 +07:00 [Information] Executed DbCommand ("40"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:30:05.388 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:30:05.591 +07:00 [Information] Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:30:11.526 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/subcategories/17 application/json 46
+2017-11-04 04:30:11.550 +07:00 [Information] Policy execution failed.
+2017-11-04 04:30:11.552 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 04:30:11.723 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" with arguments (["17", "COmpStore.Dto.SubCategoryDto"]) - ModelState is Valid
+2017-11-04 04:30:23.902 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:30:24.063 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:30:49.984 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=["@p2='?', @p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [SubCategories] SET [CategoryId] = @p0, [SubCategoryName] = @p1
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;"
+2017-11-04 04:30:56.130 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 04:30:56.151 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.UpdateSubCategory (COmpStore)" in 44503.1082ms
+2017-11-04 04:30:56.160 +07:00 [Information] Request finished in 44647.7174ms 200 application/json; charset=utf-8
+2017-11-04 04:31:09.527 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/SubCategories/17  
+2017-11-04 04:31:09.545 +07:00 [Information] Executing action method "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" with arguments (["17"]) - ModelState is Valid
+2017-11-04 04:31:09.548 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:31:09.577 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 04:31:09.581 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 04:31:09.584 +07:00 [Information] Executed action "COmpStore.Controllers.SubCategoriesController.GetSingleSubCategory (COmpStore)" in 52.0565ms
+2017-11-04 04:31:09.587 +07:00 [Information] Request finished in 60.1463ms 200 application/json; charset=utf-8
+2017-11-04 04:57:38.232 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:57:38.474 +07:00 [Information] Executed DbCommand ("77"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:59:06.754 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:59:06.989 +07:00 [Information] Executed DbCommand ("85"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 04:59:08.578 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 04:59:08.739 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 04:59:08.769 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 04:59:08.922 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 04:59:08.936 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 04:59:08.958 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" in 271.8211ms
+2017-11-04 04:59:08.966 +07:00 [Information] Request finished in 401.9732ms 200 application/json; charset=utf-8
+2017-11-04 05:04:38.785 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 05:04:38.808 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:04:38.811 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:04:38.842 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:04:38.898 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:05:09.597 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" in 30806.6549ms
+2017-11-04 05:05:09.690 +07:00 [Error] An unhandled exception has occurred: Error mapping types.
+
+Mapping types:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Type Map configuration:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Property:
+Id
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Type Map configuration:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Property:
+Id ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Int32 -> Guid
+System.Int32 -> System.Guid
+   at lambda_method(Closure , Int32 , Guid , ResolutionContext )
+   at AutoMapper.ResolutionContext.Map[TSource,TDestination](TSource source, TDestination destination)
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at COmpStore.Controllers.ProductsController.<>c.<GetAllProducts>b__2_0(Product x) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\ProductsController.cs:line 28
+   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.<WriteResponseBodyAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeResultAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResultFilterAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 05:05:09.701 +07:00 [Warning] The response has already started, the error handler will not be executed.
+2017-11-04 05:05:09.751 +07:00 [Error] Connection id ""0HL930ODGGEIP"", Request id ""0HL930ODGGEIP:00000001"": An unhandled exception was thrown by the application.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Type Map configuration:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Property:
+Id ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Int32 -> Guid
+System.Int32 -> System.Guid
+   at lambda_method(Closure , Int32 , Guid , ResolutionContext )
+   at AutoMapper.ResolutionContext.Map[TSource,TDestination](TSource source, TDestination destination)
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at COmpStore.Controllers.ProductsController.<>c.<GetAllProducts>b__2_0(Product x) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\ProductsController.cs:line 28
+   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.<WriteResponseBodyAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeResultAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResultFilterAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Frame`1.<ProcessRequestsAsync>d__2.MoveNext()
+2017-11-04 05:05:09.764 +07:00 [Information] Request finished in 30978.5821ms 200 application/json; charset=utf-8
+2017-11-04 05:05:16.429 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 05:05:16.451 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:05:33.565 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:05:42.318 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:08:22.665 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:08:22.889 +07:00 [Information] Executed DbCommand ("82"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:08:34.249 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 05:08:34.392 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:08:39.432 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:08:39.438 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 22:08:39 +00:00".
+2017-11-04 05:08:39.570 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:09:13.114 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:09:23.100 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" in 48740.8003ms
+2017-11-04 05:09:23.195 +07:00 [Error] An unhandled exception has occurred: Error mapping types.
+
+Mapping types:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Type Map configuration:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Property:
+PublisherId
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Type Map configuration:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Property:
+PublisherId ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Int32 -> Guid
+System.Int32 -> System.Guid
+   at lambda_method(Closure , Int32 , Guid , ResolutionContext )
+   at AutoMapper.ResolutionContext.Map[TSource,TDestination](TSource source, TDestination destination)
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at COmpStore.Controllers.ProductsController.<>c.<GetAllProducts>b__2_0(Product x) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\ProductsController.cs:line 28
+   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.<WriteResponseBodyAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeResultAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResultFilterAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-04 05:09:23.206 +07:00 [Warning] The response has already started, the error handler will not be executed.
+2017-11-04 05:09:23.254 +07:00 [Error] Connection id ""0HL930TJ6240D"", Request id ""0HL930TJ6240D:00000001"": An unhandled exception was thrown by the application.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Type Map configuration:
+Product -> ProductDto
+COmpStore.Schema.Entities.Product -> COmpStore.Dto.ProductDto
+
+Property:
+PublisherId ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Int32 -> Guid
+System.Int32 -> System.Guid
+   at lambda_method(Closure , Int32 , Guid , ResolutionContext )
+   at AutoMapper.ResolutionContext.Map[TSource,TDestination](TSource source, TDestination destination)
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   at COmpStore.Controllers.ProductsController.<>c.<GetAllProducts>b__2_0(Product x) in C:\Users\phamh\Desktop\Final-Assessment-master\COmpStore\Controllers\ProductsController.cs:line 28
+   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.WriteObject(TextWriter writer, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter.<WriteResponseBodyAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeResultAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResultFilterAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Frame`1.<ProcessRequestsAsync>d__2.MoveNext()
+2017-11-04 05:09:23.267 +07:00 [Information] Request finished in 49034.4859ms 200 application/json; charset=utf-8
+2017-11-04 05:12:55.992 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:12:56.198 +07:00 [Information] Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:13:10.714 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 05:13:10.875 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:13:20.709 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:13:20.715 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 22:13:20 +00:00".
+2017-11-04 05:13:20.849 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:22:50.218 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:22:50.427 +07:00 [Information] Executed DbCommand ("63"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:22:59.255 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 05:22:59.398 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:23:11.467 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:23:11.477 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 22:23:11 +00:00".
+2017-11-04 05:23:11.623 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:25:27.234 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:25:27.463 +07:00 [Information] Executed DbCommand ("81"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:25:51.814 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 05:25:51.967 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:25:59.777 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:25:59.918 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:26:16.698 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:26:16.752 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" in 24827.4869ms
+2017-11-04 05:26:16.757 +07:00 [Information] Request finished in 24958.5574ms 200 application/json; charset=utf-8
+2017-11-04 05:29:37.626 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:29:37.821 +07:00 [Information] Executed DbCommand ("56"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:29:39.379 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products/1  
+2017-11-04 05:29:39.550 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetSingleSubCategory (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-04 05:29:39.601 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:29:39.803 +07:00 [Information] Executed DbCommand ("57"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:30:10.661 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:30:10.901 +07:00 [Information] Executed DbCommand ("84"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:30:11.132 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products/1  
+2017-11-04 05:30:11.301 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetSingleSubCategory (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-04 05:30:11.327 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:30:11.508 +07:00 [Information] Executed DbCommand ("44"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:30:11.585 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:30:11.606 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetSingleSubCategory (COmpStore)" in 358.8278ms
+2017-11-04 05:30:11.610 +07:00 [Information] Request finished in 492.1874ms 200 application/json; charset=utf-8
+2017-11-04 05:35:19.178 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:35:19.386 +07:00 [Information] Executed DbCommand ("63"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:35:25.548 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products/1  
+2017-11-04 05:35:25.722 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetSingleSubCategory (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-04 05:35:40.353 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:35:40.359 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 22:35:40 +00:00".
+2017-11-04 05:35:40.532 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:35:40.614 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:35:40.632 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetSingleSubCategory (COmpStore)" in 14968.6101ms
+2017-11-04 05:35:40.637 +07:00 [Information] Request finished in 15105.0486ms 200 application/json; charset=utf-8
+2017-11-04 05:36:35.622 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/products application/json 117
+2017-11-04 05:36:35.625 +07:00 [Information] Policy execution failed.
+2017-11-04 05:36:35.627 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 05:36:35.673 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.AddProduct (COmpStore)" with arguments (["COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-04 05:37:02.365 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:37:05.465 +07:00 [Information] Executed DbCommand ("25"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 50), @p4='?', @p5='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Products] ([Description], [MadeIn], [Price], [ProductName], [PublisherId], [SubCategoryId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-04 05:37:10.443 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "11/03/2017 22:37:10 +00:00".
+2017-11-04 05:37:13.372 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:37:13.389 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.AddProduct (COmpStore)" in 37752.1594ms
+2017-11-04 05:37:13.396 +07:00 [Information] Request finished in 37772.8945ms 201 application/json; charset=utf-8
+2017-11-04 05:37:24.455 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products  
+2017-11-04 05:37:24.473 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:37:24.478 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:37:24.514 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:37:24.520 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:37:24.523 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" in 63.6924ms
+2017-11-04 05:37:24.525 +07:00 [Information] Request finished in 71.2134ms 200 application/json; charset=utf-8
+2017-11-04 05:44:53.183 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:44:53.384 +07:00 [Information] Executed DbCommand ("63"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:45:00.082 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products/1  
+2017-11-04 05:45:00.253 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetSingleProduct (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-04 05:45:00.272 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:45:00.436 +07:00 [Information] Executed DbCommand ("46"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:45:00.516 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:45:00.536 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetSingleProduct (COmpStore)" in 338.1078ms
+2017-11-04 05:45:00.540 +07:00 [Information] Request finished in 474.1971ms 200 application/json; charset=utf-8
+2017-11-04 05:46:06.677 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/products/1 application/json 117
+2017-11-04 05:46:06.680 +07:00 [Information] Policy execution failed.
+2017-11-04 05:46:06.683 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 05:46:06.739 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.UpdateProduct (COmpStore)" with arguments (["1", "COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-04 05:46:18.396 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:46:18.434 +07:00 [Information] Executed DbCommand ("30"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:46:51.915 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=["@p6='?', @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 50), @p4='?', @p5='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [Description] = @p0, [MadeIn] = @p1, [Price] = @p2, [ProductName] = @p3, [PublisherId] = @p4, [SubCategoryId] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;"
+2017-11-04 05:47:20.645 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:47:20.866 +07:00 [Information] Executed DbCommand ("66"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:47:21.284 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/products/1 application/json 117
+2017-11-04 05:47:21.309 +07:00 [Information] Policy execution failed.
+2017-11-04 05:47:21.312 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 05:47:21.502 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.UpdateProduct (COmpStore)" with arguments (["1", "COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-04 05:47:24.059 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:47:24.226 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:47:24.345 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=["@p6='?', @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 50), @p4='?', @p5='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [Description] = @p0, [MadeIn] = @p1, [Price] = @p2, [ProductName] = @p3, [PublisherId] = @p4, [SubCategoryId] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;"
+2017-11-04 05:47:24.366 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:47:24.382 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.UpdateProduct (COmpStore)" in 2965.7793ms
+2017-11-04 05:47:24.388 +07:00 [Information] Request finished in 3119.6832ms 200 application/json; charset=utf-8
+2017-11-04 05:47:35.961 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products/ application/json 
+2017-11-04 05:47:35.982 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:47:35.986 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:47:36.025 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:47:36.032 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:47:36.037 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" in 70.4353ms
+2017-11-04 05:47:36.040 +07:00 [Information] Request finished in 79.8478ms 200 application/json; charset=utf-8
+2017-11-04 05:50:42.918 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:50:43.119 +07:00 [Information] Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-04 05:50:45.611 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products/3 application/json 
+2017-11-04 05:50:45.781 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetSingleProduct (COmpStore)" with arguments (["3"]) - ModelState is Valid
+2017-11-04 05:50:45.801 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:50:45.967 +07:00 [Information] Executed DbCommand ("44"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:50:46.050 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:50:46.069 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetSingleProduct (COmpStore)" in 345.4274ms
+2017-11-04 05:50:46.074 +07:00 [Information] Request finished in 477.9956ms 200 application/json; charset=utf-8
+2017-11-04 05:50:54.367 +07:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:2693/api/products/3 application/json 117
+2017-11-04 05:50:54.370 +07:00 [Information] Policy execution failed.
+2017-11-04 05:50:54.372 +07:00 [Information] Request origin "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop" does not have permission to access the resource.
+2017-11-04 05:50:54.391 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.Remove (COmpStore)" with arguments (["3"]) - ModelState is Valid
+2017-11-04 05:50:59.374 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:50:59.405 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:51:10.017 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:51:15.637 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Products]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;"
+2017-11-04 05:51:30.857 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 204
+2017-11-04 05:51:30.863 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.Remove (COmpStore)" in 36482.7003ms
+2017-11-04 05:51:30.872 +07:00 [Information] Request finished in 36504.9404ms 204 
+2017-11-04 05:51:41.473 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products/3 application/json 
+2017-11-04 05:51:41.489 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetSingleProduct (COmpStore)" with arguments (["3"]) - ModelState is Valid
+2017-11-04 05:51:41.492 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:51:41.510 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-04 05:51:41.513 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2017-11-04 05:51:41.516 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetSingleProduct (COmpStore)" in 39.3579ms
+2017-11-04 05:51:41.518 +07:00 [Information] Request finished in 44.9502ms 404 
+2017-11-04 05:51:47.517 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/products application/json 
+2017-11-04 05:51:47.533 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-04 05:51:47.537 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-04 05:51:47.569 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-04 05:51:47.574 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-04 05:51:47.578 +07:00 [Information] Executed action "COmpStore.Controllers.ProductsController.GetAllProducts (COmpStore)" in 57.0886ms
+2017-11-04 05:51:47.581 +07:00 [Information] Request finished in 64.1276ms 200 application/json; charset=utf-8

@@ -108,6 +108,7 @@ namespace COmpStore
             // Add transient
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<ISubCategoryRepository, SubCategoryRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             // AutoMapper
             services.AddAutoMapper();
