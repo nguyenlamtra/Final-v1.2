@@ -30,6 +30,7 @@ namespace COmpStore.Services
         public void Add(SubCategory subCategory)
         {
             _context.SubCategories.Add(subCategory);
+
         }
 
         public void Delete(int id)

@@ -7,7 +7,8 @@ namespace COmpStore.Dto
 {
     public class SubCategoryDto
     {
-        public int Id { get; set; }
+         public int Id { get; set; }
         public string SubCategoryName { get; set; }
+        
     }
 }
