@@ -8,7 +8,7 @@ namespace COmpStore.Schema.Configuration
 {
     public class PublisherConfiguration
     {
-        public PublisherConfiguration(EntityTypeBuilder<PublisherEntity> entityBuilder)
+        public PublisherConfiguration(EntityTypeBuilder<Publisher> entityBuilder)
         {
             entityBuilder.HasKey(p => p.Id);
             entityBuilder.Property(s => s.PublisherName).IsRequired().HasMaxLength(50);

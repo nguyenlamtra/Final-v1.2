@@ -12,13 +12,13 @@ namespace COmpStore.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<CategoryEntity, CategoryDto>().ReverseMap();
+            CreateMap<Category, CategoryDto>().ReverseMap();
 
-            CreateMap<SubCategoryEntity, SubCategoryDto>().ReverseMap();
+            CreateMap<SubCategory, SubCategoryDto>().ReverseMap();
 
-            CreateMap<ProductEntity, ProductDto>().ReverseMap();
+            CreateMap<Product, ProductDto>().ReverseMap();
 
-            CreateMap<PublisherEntity, PublisherDto>().ReverseMap();
+            CreateMap<Publisher, PublisherDto>().ReverseMap();
         }
     }
 }

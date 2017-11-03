@@ -30,7 +30,7 @@ namespace COmpStore.Repositories
         {
             try
             {
-                var categoryEntity = Mapper.Map<CategoryEntity>(dto);
+                var categoryEntity = Mapper.Map<Category>(dto);
                 DbContext.Categories.Add(categoryEntity);
                 DbContext.SaveChanges();
                 return true;

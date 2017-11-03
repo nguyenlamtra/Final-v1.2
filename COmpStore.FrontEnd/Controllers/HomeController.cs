@@ -15,9 +15,10 @@ namespace COmpStore.FrontEnd.Controllers
     {
         
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(CategoryService.GetList());
+            var temp = await CategoryService.GetList();
+            return View(temp);
         }
 
         public IActionResult About()

@@ -13,17 +13,17 @@ namespace COmpStore.Schema
         public StoreDbContext(DbContextOptions options) : base(options)
         { }
 
-        public DbSet<CategoryEntity> Categories { get; set; }
-        public DbSet<SubCategoryEntity> SubCategories { get; set; }
-        public DbSet<PublisherEntity> Publishers { get; set; }
-        public DbSet<ProductEntity> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            new PublisherConfiguration(modelBuilder.Entity<PublisherEntity>());
-            new SubCategoryConfiguration(modelBuilder.Entity<SubCategoryEntity>());
-            new CategoryConfiguration(modelBuilder.Entity<CategoryEntity>());
-            new ProductConfiguration(modelBuilder.Entity<ProductEntity>());
+            new PublisherConfiguration(modelBuilder.Entity<Publisher>());
+            new SubCategoryConfiguration(modelBuilder.Entity<SubCategory>());
+            new CategoryConfiguration(modelBuilder.Entity<Category>());
+            new ProductConfiguration(modelBuilder.Entity<Product>());
 
             base.OnModelCreating(modelBuilder);
         }

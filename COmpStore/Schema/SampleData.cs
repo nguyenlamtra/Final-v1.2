@@ -128,11 +128,11 @@ namespace COmpStore.Schema
             }
         }
 
-        private static ProductEntity[] GetProducts()
+        private static Product[] GetProducts()
         {
-            var products = new ProductEntity[]
+            var products = new Product[]
             {
-                new ProductEntity { Description = "Description 1", Price = 1, MadeIn="China 1",ProductName="Product Name 1",Publisher=publishers["Publisher Name 1"], SubCategory=subCategories["SubCategory Name 1"] },
+                new Product { Description = "Description 1", Price = 1, MadeIn="China 1",ProductName="Product Name 1",Publisher=publishers["Publisher Name 1"], SubCategory=subCategories["SubCategory Name 1"] },
             };
 
             foreach (var product in products)
@@ -144,20 +144,20 @@ namespace COmpStore.Schema
             return products;
         }
 
-        private static Dictionary<string, PublisherEntity> publishers;
-        public static Dictionary<string, PublisherEntity> Publishers
+        private static Dictionary<string, Publisher> publishers;
+        public static Dictionary<string, Publisher> Publishers
         {
             get
             {
                 if (publishers == null)
                 {
-                    var publishersList = new PublisherEntity[]
+                    var publishersList = new Publisher[]
                     {
-                        new PublisherEntity { PublisherName = "Publisher Name 1" },
+                        new Publisher { PublisherName = "Publisher Name 1" },
                     };
 
-                    publishers = new Dictionary<string, PublisherEntity>();
-                    foreach (PublisherEntity publisher in publishersList)
+                    publishers = new Dictionary<string, Publisher>();
+                    foreach (Publisher publisher in publishersList)
                     {
                         publishers.Add(publisher.PublisherName, publisher);
                     }
@@ -167,21 +167,21 @@ namespace COmpStore.Schema
             }
         }
 
-        private static Dictionary<string, SubCategoryEntity> subCategories;
-        public static Dictionary<string, SubCategoryEntity> SubCategories
+        private static Dictionary<string, SubCategory> subCategories;
+        public static Dictionary<string, SubCategory> SubCategories
         {
             get
             {
                 if (subCategories == null)
                 {
-                    var subCategoriesList = new SubCategoryEntity[]
+                    var subCategoriesList = new SubCategory[]
                     {
-                        new SubCategoryEntity { SubCategoryName = "SubCategory Name 1", Category=categories["Category Name 1"] },
+                        new SubCategory { SubCategoryName = "SubCategory Name 1", Category=categories["Category Name 1"] },
                     };
 
-                    subCategories = new Dictionary<string, SubCategoryEntity>();
+                    subCategories = new Dictionary<string, SubCategory>();
 
-                    foreach (SubCategoryEntity subCategory in subCategoriesList)
+                    foreach (SubCategory subCategory in subCategoriesList)
                     {
                         subCategories.Add(subCategory.SubCategoryName, subCategory);
                     }
@@ -191,21 +191,21 @@ namespace COmpStore.Schema
             }
         }
 
-        private static Dictionary<string, CategoryEntity> categories;
-        public static Dictionary<string, CategoryEntity> Categories
+        private static Dictionary<string, Category> categories;
+        public static Dictionary<string, Category> Categories
         {
             get
             {
                 if (categories == null)
                 {
-                    var categoriesList = new CategoryEntity[]
+                    var categoriesList = new Category[]
                     {
-                        new CategoryEntity { CategoryName = "Category Name 1"},
+                        new Category { CategoryName = "Category Name 1"},
                     };
 
-                    categories = new Dictionary<string, CategoryEntity>();
+                    categories = new Dictionary<string, Category>();
 
-                    foreach (CategoryEntity category in categoriesList)
+                    foreach (Category category in categoriesList)
                     {
                         categories.Add(category.CategoryName, category);
                     }

@@ -8,7 +8,7 @@ namespace COmpStore.Schema.Configuration
 {
     public class ProductConfiguration
     {
-        public ProductConfiguration(EntityTypeBuilder<ProductEntity> entityBuilder)
+        public ProductConfiguration(EntityTypeBuilder<Product> entityBuilder)
         {
             entityBuilder.HasKey(p => p.Id);
             entityBuilder.Property(p => p.ProductName).IsRequired().HasMaxLength(50);

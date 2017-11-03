@@ -107,6 +107,7 @@ namespace COmpStore
 
             // Add transient
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ISubCategoryRepository, SubCategoryRepository>();
 
             // AutoMapper
             services.AddAutoMapper();
@@ -162,6 +163,7 @@ namespace COmpStore
 
             //app.UseAuthentication();
             app.UseStaticFiles();
+           
 
             app.UseMvc();
 

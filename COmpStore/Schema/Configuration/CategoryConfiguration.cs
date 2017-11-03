@@ -8,7 +8,7 @@ namespace COmpStore.Schema.Configuration
 {
     public class CategoryConfiguration
     {
-        public CategoryConfiguration(EntityTypeBuilder<CategoryEntity> entityBuilder)
+        public CategoryConfiguration(EntityTypeBuilder<Category> entityBuilder)
         {
             entityBuilder.HasKey(c => c.Id);
             entityBuilder.Property(s => s.CategoryName).IsRequired().HasMaxLength(50);
