@@ -18,6 +18,7 @@ using Serilog;
 using System.IO;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using COmpStore.Repositories;
 
 namespace COmpStore
 {
@@ -105,7 +106,7 @@ namespace COmpStore
             });
 
             // Add transient
-            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
 
             // AutoMapper
             services.AddAutoMapper();

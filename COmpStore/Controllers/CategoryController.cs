@@ -7,17 +7,18 @@ using COmpStore.Services;
 using COmpStore.Schema.Entities;
 using COmpStore.Dto;
 using Microsoft.AspNetCore.Authorization;
+using COmpStore.Repositories;
 
 namespace COmpStore.Controllers
 {
     [Route("api/[controller]")]
     public class CategoryController : Controller
     {
-        private ICategoryService CategoryService;
+        private ICategoryRepository _categoryRepository;
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController(ICategoryRepository categoryService)
         {
-            CategoryService = categoryService;
+            _categoryRepository = categoryService;
         }
 
         [HttpGet("{id}")]
@@ -30,7 +31,7 @@ namespace COmpStore.Controllers
         [HttpGet("")]
         public IActionResult Get()
         {
-            var categories = CategoryService.GetAll();
+            var categories = _categoryRepository.GetAll();
             return Ok(categories);
         }
 
@@ -66,7 +67,7 @@ namespace COmpStore.Controllers
                 return BadRequest();
             }
 
-            if(CategoryService.Create(dto))
+            if(_categoryRepository.Create(dto))
             {
                 return Ok();
             }
@@ -86,7 +87,7 @@ namespace COmpStore.Controllers
         public IActionResult Delete(int id)
         {
 
-            if (CategoryService.Delete(id))
+            if (_categoryRepository.Delete(id))
             {
                 return Ok();
             }

@@ -9,6 +9,6 @@ namespace COmpStore.Schema.Entities
         public string SubCategoryName { get; set; }
         public int CategoryId { get; set; }
 
-        public virtual IEnumerable<CategoryEntity> Category { get; set; }
+        public virtual CategoryEntity Category { get; set; }
     }
 }
