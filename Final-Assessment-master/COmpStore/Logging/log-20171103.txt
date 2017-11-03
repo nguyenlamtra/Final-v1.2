@@ -1,0 +1,298 @@
+2017-11-03 14:21:19.977 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:21:32.673 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:50.083 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:50.544 +07:00 [Information] Executed DbCommand ("207"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""CREATE DATABASE [COmpStore];"
+2017-11-03 14:22:50.628 +07:00 [Information] Executed DbCommand ("69"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [COmpStore] SET READ_COMMITTED_SNAPSHOT ON;');"
+2017-11-03 14:22:50.732 +07:00 [Information] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);"
+2017-11-03 14:22:50.760 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [Email] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);"
+2017-11-03 14:22:50.784 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Categories] (
+    [Id] int NOT NULL IDENTITY,
+    [CategoryName] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([Id])
+);"
+2017-11-03 14:22:50.809 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Publishers] (
+    [Id] int NOT NULL IDENTITY,
+    [PublisherName] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Publishers] PRIMARY KEY ([Id])
+);"
+2017-11-03 14:22:50.833 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);"
+2017-11-03 14:22:50.862 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2017-11-03 14:22:50.887 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2017-11-03 14:22:50.919 +07:00 [Information] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2017-11-03 14:22:50.945 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2017-11-03 14:22:50.964 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [SubCategories] (
+    [Id] int NOT NULL IDENTITY,
+    [CategoryId] int NOT NULL,
+    [SubCategoryName] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_SubCategories] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_SubCategories_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([Id]) ON DELETE CASCADE
+);"
+2017-11-03 14:22:50.987 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [Description] nvarchar(max) NULL,
+    [MadeIn] nvarchar(max) NULL,
+    [Price] decimal(18, 2) NOT NULL,
+    [ProductName] nvarchar(50) NOT NULL,
+    [PublisherId] int NOT NULL,
+    [SubCategoryId] int NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Publishers_PublisherId] FOREIGN KEY ([PublisherId]) REFERENCES [Publishers] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Products_SubCategories_SubCategoryId] FOREIGN KEY ([SubCategoryId]) REFERENCES [SubCategories] ([Id]) ON DELETE CASCADE
+);"
+2017-11-03 14:22:51.012 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);"
+2017-11-03 14:22:51.037 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;"
+2017-11-03 14:22:51.066 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);"
+2017-11-03 14:22:51.087 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);"
+2017-11-03 14:22:51.115 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);"
+2017-11-03 14:22:51.138 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);"
+2017-11-03 14:22:51.166 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;"
+2017-11-03 14:22:51.192 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Products_PublisherId] ON [Products] ([PublisherId]);"
+2017-11-03 14:22:51.213 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Products_SubCategoryId] ON [Products] ([SubCategoryId]);"
+2017-11-03 14:22:51.233 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_SubCategories_CategoryId] ON [SubCategories] ([CategoryId]);"
+2017-11-03 14:22:51.261 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.409 +07:00 [Information] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[PublisherName]
+FROM [Publishers] AS [p]"
+2017-11-03 14:22:51.421 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.589 +07:00 [Information] Executed DbCommand ("87"ms) [Parameters=["@p0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Publishers] ([PublisherName])
+VALUES (@p0);
+SELECT [Id]
+FROM [Publishers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-03 14:22:51.605 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.637 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-03 14:22:51.642 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.675 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@p0='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Categories] ([CategoryName])
+VALUES (@p0);
+SELECT [Id]
+FROM [Categories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-03 14:22:51.680 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.713 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName]
+FROM [SubCategories] AS [s]"
+2017-11-03 14:22:51.717 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.772 +07:00 [Information] Executed DbCommand ("36"ms) [Parameters=["@p0='?', @p1='?' (Size = 50)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [SubCategories] ([CategoryId], [SubCategoryName])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [SubCategories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-03 14:22:51.779 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.814 +07:00 [Information] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[MadeIn], [p].[Price], [p].[ProductName], [p].[PublisherId], [p].[SubCategoryId]
+FROM [Products] AS [p]"
+2017-11-03 14:22:51.817 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:51.854 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 50), @p4='?', @p5='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Products] ([Description], [MadeIn], [Price], [ProductName], [PublisherId], [SubCategoryId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2017-11-03 14:22:52.126 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-11-03 14:22:52.206 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-03 14:22:52.210 +07:00 [Information] Request finished in 97.7043ms 404 
+2017-11-03 14:22:52.226 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/favicon.ico  
+2017-11-03 14:22:52.229 +07:00 [Information] Request finished in 2.6615ms 404 
+2017-11-03 14:22:52.301 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-03 14:22:52.336 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:22:52.356 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-03 14:22:52.368 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-03 14:22:52.387 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 127.2107ms
+2017-11-03 14:22:52.391 +07:00 [Information] Request finished in 184.2385ms 200 application/json; charset=utf-8
+2017-11-03 14:26:22.308 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:26:22.625 +07:00 [Information] Executed DbCommand ("96"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-03 14:26:22.906 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-11-03 14:26:23.006 +07:00 [Information] Request finished in 115.191ms 404 
+2017-11-03 14:26:23.030 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/favicon.ico  
+2017-11-03 14:26:23.036 +07:00 [Information] Request finished in 5.5843ms 404 
+2017-11-03 14:26:24.221 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-03 14:26:24.302 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-03 14:26:24.354 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:26:24.447 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-03 14:26:24.482 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-03 14:26:24.498 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 238.9404ms
+2017-11-03 14:26:24.503 +07:00 [Information] Request finished in 281.2785ms 200 application/json; charset=utf-8
+2017-11-03 14:26:56.354 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:26:56.684 +07:00 [Information] Executed DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-03 14:26:57.105 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger  
+2017-11-03 14:26:57.131 +07:00 [Information] Request finished in 43.6479ms 301 
+2017-11-03 14:26:57.150 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/  
+2017-11-03 14:26:57.169 +07:00 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.180 +07:00 [Information] Request finished in 27.1903ms 200 text/html
+2017-11-03 14:26:57.199 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/css/typography.css  
+2017-11-03 14:26:57.259 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/jquery-1.8.0.min.js  
+2017-11-03 14:26:57.261 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/css/screen.css  
+2017-11-03 14:26:57.284 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/css/reset.css  
+2017-11-03 14:26:57.287 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/object-assign-pollyfill.js  
+2017-11-03 14:26:57.307 +07:00 [Information] Sending file. Request path: '"/css/typography.css"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.330 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/jquery.slideto.min.js  
+2017-11-03 14:26:57.342 +07:00 [Information] Sending file. Request path: '"/css/screen.css"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.348 +07:00 [Information] Sending file. Request path: '"/lib/jquery-1.8.0.min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.352 +07:00 [Information] Sending file. Request path: '"/css/reset.css"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.384 +07:00 [Information] Sending file. Request path: '"/lib/jquery.slideto.min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.391 +07:00 [Information] Request finished in 115.4875ms 200 text/css
+2017-11-03 14:26:57.413 +07:00 [Information] Request finished in 150.8101ms 200 text/css
+2017-11-03 14:26:57.443 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/jquery.wiggle.min.js  
+2017-11-03 14:26:57.445 +07:00 [Information] Request finished in 155.1027ms 200 application/javascript
+2017-11-03 14:26:57.466 +07:00 [Information] Sending file. Request path: '"/lib/object-assign-pollyfill.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.468 +07:00 [Information] Sending file. Request path: '"/lib/jquery.wiggle.min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.473 +07:00 [Information] Request finished in 147.4749ms 200 text/css
+2017-11-03 14:26:57.552 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/lodash.min.js  
+2017-11-03 14:26:57.559 +07:00 [Information] Request finished in 54.9458ms 200 application/javascript
+2017-11-03 14:26:57.575 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/jquery.ba-bbq.min.js  
+2017-11-03 14:26:57.620 +07:00 [Information] Request finished in 266.973ms 200 application/javascript
+2017-11-03 14:26:57.641 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/handlebars-4.0.5.js  
+2017-11-03 14:26:57.664 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/swagger-ui.min.js  
+2017-11-03 14:26:57.708 +07:00 [Information] Sending file. Request path: '"/lib/lodash.min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.710 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/backbone-min.js  
+2017-11-03 14:26:57.755 +07:00 [Information] Request finished in 232.4411ms 200 application/javascript
+2017-11-03 14:26:57.800 +07:00 [Information] Sending file. Request path: '"/swagger-ui.min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.845 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/highlight.9.1.0.pack_extended.js  
+2017-11-03 14:26:57.874 +07:00 [Information] Sending file. Request path: '"/lib/backbone-min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.875 +07:00 [Information] Sending file. Request path: '"/lib/jquery.ba-bbq.min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.884 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-03 14:26:57.885 +07:00 [Information] Sending file. Request path: '"/lib/handlebars-4.0.5.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.912 +07:00 [Information] Sending file. Request path: '"/lib/highlight.9.1.0.pack_extended.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:57.926 +07:00 [Information] Request finished in 212.933ms 200 application/javascript
+2017-11-03 14:26:57.932 +07:00 [Information] Request finished in 643.8113ms 200 application/javascript
+2017-11-03 14:26:57.932 +07:00 [Information] Request finished in 459.052ms 200 application/javascript
+2017-11-03 14:26:57.977 +07:00 [Information] Request finished in 133.6074ms 200 application/javascript
+2017-11-03 14:26:57.984 +07:00 [Information] Request finished in 293.2948ms 200 application/javascript
+2017-11-03 14:26:58.035 +07:00 [Information] Request finished in 437.0697ms 200 application/javascript
+2017-11-03 14:26:58.060 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/highlight.9.1.0.pack.js  
+2017-11-03 14:26:58.062 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/marked.js  
+2017-11-03 14:26:58.082 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/jsoneditor.min.js  
+2017-11-03 14:26:58.084 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/lib/swagger-oauth.js  
+2017-11-03 14:26:58.148 +07:00 [Information] Sending file. Request path: '"/lib/marked.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.170 +07:00 [Information] Sending file. Request path: '"/lib/swagger-oauth.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.212 +07:00 [Information] Sending file. Request path: '"/lib/jsoneditor.min.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.214 +07:00 [Information] Request finished in 132.8859ms 200 application/javascript
+2017-11-03 14:26:58.221 +07:00 [Information] Request finished in 242.2512ms 200 application/javascript
+2017-11-03 14:26:58.224 +07:00 [Information] Sending file. Request path: '"/lib/highlight.9.1.0.pack.js"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.247 +07:00 [Information] Request finished in 157.2964ms 200 application/javascript
+2017-11-03 14:26:58.250 +07:00 [Information] Request finished in 242.0581ms 200 application/javascript
+2017-11-03 14:26:58.315 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/images/logo_small.png  
+2017-11-03 14:26:58.359 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/v1/swagger.json  
+2017-11-03 14:26:58.361 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/css/print.css  
+2017-11-03 14:26:58.363 +07:00 [Information] Sending file. Request path: '"/images/logo_small.png"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.366 +07:00 [Information] Sending file. Request path: '"/css/print.css"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.369 +07:00 [Information] Request finished in 93.7317ms 200 image/png
+2017-11-03 14:26:58.377 +07:00 [Information] Request finished in 97.5013ms 200 text/css
+2017-11-03 14:26:58.387 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/images/favicon-32x32.png  
+2017-11-03 14:26:58.390 +07:00 [Information] Sending file. Request path: '"/images/favicon-32x32.png"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.394 +07:00 [Information] Request finished in 5.4083ms 200 image/png
+2017-11-03 14:26:58.399 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/images/favicon-16x16.png  
+2017-11-03 14:26:58.402 +07:00 [Information] Sending file. Request path: '"/images/favicon-16x16.png"'. Physical path: '"N/A"'
+2017-11-03 14:26:58.405 +07:00 [Information] Request finished in 5.6922ms 200 image/png
+2017-11-03 14:26:58.503 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-03 14:26:58.539 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:26:58.581 +07:00 [Information] Request finished in 284.2384ms 200 application/json
+2017-11-03 14:26:58.650 +07:00 [Information] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-03 14:26:58.685 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-03 14:26:58.699 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 232.6988ms
+2017-11-03 14:26:58.703 +07:00 [Information] Request finished in 852.0122ms 200 application/json; charset=utf-8
+2017-11-03 14:29:32.207 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:29:32.440 +07:00 [Information] Executed DbCommand ("70"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-03 14:29:32.850 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/  
+2017-11-03 14:29:32.876 +07:00 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"N/A"'
+2017-11-03 14:29:32.887 +07:00 [Information] Request finished in 50.5357ms 200 text/html
+2017-11-03 14:29:33.133 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/v1/swagger.json  
+2017-11-03 14:29:33.292 +07:00 [Information] Request finished in 158.707ms 200 application/json

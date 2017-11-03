@@ -1,0 +1,250 @@
+2017-10-29 19:09:40.148 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 19:09:40.561 +07:00 [Information] Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 19:09:41.133 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 19:09:41.524 +07:00 [Information] Request finished in 272.4876ms 404 
+2017-10-29 19:09:57.352 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values  
+2017-10-29 19:09:57.383 +07:00 [Information] Successfully validated the token.
+2017-10-29 19:09:57.389 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 19:09:57.448 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 19:09:57.458 +07:00 [Information] Authorization was successful for user: "mrtea@gmail.com".
+2017-10-29 19:09:57.477 +07:00 [Information] Executing action method "COmpStore.Controllers.ValuesController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 19:09:57.490 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 19:09:57.515 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 62.2004ms
+2017-10-29 19:09:57.527 +07:00 [Information] Request finished in 170.3312ms 200 application/json; charset=utf-8
+2017-10-29 19:14:20.078 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 19:14:20.536 +07:00 [Information] Executed DbCommand ("70"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 19:14:21.170 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 19:14:21.422 +07:00 [Information] Request finished in 300.1756ms 404 
+2017-10-29 21:50:58.618 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 21:50:59.057 +07:00 [Information] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 21:50:59.696 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 21:51:00.087 +07:00 [Information] Request finished in 423.1231ms 404 
+2017-10-29 21:51:00.170 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/robots.txt  
+2017-10-29 21:51:00.224 +07:00 [Information] Request finished in 27.4992ms 404 
+2017-10-29 21:52:15.455 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 21:52:16.069 +07:00 [Information] Executed DbCommand ("93"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 21:52:16.869 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 21:52:23.612 +07:00 [Warning] Heartbeat took longer than "00:00:01" at "10/29/2017 14:52:23 +00:00".
+2017-10-29 21:54:04.513 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 21:54:05.170 +07:00 [Information] Executed DbCommand ("96"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 21:54:05.817 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 21:54:06.203 +07:00 [Information] Request finished in 400.3917ms 404 
+2017-10-29 21:55:20.323 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 21:55:20.908 +07:00 [Information] Executed DbCommand ("82"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 21:55:21.784 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 21:55:22.333 +07:00 [Information] Request finished in 534.6042ms 404 
+2017-10-29 22:12:43.065 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values  
+2017-10-29 22:12:43.104 +07:00 [Information] Successfully validated the token.
+2017-10-29 22:12:43.110 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:12:43.179 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:12:43.193 +07:00 [Information] Authorization was successful for user: "mrtea@gmail.com".
+2017-10-29 22:12:43.219 +07:00 [Information] Executing action method "COmpStore.Controllers.ValuesController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 22:12:43.243 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 22:12:43.273 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 89.2977ms
+2017-10-29 22:12:43.282 +07:00 [Information] Request finished in 214.8235ms 200 application/json; charset=utf-8
+2017-10-29 22:12:49.971 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values  
+2017-10-29 22:12:49.984 +07:00 [Information] Authorization failed for user: null.
+2017-10-29 22:12:49.996 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-10-29 22:12:50.007 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Bearer"]).
+2017-10-29 22:12:50.018 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-10-29 22:12:50.022 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 45.6498ms
+2017-10-29 22:12:50.035 +07:00 [Information] Request finished in 56.6428ms 401 
+2017-10-29 22:13:06.638 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values  
+2017-10-29 22:13:06.647 +07:00 [Information] Successfully validated the token.
+2017-10-29 22:13:06.653 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:13:06.659 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:13:06.664 +07:00 [Information] Authorization was successful for user: "mrtea@gmail.com".
+2017-10-29 22:13:06.676 +07:00 [Information] Executing action method "COmpStore.Controllers.ValuesController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 22:13:06.681 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 22:13:06.687 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 28.7587ms
+2017-10-29 22:13:06.696 +07:00 [Information] Request finished in 59.8056ms 200 application/json; charset=utf-8
+2017-10-29 22:14:41.321 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:14:42.655 +07:00 [Information] Executed DbCommand ("120"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:14:43.563 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:14:43.949 +07:00 [Information] Request finished in 469.7251ms 404 
+2017-10-29 22:15:59.794 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:16:00.279 +07:00 [Information] Executed DbCommand ("65"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:16:01.089 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:16:01.375 +07:00 [Information] Request finished in 419.2344ms 404 
+2017-10-29 22:25:58.187 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:25:58.856 +07:00 [Information] Executed DbCommand ("89"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:25:59.559 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:25:59.918 +07:00 [Information] Request finished in 393.797ms 404 
+2017-10-29 22:31:13.095 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:31:13.937 +07:00 [Information] Executed DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:31:14.974 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:31:15.473 +07:00 [Information] Request finished in 549.6547ms 404 
+2017-10-29 22:34:42.307 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:34:43.012 +07:00 [Information] Executed DbCommand ("139"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:34:43.881 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:34:44.244 +07:00 [Information] Request finished in 403.1759ms 404 
+2017-10-29 22:44:26.507 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:44:26.867 +07:00 [Information] Executed DbCommand ("62"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:44:27.326 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:44:27.571 +07:00 [Information] Request finished in 251.6327ms 404 
+2017-10-29 22:44:27.599 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/robots.txt  
+2017-10-29 22:44:27.614 +07:00 [Information] Request finished in 13.422ms 404 
+2017-10-29 22:48:21.091 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values application/json 
+2017-10-29 22:48:21.128 +07:00 [Information] Successfully validated the token.
+2017-10-29 22:48:21.136 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:48:21.208 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:48:21.220 +07:00 [Information] Authorization was successful for user: "mrtea@gmail.com".
+2017-10-29 22:48:21.243 +07:00 [Information] Executing action method "COmpStore.Controllers.ValuesController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 22:48:21.259 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 22:48:21.282 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 69.9816ms
+2017-10-29 22:48:21.293 +07:00 [Information] Request finished in 197.9792ms 200 application/json; charset=utf-8
+2017-10-29 22:48:24.331 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values application/json 
+2017-10-29 22:48:24.338 +07:00 [Information] Successfully validated the token.
+2017-10-29 22:48:24.346 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:48:24.378 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:48:24.384 +07:00 [Information] Authorization was successful for user: "mrtea@gmail.com".
+2017-10-29 22:48:24.390 +07:00 [Information] Executing action method "COmpStore.Controllers.ValuesController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 22:48:24.396 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 22:48:24.403 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 50.1901ms
+2017-10-29 22:48:24.423 +07:00 [Information] Request finished in 80.8099ms 200 application/json; charset=utf-8
+2017-10-29 22:48:26.322 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values  
+2017-10-29 22:48:26.329 +07:00 [Information] Successfully validated the token.
+2017-10-29 22:48:26.341 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:48:26.353 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:48:26.360 +07:00 [Information] Authorization was successful for user: "mrtea@gmail.com".
+2017-10-29 22:48:26.367 +07:00 [Information] Executing action method "COmpStore.Controllers.ValuesController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 22:48:26.373 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 22:48:26.380 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 31.324ms
+2017-10-29 22:48:26.410 +07:00 [Information] Request finished in 64.7377ms 200 application/json; charset=utf-8
+2017-10-29 22:49:47.317 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:49:47.718 +07:00 [Information] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:49:48.291 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:49:48.554 +07:00 [Information] Request finished in 279.9222ms 404 
+2017-10-29 22:52:47.042 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:52:52.131 +07:00 [Information] Executed DbCommand ("649"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:52:52.628 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:52:52.883 +07:00 [Information] Request finished in 268.7022ms 404 
+2017-10-29 22:56:02.074 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values application/json 
+2017-10-29 22:56:02.179 +07:00 [Information] Failed to validate the token "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtcnRlYUBnbWFpbC5jb20iLCJqdGkiOiJmNTgyZjVlOS1hZTVhLTQyNGYtOTY5MC0xMmRiZmFkZTc0ZjciLCJlbWFpbCI6Im1ydGVhQGdtYWlsLmNvbSIsImV4cCI6MTUwOTQ1MDUyOSwiaXNzIjoiRGVtb0lzc3VlciIsImF1ZCI6IkRlbW9BdWRpZW5jZSJ9.j6p0P_p35FDHK9GKm8L9LPf7fQ9vQ6Is8T21Rhy99kI".
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10214: Audience validation failed. Audiences: 'DemoAudience'. Did not match: validationParameters.ValidAudience: 'http://localhost:60268' or validationParameters.ValidAudiences: 'null'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateAudience(IEnumerable`1 audiences, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwt, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2017-10-29 22:56:02.185 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10214: Audience validation failed. Audiences: 'DemoAudience'. Did not match: validationParameters.ValidAudience: 'http://localhost:60268' or validationParameters.ValidAudiences: 'null'."
+2017-10-29 22:56:02.253 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10214: Audience validation failed. Audiences: 'DemoAudience'. Did not match: validationParameters.ValidAudience: 'http://localhost:60268' or validationParameters.ValidAudiences: 'null'."
+2017-10-29 22:56:02.268 +07:00 [Information] Authorization failed for user: null.
+2017-10-29 22:56:02.280 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-10-29 22:56:02.295 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Bearer"]).
+2017-10-29 22:56:02.310 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-10-29 22:56:02.325 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 64.8215ms
+2017-10-29 22:56:02.334 +07:00 [Information] Request finished in 274.7558ms 401 
+2017-10-29 22:56:10.072 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:2693/api/authen/token application/json 59
+2017-10-29 22:56:10.267 +07:00 [Information] Executing action method "TokenAuthWebApiCore.Server.Controllers.Web.AuthController.CreateToken (COmpStore)" with arguments (["TokenAuthWebApiCore.Server.Models.LoginViewModel"]) - ModelState is Valid
+2017-10-29 22:56:10.317 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:56:10.633 +07:00 [Information] Executed DbCommand ("43"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0"
+2017-10-29 22:56:10.776 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0"
+2017-10-29 22:56:10.797 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 22:56:10.823 +07:00 [Information] Executed action "TokenAuthWebApiCore.Server.Controllers.Web.AuthController.CreateToken (COmpStore)" in 690.5657ms
+2017-10-29 22:56:10.840 +07:00 [Information] Request finished in 765.1214ms 200 application/json; charset=utf-8
+2017-10-29 22:56:26.236 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/values application/json 
+2017-10-29 22:56:26.244 +07:00 [Information] Successfully validated the token.
+2017-10-29 22:56:26.252 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:56:26.260 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 22:56:26.268 +07:00 [Information] Authorization was successful for user: "mrtea@gmail.com".
+2017-10-29 22:56:26.274 +07:00 [Information] Executing action method "COmpStore.Controllers.ValuesController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 22:56:26.280 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 22:56:26.287 +07:00 [Information] Executed action "COmpStore.Controllers.ValuesController.Get (COmpStore)" in 29.4886ms
+2017-10-29 22:56:26.302 +07:00 [Information] Request finished in 58.6476ms 200 application/json; charset=utf-8
+2017-10-29 22:58:01.885 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 22:58:02.261 +07:00 [Information] Executed DbCommand ("57"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 22:58:02.706 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 22:58:02.937 +07:00 [Information] Request finished in 232.2779ms 404 
+2017-10-29 23:36:13.959 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:36:14.456 +07:00 [Information] Executed DbCommand ("71"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 23:36:14.904 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 23:36:15.186 +07:00 [Information] Request finished in 306.0102ms 404 
+2017-10-29 23:36:15.219 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/robots.txt  
+2017-10-29 23:36:15.238 +07:00 [Information] Request finished in 17.265ms 404 
+2017-10-29 23:38:12.433 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:38:12.813 +07:00 [Information] Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 23:38:13.244 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 23:38:13.692 +07:00 [Information] Request finished in 444.9342ms 404 
+2017-10-29 23:39:24.005 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:39:24.344 +07:00 [Information] Executed DbCommand ("68"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 23:39:24.892 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 23:39:25.183 +07:00 [Information] Request finished in 305.911ms 404 
+2017-10-29 23:40:03.177 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category application/json 
+2017-10-29 23:40:03.234 +07:00 [Information] Successfully validated the token.
+2017-10-29 23:40:03.253 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 23:40:03.402 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 23:40:13.671 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:40:13.909 +07:00 [Information] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-10-29 23:40:14.025 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 23:40:14.067 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 10683.7652ms
+2017-10-29 23:40:14.076 +07:00 [Information] Request finished in 10900.7606ms 200 application/json; charset=utf-8
+2017-10-29 23:42:41.007 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:42:41.738 +07:00 [Information] Executed DbCommand ("99"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 23:42:43.143 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-10-29 23:42:43.138 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 23:42:43.297 +07:00 [Information] Successfully validated the token.
+2017-10-29 23:42:43.431 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 23:42:43.542 +07:00 [Information] Request finished in 457.5261ms 404 
+2017-10-29 23:42:43.750 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 23:42:43.892 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:42:44.166 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-10-29 23:42:44.264 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 23:42:44.324 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 587.846ms
+2017-10-29 23:42:44.361 +07:00 [Information] Request finished in 1269.9024ms 200 application/json; charset=utf-8
+2017-10-29 23:44:15.402 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:44:15.850 +07:00 [Information] Executed DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-10-29 23:44:16.670 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-10-29 23:44:16.670 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-10-29 23:44:16.819 +07:00 [Information] Successfully validated the token.
+2017-10-29 23:44:16.829 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 23:44:16.943 +07:00 [Information] Request finished in 380.1149ms 404 
+2017-10-29 23:44:17.341 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 23:44:17.623 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:44:17.908 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-10-29 23:44:18.122 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 23:44:18.239 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 899.1253ms
+2017-10-29 23:44:18.258 +07:00 [Information] Request finished in 1690.2145ms 200 application/json; charset=utf-8
+2017-10-29 23:44:32.720 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-10-29 23:44:32.725 +07:00 [Information] Successfully validated the token.
+2017-10-29 23:44:32.730 +07:00 [Information] AuthenticationScheme: "Bearer" was successfully authenticated.
+2017-10-29 23:44:32.739 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-10-29 23:44:32.746 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-10-29 23:44:32.757 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-10-29 23:44:32.765 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-10-29 23:44:32.779 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 32.986ms
+2017-10-29 23:44:32.797 +07:00 [Information] Request finished in 66.2806ms 200 application/json; charset=utf-8

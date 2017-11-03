@@ -1,0 +1,53 @@
+2017-11-03 14:21:17.269 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:21:18.151 +07:00 [Information] Executed DbCommand ("213"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-03 14:21:19.131 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-11-03 14:21:19.210 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-03 14:21:19.442 +07:00 [Information] Request finished in 702.3798ms 404 
+2017-11-03 14:21:19.701 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-03 14:21:19.799 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:21:19.915 +07:00 [Information] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-03 14:21:19.987 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-03 14:21:20.022 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 326.0939ms
+2017-11-03 14:21:43.036 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:21:43.408 +07:00 [Information] Executed DbCommand ("38"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-03 14:21:43.669 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-03 14:21:43.722 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-11-03 14:21:43.875 +07:00 [Information] Request finished in 143.0309ms 404 
+2017-11-03 14:21:43.904 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/favicon.ico  
+2017-11-03 14:21:43.926 +07:00 [Information] Request finished in 5.8826ms 404 
+2017-11-03 14:21:43.940 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-03 14:21:43.995 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:21:44.105 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-03 14:21:44.153 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-03 14:21:44.189 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 275.6868ms
+2017-11-03 14:21:44.213 +07:00 [Information] Request finished in 558.3488ms 200 application/json; charset=utf-8
+2017-11-03 14:21:52.820 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/  
+2017-11-03 14:21:52.833 +07:00 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"N/A"'
+2017-11-03 14:21:52.942 +07:00 [Information] Request finished in 20.931ms 200 text/html
+2017-11-03 14:21:53.233 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/v1/swagger.json  
+2017-11-03 14:21:53.616 +07:00 [Information] Request finished in 279.0033ms 200 application/json
+2017-11-03 14:26:25.398 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:26:25.806 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-03 14:26:26.585 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/  
+2017-11-03 14:26:26.590 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-03 14:26:26.598 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/  
+2017-11-03 14:26:26.652 +07:00 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"N/A"'
+2017-11-03 14:26:27.063 +07:00 [Information] Request finished in 171.7371ms 200 text/html
+2017-11-03 14:26:27.439 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/swagger/v1/swagger.json  
+2017-11-03 14:26:27.498 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-03 14:26:27.501 +07:00 [Information] Request finished in 379.8823ms 404 
+2017-11-03 14:26:27.722 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-03 14:26:28.017 +07:00 [Information] Request finished in 448.9587ms 200 application/json
+2017-11-03 14:26:28.066 +07:00 [Information] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-03 14:26:28.167 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-03 14:26:28.219 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 866.5796ms
+2017-11-03 14:26:28.305 +07:00 [Information] Request finished in 1722.2206ms 200 application/json; charset=utf-8
