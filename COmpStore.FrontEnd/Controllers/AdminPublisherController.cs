@@ -8,11 +8,11 @@ using COmpStore.FrontEnd.Models;
 
 namespace COmpStore.FrontEnd.Controllers
 {
-    public class PublisherController : Controller
+    public class AdminPublisherController : Controller
     {
         private readonly IService<PublisherModel> _publisherService;
 
-        public PublisherController(IService<PublisherModel> service)
+        public AdminPublisherController(IService<PublisherModel> service)
         {
             _publisherService = service;
         }

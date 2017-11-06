@@ -9,13 +9,13 @@ using COmpStore.FrontEnd.Service;
 
 namespace COmpStore.FrontEnd.Controllers
 {
-    public class ProductController : Controller
+    public class AdminProductController : Controller
     {
         private readonly IService<ProductModel> _productService;
         private readonly IService<PublisherModel> _publisherService;
         private readonly IService<SubCategoryModel> _subCategoryService;
 
-        public ProductController(IService<ProductModel> productService,IService<SubCategoryModel> subCategoryService, IService<PublisherModel> publisherService)
+        public AdminProductController(IService<ProductModel> productService,IService<SubCategoryModel> subCategoryService, IService<PublisherModel> publisherService)
         {
             _productService = productService;
             _publisherService = publisherService;
@@ -64,12 +64,12 @@ namespace COmpStore.FrontEnd.Controllers
                 return View();
         }
 
-        public async Task<IActionResult> Delete(int productId)
+        public async Task<bool> Delete(int id)
         {
-            if (await _productService.Delete(productId))
-                return View();
+            if (await _productService.Delete(id))
+                return true;
             else
-                return View();
+                return false;
         }
     }
 }

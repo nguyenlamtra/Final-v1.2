@@ -24,7 +24,7 @@ namespace COmpStore.Controllers
         public AdminProductController(IProductRepository productRepository,IHostingEnvironment hostingEnvironment)
         {
             _productRepository = productRepository;
-            this._hostingEnvironment = hostingEnvironment;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpGet]
@@ -60,6 +60,10 @@ namespace COmpStore.Controllers
         //[ProducesResponseType(typeof(CategoryDto), 400)]
         public async Task<IActionResult> AddProduct([FromBody] ProductDto productDto)
         {
+            if (string.IsNullOrWhiteSpace(_hostingEnvironment.WebRootPath))
+            {
+                _hostingEnvironment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            }
             var filePath = _hostingEnvironment.WebRootPath + "\\images\\products";
             var base64String = Regex.Replace(productDto.Image, "^data:image\\/[a-zA-Z]+;base64,", String.Empty);
             if (base64String.IsBase64())
@@ -75,12 +79,13 @@ namespace COmpStore.Controllers
 
                 byte[] image = Convert.FromBase64String(base64String);
                 var fileName = Guid.NewGuid() + ".jpg";
-
                 using (var stream = new FileStream(Path.Combine(filePath, fileName), FileMode.Create))
                 {
                     await stream.WriteAsync(image, 0, image.Length);
                     stream.Flush();
                 }
+                
+                
                 //return Ok(Mapper.Map<ProductDto>(toAdd));
                 return CreatedAtRoute("GetSingleProduct", new { id = toAdd.Id }, Mapper.Map<ProductDto>(toAdd));
             }
@@ -127,10 +132,11 @@ namespace COmpStore.Controllers
             return Ok(Mapper.Map<ProductDto>(existingProduct));
         }
 
-          [HttpDelete]
+        [HttpDelete]
         [Route("{id}")]
         public IActionResult Remove(int id)
         {
+            
             var existingProduct = _productRepository.GetSingleProduct(id);
 
             if (existingProduct == null)
@@ -147,7 +153,7 @@ namespace COmpStore.Controllers
                 // return new StatusCodeResult(500);
                 throw new Exception($"something went wrong when deleting the subcategory with id: {id}");
             }
-
+            
             return NoContent();
         }
     }

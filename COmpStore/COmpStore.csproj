@@ -50,7 +50,14 @@
 
   <ItemGroup>
     <Folder Include="Logging\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\images\products\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\banner1.svg" />
+    <None Include="wwwroot\images\banner2.svg" />
+    <None Include="wwwroot\images\banner3.svg" />
+    <None Include="wwwroot\images\banner4.svg" />
   </ItemGroup>
 
 </Project>

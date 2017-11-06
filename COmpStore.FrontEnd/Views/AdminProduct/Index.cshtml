@@ -17,7 +17,7 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="form-group">
-                    <a asp-action="Create" asp-controller="Product" id="add_btn" class="btn btn-primary btn-sm">Thêm</a>
+                    <a asp-action="Create" asp-controller="AdminProduct" id="add_btn" class="btn btn-primary btn-sm">Thêm</a>
                     <a id="btn_delete" class="btn btn-danger btn-sm disabled">Xóa</a>
                     <a id="btn_uncheck" class="btn btn-default btn-sm pull-right" style="display:none">Bỏ chọn</a>
                 </div>
@@ -39,14 +39,14 @@
                                     <td>@product.Id</td>
                                     <td><strong>@product.ProductName</strong></td>
                                     <td class="text-center">
-                                        <img class="admin-product-item product-img" src="http://placehold.it/150x150" />
+                                        <img class="admin-product-item product-img" src="@product.Image" />
                                     </td>
                                     <td>@product.InStock</td>
                                     <td class="text-center">
-                                        <a asp-action="Details" asp-controller="Product" asp-route-productId="@product.Id" class="text-primary" title="Chi tiết">
+                                        <a asp-action="Details" asp-controller="AdminProduct" asp-route-productId="@product.Id" class="text-primary" title="Chi tiết">
                                             <span class="glyphicon glyphicon-info-sign"></span>
                                         </a>
-                                        <a asp-action="Update" asp-controller="Product" asp-route-productId="@product.Id" class="text-primary" title="Chỉnh sửa">
+                                        <a asp-action="Update" asp-controller="AdminProduct" asp-route-productId="@product.Id" class="text-primary" title="Chỉnh sửa">
                                             &nbsp;<span class="glyphicon glyphicon-edit"></span>
                                         </a>
                                     </td>

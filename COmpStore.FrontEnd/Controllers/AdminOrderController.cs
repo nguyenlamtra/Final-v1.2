@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace COmpStore.FrontEnd.Controllers
 {
-    public class OrderController : Controller
+    public class AdminOrderController : Controller
     {
         public IActionResult Index()
         {

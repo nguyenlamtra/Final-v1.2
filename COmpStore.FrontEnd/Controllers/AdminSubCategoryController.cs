@@ -8,11 +8,11 @@ using COmpStore.FrontEnd.Models;
 
 namespace COmpStore.FrontEnd.Controllers
 {
-    public class SubCategoryController : Controller
+    public class AdminSubCategoryController : Controller
     {
         IService<SubCategoryModel> _subCategoryService;
 
-        public SubCategoryController(IService<SubCategoryModel> subCategoryService)
+        public AdminSubCategoryController(IService<SubCategoryModel> subCategoryService)
         {
             _subCategoryService = subCategoryService;
         }

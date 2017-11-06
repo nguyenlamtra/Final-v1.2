@@ -22,7 +22,7 @@ namespace COmpStore.FrontEnd.Service.Admin
 
         public Service()
         {
-            URI = "admin" + typeof(T).Name.Replace("Model","").ToLower();
+            URI = "admin" + typeof(T).Name.Replace("Model", "").ToLower();
         }
 
         public async Task<List<T>> GetAll()
@@ -61,7 +61,7 @@ namespace COmpStore.FrontEnd.Service.Admin
         public async Task<bool> Delete(int id)
         {
             var response = await HttpRequestFactory.Delete(URI + "/" + id);
-            if ((int)response.StatusCode == 200)
+            if ((int)response.StatusCode == 204)
             {
                 return true;
             }

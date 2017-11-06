@@ -91,9 +91,9 @@
                             ids.push($(this).data('id'));
                         });
                         $.ajax({
-                            url: '/admin/san-pham/xoa',
+                            url: '/AdminProduct/Delete',
                             type: 'post',
-                            data: { 'productIds': ids },
+                            data: { 'id': ids },
                             success: function (result) {
                                 if (result === true) {
                                     $('#content_table tbody tr.active').each(function () {
