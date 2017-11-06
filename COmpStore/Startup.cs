@@ -28,7 +28,7 @@ namespace COmpStore
 
         private void ConfigureAuth(IServiceCollection services)
         {
-            ///////
+            //////////ljkh
         }
 
         public IConfiguration Configuration { get; }
