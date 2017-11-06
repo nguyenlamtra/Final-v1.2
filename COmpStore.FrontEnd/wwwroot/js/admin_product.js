@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     var maxImage = 4;
     var currentNumOfImage = $('.image-item-block').length;
-
+    $('#imageEditor').show();
     $('#addImages').click(function () {
         bootbox.alert({
             message: $('#addProductImagesPartial').html()

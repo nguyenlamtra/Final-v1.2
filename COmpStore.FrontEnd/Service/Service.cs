@@ -22,7 +22,7 @@ namespace COmpStore.FrontEnd.Service
 
         public Service()
         {
-            URI = typeof(T).Name.Replace("Model","").ToLower();
+            URI = "admin" + typeof(T).Name.Replace("Model","").ToLower();
         }
 
         public async Task<List<T>> GetAll()
