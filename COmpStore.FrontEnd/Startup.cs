@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using COmpStore.FrontEnd.Service;
+using COmpStore.FrontEnd.Service.Admin;
 using COmpStore.FrontEnd.Models;
 
 namespace COmpStore.FrontEnd

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using COmpStore.FrontEnd.Service;
+using COmpStore.FrontEnd.Service.Admin;
 using COmpStore.FrontEnd.Models;
 
 namespace COmpStore.FrontEnd.Controllers

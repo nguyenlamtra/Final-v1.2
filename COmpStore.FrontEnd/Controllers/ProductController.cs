@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using COmpStore.FrontEnd.Models;
-using COmpStore.FrontEnd.Services;
+using COmpStore.FrontEnd.Service.Admin;
 using COmpStore.FrontEnd.Service;
 
 namespace COmpStore.FrontEnd.Controllers

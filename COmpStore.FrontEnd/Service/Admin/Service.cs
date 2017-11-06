@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace COmpStore.FrontEnd.Service
+namespace COmpStore.FrontEnd.Service.Admin
 {
     public interface IService<T> where T : class
     {
