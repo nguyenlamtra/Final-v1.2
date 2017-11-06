@@ -1653,6 +1653,7 @@ FROM [Publishers] AS [p]"
 2017-11-06 14:49:57.516 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-06 14:49:57.523 +07:00 [Information] Executed action "COmpStore.Controllers.PublisherController.Get (COmpStore)" in 19.089ms
 2017-11-06 14:49:57.530 +07:00 [Information] Request finished in 30.2053ms 200 application/json; charset=utf-8
+<<<<<<< HEAD
 2017-11-06 14:52:12.256 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/product  
 2017-11-06 14:52:12.260 +07:00 [Information] Executing action method "COmpStore.Controllers.ProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-06 14:52:12.265 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
@@ -2195,3 +2196,26 @@ FROM [Publishers] AS [p]"
 2017-11-06 15:33:56.738 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-06 15:33:56.745 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 21.4992ms
 2017-11-06 15:33:56.752 +07:00 [Information] Request finished in 32.872ms 200 application/json; charset=utf-8
+=======
+2017-11-06 15:09:00.810 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-06 15:09:01.123 +07:00 [Information] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-06 15:09:12.340 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-06 15:09:12.677 +07:00 [Information] Executed DbCommand ("111"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-06 15:10:14.589 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-06 15:10:14.878 +07:00 [Information] Executed DbCommand ("73"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-06 15:10:52.333 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-06 15:10:52.639 +07:00 [Information] Executed DbCommand ("106"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-06 15:14:11.053 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-06 15:14:11.353 +07:00 [Information] Executed DbCommand ("84"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-06 15:22:50.807 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-06 15:22:51.145 +07:00 [Information] Executed DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-06 15:22:58.949 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-06 15:22:59.213 +07:00 [Information] Executed DbCommand ("72"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+>>>>>>> 6419ecbaf01d7b4ac2ce5ee72741f3e343ca0ed3
