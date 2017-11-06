@@ -13,12 +13,13 @@ namespace COmpStore.FrontEnd.Controllers
 {
     public class HomeController : Controller
     {
-        
 
-        public async Task<IActionResult> Index()
+
+        // public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var temp = await CategoryService.GetList();
-            return View(temp);
+            //var temp = await CategoryService.GetList();
+            return View();
         }
 
         public IActionResult About()

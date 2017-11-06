@@ -1,0 +1,24 @@
+2017-11-05 22:02:28.144 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-05 22:02:28.736 +07:00 [Information] Executed DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-05 22:02:30.258 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-05 22:02:30.404 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-05 22:02:30.462 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-05 22:02:30.592 +07:00 [Information] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-05 22:02:30.638 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-05 22:02:30.663 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 298.3458ms
+2017-11-05 22:02:30.670 +07:00 [Information] Request finished in 427.5347ms 200 application/json; charset=utf-8
+2017-11-05 22:05:14.402 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-05 22:05:14.743 +07:00 [Information] Executed DbCommand ("120"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0"
+2017-11-05 22:05:16.176 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/category  
+2017-11-05 22:05:16.334 +07:00 [Information] Executing action method "COmpStore.Controllers.CategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-05 22:05:16.383 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-05 22:05:16.478 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[CategoryName]
+FROM [Categories] AS [c]"
+2017-11-05 22:05:16.512 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-05 22:05:16.529 +07:00 [Information] Executed action "COmpStore.Controllers.CategoryController.Get (COmpStore)" in 235.8447ms
+2017-11-05 22:05:16.534 +07:00 [Information] Request finished in 373.9295ms 200 application/json; charset=utf-8

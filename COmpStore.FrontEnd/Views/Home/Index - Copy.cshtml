@@ -1,0 +1,18 @@
+﻿@model List<COmpStore.FrontEnd.Models.CategoryModel>
+
+    <table>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>
+                    @category.Id
+                </td>
+                <td>
+                    @category.CategoryName
+                </td>
+            </tr>
+        }
+    
+</table>
+
+
