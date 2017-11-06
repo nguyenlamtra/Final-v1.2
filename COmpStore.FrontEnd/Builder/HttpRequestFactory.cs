@@ -6,7 +6,7 @@ namespace COmpStore.FrontEnd.Builder
     public static class HttpRequestFactory
     {
         public static async Task<HttpResponseMessage> Get(string requestUri)
-            => await Get(requestUri, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtcnRlYUBnbWFpbC5jb20iLCJqdGkiOiIzOWI0ZmRjMS04NTVkLTQzNjItYmI1MS04ODMyZWI2NDRmNGUiLCJlbWFpbCI6Im1ydGVhQGdtYWlsLmNvbSIsImV4cCI6MTUwOTQ2NTM3MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo2MDI2OCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjAyNjgifQ.yP2vdE8iRw4TkOGfDHMbYtB0IGigefGfXfAKQosLuEE");
+            => await Get(requestUri,"");
 
         public static async Task<HttpResponseMessage> Get(string requestUri, string bearerToken)
         {

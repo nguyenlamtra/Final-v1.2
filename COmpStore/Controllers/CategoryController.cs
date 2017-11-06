@@ -21,44 +21,44 @@ namespace COmpStore.Controllers
             _categoryRepository = categoryService;
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet("{categoryId}")]
+        public IActionResult Get(int categoryId)
         {
-            
-            return Ok(1);
+            var category = _categoryRepository.GetById(categoryId);
+            if (category != null)
+            {
+                var list = new List<CategoryDto>();
+                list.Add(category);
+                return Ok(list);
+            }
+                
+            else
+                return BadRequest();
         }
 
-        [HttpGet("")]
+        [HttpGet]
         public IActionResult Get()
         {
             var categories = _categoryRepository.GetAll();
+
             return Ok(categories);
         }
 
         [HttpPut]
-        public IActionResult Put()
+        public IActionResult Put([FromBody] CategoryDto dto)
         {
-            return Ok();
+            if (_categoryRepository.Update(dto))
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
-        /// <summary>
-        /// Creates a TodoItem.
-        /// </summary>
-        /// <remarks>
-        /// Sample request:
-        ///
-        ///     POST /Todo
-        ///     {
-        ///        "CategoryName": "Category Name"
-        ///     }
-        ///
-        /// </remarks>
-        /// <param name="item"></param>
-        /// <returns>A newly-created TodoItem</returns>
-        /// <response code="201">Returns the newly-created item</response>
-        /// <response code="400">If the item is null</response>            
         [HttpPost]
-        [ProducesResponseType(typeof(bool), 201)]
+        [ProducesResponseType(typeof(bool), 200)]
         [ProducesResponseType(typeof(bool), 400)]
         public IActionResult Create([FromBody] CategoryDto dto)
         {
@@ -67,27 +67,23 @@ namespace COmpStore.Controllers
                 return BadRequest();
             }
 
-            if(_categoryRepository.Create(dto))
+            if (_categoryRepository.Create(dto))
             {
                 return Ok();
             }
             else
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            
+
         }
 
-        /// <summary>
-        /// Deletes a specific TodoItem.
-        /// </summary>
-        /// <param name="id"></param>        
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int categoryId)
         {
 
-            if (_categoryRepository.Delete(id))
+            if (_categoryRepository.Delete(categoryId))
             {
                 return Ok();
             }

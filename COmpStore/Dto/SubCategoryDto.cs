@@ -12,6 +12,6 @@ namespace COmpStore.Dto
         public string SubCategoryName { get; set; }
         public int CategoryId { get; set; }
 
-
+        public IEnumerable<ProductDto> Products { get; set; }
     }
 }

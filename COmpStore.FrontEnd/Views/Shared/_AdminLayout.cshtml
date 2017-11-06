@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico" />
-    <title>@ViewData["Title"] - Quản trị Yến Việt Nam</title>
+    <title>@ViewData["Title"] - Quản trị COmpStore</title>
 
     <environment names="Development">
 
@@ -55,7 +55,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Quản trị - <b>Yến Việt Nam</b></a>
+                <a class="navbar-brand" href="index.html">Quản trị - <b>COmpStore</b></a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
@@ -299,31 +299,10 @@
                             <a asp-action="Index" asp-controller="Category"><i class="fa fa-th-large fa-fw"></i> Loại sản phẩm</a>
                         </li>
                         <li>
-                            <a asp-action="Index" asp-controller="Stock"><i class="fa fa-umbrella fa-fw"></i> Kho hàng</a>
+                            <a asp-action="Index" asp-controller="Stock"><i class="glyphicon glyphicon-home"></i> Kho hàng</a>
                         </li>
                         <li>
-                            <a asp-action="Index" asp-controller="Article"><i class="fa fa-edit fa-fw"></i> Bài viết</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-dollar fa-fw"></i> Doanh thu</a>
-                        </li>
-                        <li>
-                            <a asp-action="Index" asp-controller="Discount"><i class="fa fa-calendar-minus-o fa-fw"></i> Khuyến Mãi</a>
-                        </li>
-                        <li>
-                            <a asp-action="Index" asp-controller="Banner"><i class="fa fa-calendar-plus-o fa-fw"></i> Banner</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Khách hàng</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Quản trị viên</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a asp-action="Index" asp-controller="Publisher"><i class="fa fa-umbrella fa-fw"></i> Nơi sản xuất</a>
                         </li>
                     </ul>
                 </div>
@@ -340,15 +319,12 @@
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- Metis Menu Plugin JavaScript -->
         <script src="~/lib/admin_theme/vendor/metisMenu/metisMenu.min.js"></script>
         <script src="~/lib/cropit/dist/jquery.cropit.js"></script>
         <!-- Morris Charts JavaScript -->
         <script src="~/lib/admin_theme/vendor/morrisjs/morris.min.js"></script>
-        @*<script src="~/lib/admin_theme/data/morris-data.js"></script>*@
         <script src="~/lib/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
         <!-- Custom Theme JavaScript -->
         <script src="~/lib/admin_theme/dist/js/sb-admin-2.js"></script>
@@ -357,8 +333,6 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
         <script src="~/lib/bootstrap-datetimepicker/build/js/moment.js"></script>
         @RenderSection("Scripts", required: false)
-    </environment>
-    <environment names="Staging,Production">
     </environment>
 </body>
 </html>

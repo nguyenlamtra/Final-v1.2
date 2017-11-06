@@ -11,9 +11,9 @@ namespace COmpStore.FrontEnd.Builder
     public class HttpRequestBuilder
     {
         private HttpMethod method = null;
-        private string requestUri = "";
+        private string requestUri = "http://localhost:2693/api/";
         private HttpContent content = null;
-        private string bearerToken = "";
+        private string bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtcnRlYUBnbWFpbC5jb20iLCJqdGkiOiIzOWI0ZmRjMS04NTVkLTQzNjItYmI1MS04ODMyZWI2NDRmNGUiLCJlbWFpbCI6Im1ydGVhQGdtYWlsLmNvbSIsImV4cCI6MTUwOTQ2NTM3MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo2MDI2OCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjAyNjgifQ.yP2vdE8iRw4TkOGfDHMbYtB0IGigefGfXfAKQosLuEE";
         private string acceptHeader = "application/json";
         private TimeSpan timeout = new TimeSpan(0, 0, 15);
         private bool allowAutoRedirect = false;
@@ -30,7 +30,7 @@ namespace COmpStore.FrontEnd.Builder
         
         public HttpRequestBuilder AddRequestUri(string requestUri)
         {
-            this.requestUri = requestUri;
+            this.requestUri += requestUri;
             return this;
         }
 

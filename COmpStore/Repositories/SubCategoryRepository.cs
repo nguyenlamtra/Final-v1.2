@@ -23,7 +23,7 @@ namespace COmpStore.Services
 
         public SubCategory GetSingleSubCategory(int id)
         {
-            return _context.SubCategories.Include(s => s.Category).FirstOrDefault(s => s.Id == id);
+            return _context.SubCategories.Include(s => s.Category).Include(s=>s.Products).FirstOrDefault(s => s.Id == id);
         }
 
 

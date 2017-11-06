@@ -20,7 +20,7 @@ namespace COmpStore.Schema.Migrations
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("COmpStore.Schema.Entities.CategoryEntity", b =>
+            modelBuilder.Entity("COmpStore.Schema.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -34,12 +34,16 @@ namespace COmpStore.Schema.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("COmpStore.Schema.Entities.ProductEntity", b =>
+            modelBuilder.Entity("COmpStore.Schema.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("Image");
+
+                    b.Property<int>("InStock");
 
                     b.Property<string>("MadeIn");
 
@@ -62,7 +66,7 @@ namespace COmpStore.Schema.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("COmpStore.Schema.Entities.PublisherEntity", b =>
+            modelBuilder.Entity("COmpStore.Schema.Entities.Publisher", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -76,7 +80,7 @@ namespace COmpStore.Schema.Migrations
                     b.ToTable("Publishers");
                 });
 
-            modelBuilder.Entity("COmpStore.Schema.Entities.SubCategoryEntity", b =>
+            modelBuilder.Entity("COmpStore.Schema.Entities.SubCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -253,22 +257,22 @@ namespace COmpStore.Schema.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("COmpStore.Schema.Entities.ProductEntity", b =>
+            modelBuilder.Entity("COmpStore.Schema.Entities.Product", b =>
                 {
-                    b.HasOne("COmpStore.Schema.Entities.PublisherEntity", "Publisher")
+                    b.HasOne("COmpStore.Schema.Entities.Publisher", "Publisher")
                         .WithMany("Products")
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("COmpStore.Schema.Entities.SubCategoryEntity", "SubCategory")
+                    b.HasOne("COmpStore.Schema.Entities.SubCategory", "SubCategory")
                         .WithMany("Products")
                         .HasForeignKey("SubCategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("COmpStore.Schema.Entities.SubCategoryEntity", b =>
+            modelBuilder.Entity("COmpStore.Schema.Entities.SubCategory", b =>
                 {
-                    b.HasOne("COmpStore.Schema.Entities.CategoryEntity", "Category")
+                    b.HasOne("COmpStore.Schema.Entities.Category", "Category")
                         .WithMany("SubCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);

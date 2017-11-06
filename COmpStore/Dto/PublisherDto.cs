@@ -9,5 +9,7 @@ namespace COmpStore.Dto
     {
         public int Id { get; set; }
         public string PublisherName { get; set; }
+
+        public IEnumerable<ProductDto> Products { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace COmpStore.Dto
         public int Id { get; set; }
         public string CategoryName { get; set; }
 
+        public IEnumerable<SubCategoryDto> SubCategories { get; set; }
     }
 }

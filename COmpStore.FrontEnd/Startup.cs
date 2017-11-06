@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using COmpStore.FrontEnd.Service;
+using COmpStore.FrontEnd.Models;
 
 namespace COmpStore.FrontEnd
 {
@@ -22,6 +24,10 @@ namespace COmpStore.FrontEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<IService<PublisherModel>, Service<PublisherModel>>();
+            services.AddTransient<IService<SubCategoryModel>, Service<SubCategoryModel>>();
+            services.AddTransient<IService<ProductModel>, Service<ProductModel>>();
+            services.AddTransient<IService<CategoryModel>, Service<CategoryModel>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +49,7 @@ namespace COmpStore.FrontEnd
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Admin}/{action=Index}/{id?}");
             });
         }
     }

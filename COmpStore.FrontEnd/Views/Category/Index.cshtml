@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CategoryModel>
+    @{
+    ViewData["Title"] = "Quản lý loại sản phẩm";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Loại sản phẩm</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="form-group">
+                        <a asp-action="Create" asp-controller="Category" id="add_btn" class="btn btn-primary btn-sm">Thêm</a>
+                        <a id="btn_delete" class="btn btn-danger btn-sm disabled">Xóa</a>
+                        <a id="btn_uncheck" class="btn btn-default btn-sm pull-right" style="display:none">Bỏ chọn</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="content_table" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tên loại</th>
+                                    <th>Số loại con</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var category in Model)
+                            {
+                                <tr data-id="@category.Id">
+                                    <td>@category.Id</td>
+                                    <td>@category.CategoryName</td>
+                                    <td>1</td>
+                                    <td class="text-center">
+                                        <a asp-action="Details" asp-controller="Category" asp-route-categoryId="@category.Id" class="text-primary" title="Chi tiết">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                        </a>
+                                        <a asp-action="Update" asp-controller="Category" asp-route-categoryId="@category.Id" class="text-primary" title="Chỉnh sửa">
+                                            &nbsp;<span class="glyphicon glyphicon-edit"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    @section Scripts{
+        <script src="~/js/admin_category.js"></script>
+    }

@@ -2,6 +2,7 @@
 using COmpStore.Dto;
 using COmpStore.Schema;
 using COmpStore.Schema.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace COmpStore.Repositories
         bool Delete(int id);
         bool Create(CategoryDto dto);
         bool Update(CategoryDto dto);
+        CategoryDto GetById(int id);
     }
 
     public class CategoryRepository : ICategoryRepository
@@ -67,9 +69,30 @@ namespace COmpStore.Repositories
             return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories);
         }
 
+        public CategoryDto GetById(int id)
+        {
+            var category = DbContext.Categories.Include(x=>x.SubCategories).ThenInclude(x=>x.Products).SingleOrDefault(x => x.Id == id);
+            if (category != null)
+                return Mapper.Map<CategoryDto>(category);
+            else
+                return null;
+        }
+
         public bool Update(CategoryDto dto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var category = Mapper.Map<Category>(dto);
+                //DbContext.Categories.Attach(category);
+                DbContext.Entry(category).State = EntityState.Modified;
+                DbContext.SaveChanges();
+                return true;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return false;
+            }
+            
         }
     }
 }

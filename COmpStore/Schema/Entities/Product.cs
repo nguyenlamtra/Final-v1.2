@@ -12,6 +12,8 @@ namespace COmpStore.Schema.Entities
         public int SubCategoryId { get; set; }
         public string Description { get; set; }
         public string MadeIn { get; set; }
+        public int InStock { get; set; }
+        public string Image { get; set; }
 
         public virtual Publisher Publisher { get; set; }
         public virtual SubCategory SubCategory { get; set; }

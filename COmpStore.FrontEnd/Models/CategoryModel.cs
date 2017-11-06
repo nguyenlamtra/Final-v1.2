@@ -10,5 +10,6 @@ namespace COmpStore.FrontEnd.Models
         public int Id { get; set; }
         public string CategoryName { get; set; }
 
+        public IEnumerable<SubCategoryModel> SubCategories { get; set; }
     }
 }
