@@ -47,7 +47,7 @@ namespace COmpStore.Extension
                 Convert.FromBase64String(base64String);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 // Handle the exception
             }

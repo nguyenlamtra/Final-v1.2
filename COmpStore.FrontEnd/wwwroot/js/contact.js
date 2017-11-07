@@ -1,16 +1,17 @@
-//jQuery(function($) {'use strict',
-//	var form = $('.contact-form');
-//	form.submit(function () {'use strict',
-//		$this = $(this);
-//		$.post("sendemail.php", $(".contact-form").serialize(),function(result){
-//			if(result.type == 'success'){
-//				$this.prev().text(result.message).fadeIn().delay(3000).fadeOut();
-//			}
-//		});
-//		return false;
-//	});
+jQuery(function($) {'use strict',
 
-//});
+	var form = $('.contact-form');
+	form.submit(function () {'use strict',
+		$this = $(this);
+		$.post("sendemail.php", $(".contact-form").serialize(),function(result){
+			if(result.type == 'success'){
+				$this.prev().text(result.message).fadeIn().delay(3000).fadeOut();
+			}
+		});
+		return false;
+	});
+
+});
 
 // Google Map Customization
 (function(){
@@ -39,7 +40,7 @@
 		animation: google.maps.Animation.DROP,
 		verticalAlign: 'bottom',
 		horizontalAlign: 'center',
-		backgroundColor: '#ffffff'
+		backgroundColor: '#ffffff',
 	});
 
 	var styles = [ 

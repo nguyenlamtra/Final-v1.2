@@ -17,4 +17,16 @@
     <Folder Include="Views\Admin\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\contact.js" />
+    <None Include="wwwroot\js\gmaps.js" />
+    <None Include="wwwroot\js\html5shiv.js" />
+    <None Include="wwwroot\js\jquery.js" />
+    <None Include="wwwroot\js\jquery.prettyPhoto.js" />
+    <None Include="wwwroot\js\jquery.scrollUp.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\price-range.js" />
+  </ItemGroup>
+
 </Project>

@@ -49,7 +49,7 @@ namespace COmpStore.FrontEnd
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Admin}/{action=Index}/{id?}");
+                    template: "{controller=Product}/{action=Index}/{id?}");
             });
         }
     }
