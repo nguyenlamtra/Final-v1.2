@@ -20,9 +20,9 @@
                         ids.push($(this).data('id'));
                     });
                     $.ajax({
-                        url: '/admin/loai-san-pham/xoa',
+                        url: '/AdminCategory/Delete',
                         type: 'post',
-                        data: { 'categoryIds': ids },
+                        data: { 'ids': ids },
                         success: function (result) {
                             if (result === true) {
                                 $('#content_table tbody tr.active').each(function () {

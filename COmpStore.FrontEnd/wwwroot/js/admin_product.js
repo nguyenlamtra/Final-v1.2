@@ -93,7 +93,7 @@
                         $.ajax({
                             url: '/AdminProduct/Delete',
                             type: 'post',
-                            data: { 'id': ids },
+                            data: { 'ids': ids },
                             success: function (result) {
                                 if (result === true) {
                                     $('#content_table tbody tr.active').each(function () {
@@ -102,6 +102,7 @@
                                         });
                                     });
                                     $('#btn_delete').addClass('disabled');
+                                    $('#btn_uncheck').hide();
                                 }
                                 else {
                                     bootbox.alert("Có lỗi xảy ra. Liên hệ quản trị viên để biết thêm chi tiết!");

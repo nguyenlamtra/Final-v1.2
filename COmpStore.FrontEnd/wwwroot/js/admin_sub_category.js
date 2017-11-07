@@ -29,9 +29,9 @@
                     });
                     if (canDelete) {
                         $.ajax({
-                            url: '/admin/loai-san-pham-con/xoa',
+                            url: '/AdminSubCategory/Delete',
                             type: 'post',
-                            data: { 'subCategoryIds': ids },
+                            data: { 'ids': ids },
                             success: function (result) {
                                 if (result === true) {
                                     console.log(ids);

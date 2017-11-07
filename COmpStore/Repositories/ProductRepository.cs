@@ -25,7 +25,7 @@ namespace COmpStore.Repositories
 
         public Product GetSingleProduct(int id)
         {
-            return _context.Products.Include(s => s.SubCategory)
+            return _context.Products.AsNoTracking().Include(s => s.SubCategory)
                                     .Include(s => s.Publisher)
                                     .FirstOrDefault(s => s.Id == id);
         }
@@ -52,7 +52,17 @@ namespace COmpStore.Repositories
             return _context.SaveChanges() >= 0;
         }
 
+        public void UpdateExceptImage(Product product)
+        {
+            _context.Products.Attach(product);
+            _context.Entry(product).State = EntityState.Modified;
+            _context.Entry(product).Property(x => x.Image).IsModified = false;
+        }
 
+        public string GetImage(int id)
+        {
+            return _context.Products.AsNoTracking().SingleOrDefault(s => s.Id == id).Image;
+        }
     }
 
     public interface IProductRepository
@@ -61,8 +71,10 @@ namespace COmpStore.Repositories
         void Delete(int id);
         IList<Product> GetAllProducts();
         Product GetSingleProduct(int id);
+        string GetImage(int id);
         bool Save();
         void Update(Product product);
+        void UpdateExceptImage(Product product);
     }
 }
 

@@ -11,10 +11,12 @@ namespace COmpStore.FrontEnd.Controllers
     public class AdminSubCategoryController : Controller
     {
         IService<SubCategoryModel> _subCategoryService;
+        IService<CategoryModel> _categoryService;
 
-        public AdminSubCategoryController(IService<SubCategoryModel> subCategoryService)
+        public AdminSubCategoryController(IService<SubCategoryModel> subCategoryService, IService<CategoryModel> categoryService)
         {
             _subCategoryService = subCategoryService;
+            _categoryService = categoryService;
         }
 
         public async Task<IActionResult> Index()
@@ -23,23 +25,23 @@ namespace COmpStore.FrontEnd.Controllers
             return View(result);
         }
 
-        public IActionResult Create()
+        public IActionResult Create(int categoryId)
         {
-            return View();
+            ViewBag.CategoryId = categoryId;
+            return View(new SubCategoryModel());
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(SubCategoryModel model)
         {
-            var result = await _subCategoryService.Create(model);
-            if (result)
+            ViewBag.CategoryId = model.CategoryId;
+            if (await _subCategoryService.Create(model)!=null)
             {
                 ViewBag.IsSuccess = true;
-                return View();
+                return View(new SubCategoryModel());
             }
-
             else
-                return View();
+                return View(new SubCategoryModel());
         }
 
         public async Task<IActionResult> Details(int id)
@@ -57,7 +59,7 @@ namespace COmpStore.FrontEnd.Controllers
         public async Task<IActionResult> Update(SubCategoryModel model)
         {
             var result = await _subCategoryService.Update(model);
-            if (result)
+            if (result!=null)
             {
                 ViewBag.IsSuccess = true;
                 return View();
@@ -66,6 +68,22 @@ namespace COmpStore.FrontEnd.Controllers
                 return View();
         }
 
+        [HttpPost]
+        public async Task<bool> Delete(int[] ids)
+        {
+            if (await _subCategoryService.Delete(ids))
+                return true;
+            else
+                return false;
+        }
 
+        //[HttpPost]
+        //public async Task<bool> Delete(int id)
+        //{
+        //    if (await _subCategoryService.Delete(id))
+        //        return true;
+        //    else
+        //        return false;
+        //}
     }
 }

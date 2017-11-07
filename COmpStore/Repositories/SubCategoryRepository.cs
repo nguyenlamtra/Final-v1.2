@@ -49,12 +49,33 @@ namespace COmpStore.Services
             return _context.SaveChanges() >= 0;
         }
 
-      
+        public bool Delete(int[] ids)
+        {
+
+            try
+            {
+                foreach (int id in ids)
+                {
+                    var subCategory = _context.SubCategories.FirstOrDefault(c => c.Id == id);
+                    if (subCategory != null)
+                    {
+                        _context.SubCategories.Remove(subCategory);
+                    }
+                }
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return false;
+            }
+        }
     }
     public interface ISubCategoryRepository
     {
         void Add(SubCategory subCategory);
-        void Delete(int id);
+        bool Delete(int[] ids);
         IList<SubCategory> GetAllSubCategories();
         SubCategory GetSingleSubCategory(int id);
         bool Save();

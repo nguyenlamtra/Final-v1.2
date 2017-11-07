@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using COmpStore.FrontEnd.Models;
 using COmpStore.FrontEnd.Service.Admin;
 using COmpStore.FrontEnd.Service;
+using COmpStore.FrontEnd.Const;
 
 namespace COmpStore.FrontEnd.Controllers
 {
@@ -24,12 +25,17 @@ namespace COmpStore.FrontEnd.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _productService.GetAll());
+            var products = await _productService.GetAll();
+            foreach(var product in products)
+            {
+                product.Image = WebCommon.API_IMAGE_URL + product.Image;
+            }
+            return View(products);
         }
 
-        public async Task<IActionResult> Details(int productId)
+        public async Task<IActionResult> Details(int id)
         {
-            return View(await _productService.GetById(productId));
+            return View(await _productService.GetById(id));
         }
 
         public async Task<IActionResult> Create()
@@ -42,31 +48,52 @@ namespace COmpStore.FrontEnd.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(ProductModel model)
         {
-            if (await _productService.Create(model))
-                return View();
-            else
-                return View();
-        }
-
-        public async Task<IActionResult> Update(int productId)
-        {
             ViewBag.SubCategories = await _subCategoryService.GetAll();
             ViewBag.Publishers = await _publisherService.GetAll();
-            return View();
+            var result = await _productService.Create(model);
+            if (result.GetType() == typeof(ProductModel))
+            {
+                ViewBag.IsSuccess = true;
+                return View(model);
+            }
+            else
+                return View(model);
+        }
+
+        public async Task<IActionResult> Update(int id)
+        {
+            var product = await _productService.GetById(id);
+
+            ViewBag.SubCategories = await _subCategoryService.GetAll();
+            ViewBag.Publishers = await _publisherService.GetAll();
+            ViewBag.SubCategoryId = product.SubCategoryId;
+            ViewBag.PublisherId = product.PublisherId;
+
+            return View(product);
         }
 
         [HttpPost]
         public async Task<IActionResult> Update(ProductModel model)
         {
-            if (await _productService.Update(model))
-                return View();
+            ViewBag.SubCategories = await _subCategoryService.GetAll();
+            ViewBag.Publishers = await _publisherService.GetAll();
+            ViewBag.SubCategoryId = model.SubCategoryId;
+            ViewBag.PublisherId = model.PublisherId;
+
+            var result = await _productService.Update(model);
+            if (result.GetType() == typeof(ProductModel))
+            {
+                ViewBag.IsSuccess = true;
+                return View(result);
+            }
             else
                 return View();
         }
 
-        public async Task<bool> Delete(int id)
+        [HttpPost]
+        public async Task<bool> Delete(int[] ids)
         {
-            if (await _productService.Delete(id))
+            if (await _productService.Delete(ids))
                 return true;
             else
                 return false;

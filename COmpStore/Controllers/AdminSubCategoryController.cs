@@ -113,27 +113,12 @@ namespace COmpStore.Controllers
         }
 
         [HttpDelete]
-        [Route("{id}")]
-        public IActionResult Remove(int id)
+        public IActionResult Delete([FromBody]int[] ids)
         {
-            var existingSubCategory = _subCategoryRepository.GetSingleSubCategory(id);
-
-            if (existingSubCategory == null)
-            {
+            if (_subCategoryRepository.Delete(ids))
+                return NoContent();
+            else
                 return NotFound();
-            }
-
-            _subCategoryRepository.Delete(id);
-
-            bool result = _subCategoryRepository.Save();
-
-            if (!result)
-            {
-                // return new StatusCodeResult(500);
-                throw new Exception($"something went wrong when deleting the subcategory with id: {id}");
-            }
-
-            return NoContent();
         }
     }
 }

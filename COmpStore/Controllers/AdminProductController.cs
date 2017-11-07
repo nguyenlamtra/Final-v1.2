@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using COmpStore.Extension;
 using System.IO;
 using TokenAuthWebApiCore.Server.Filters;
+using COmpStore.Helper;
 
 namespace COmpStore.Controllers
 {
@@ -68,26 +69,16 @@ namespace COmpStore.Controllers
             var base64String = Regex.Replace(productDto.Image, "^data:image\\/[a-zA-Z]+;base64,", String.Empty);
             if (base64String.IsBase64())
             {
-                Product toAdd = Mapper.Map<Product>(productDto);
-
-                _productRepository.Add(toAdd);
+                Product product = Mapper.Map<Product>(productDto);
+                product.Image = Guid.NewGuid() + ".jpg";
+                _productRepository.Add(product);
                 if (!_productRepository.Save())
                 {
-                    //return new StatusCodeResult(500);
                     throw new Exception("something went wrong when adding a new subcategory");
                 }
-
-                byte[] image = Convert.FromBase64String(base64String);
-                var fileName = Guid.NewGuid() + ".jpg";
-                using (var stream = new FileStream(Path.Combine(filePath, fileName), FileMode.Create))
-                {
-                    await stream.WriteAsync(image, 0, image.Length);
-                    stream.Flush();
-                }
-                
-                
-                //return Ok(Mapper.Map<ProductDto>(toAdd));
-                return CreatedAtRoute("GetSingleProduct", new { id = toAdd.Id }, Mapper.Map<ProductDto>(toAdd));
+                await FileHelper.AddFileAsync(filePath, base64String, product.Image);
+               
+                return Ok(productDto);
             }
             else
             {
@@ -98,63 +89,97 @@ namespace COmpStore.Controllers
         // PUT api/customers/{id}
 
         [HttpPut]
-        [Route("{id}")]
-        public IActionResult UpdateProduct(int id, [FromBody] ProductDto productDto)
+        [ValidateFormAttribute]
+        public async Task<IActionResult> UpdateProduct([FromBody] ProductDto productDto)
         {
-            if (productDto == null)
+            var product = Mapper.Map<Product>(productDto);
+            if (string.IsNullOrWhiteSpace(_hostingEnvironment.WebRootPath))
             {
-                return BadRequest();
+                _hostingEnvironment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             }
-            var existingProduct = _productRepository.GetSingleProduct(id);
-
-            productDto.Id = existingProduct.Id;
-            if (existingProduct == null)
+            var filePath = _hostingEnvironment.WebRootPath + "\\images\\products";
+            var base64String = Regex.Replace(productDto.Image, "^data:image\\/[a-zA-Z]+;base64,", String.Empty);
+            if (base64String.IsBase64())
             {
-                return NotFound();
+                var imageName = _productRepository.GetImage(product.Id);
+                FileHelper.DeleteFile(filePath, imageName);
+                product.Image = Guid.NewGuid() + ".jpg";
+                _productRepository.Update(product);
+                if (!_productRepository.Save())
+                    throw new Exception("something went wrong when UpdateProduct");
+                await FileHelper.AddFileAsync(filePath, base64String,product.Image);
+                return Ok(product);
             }
-            if (!ModelState.IsValid)
+            else
             {
-                return BadRequest(ModelState);
+                _productRepository.UpdateExceptImage(product);
+
+                if (!_productRepository.Save())
+                    throw new Exception("something went wrong when adding a new subcategory");
+                else
+                    return Ok(product);
             }
-
-            Mapper.Map(productDto, existingProduct);
-
-            _productRepository.Update(existingProduct);
-
-            bool result = _productRepository.Save();
-
-            if (!result)
-            {
-                //return new StatusCodeResult(500);
-                throw new Exception($"something went wrong when updating the subcategory with id: {id}");
-            }
-
-            return Ok(Mapper.Map<ProductDto>(existingProduct));
         }
 
-        [HttpDelete]
-        [Route("{id}")]
-        public IActionResult Remove(int id)
-        {
+        //[HttpDelete]
+        //[Route("{id}")]
+        //public IActionResult Remove(int id)
+        //{
             
-            var existingProduct = _productRepository.GetSingleProduct(id);
+        //    var existingProduct = _productRepository.GetSingleProduct(id);
 
-            if (existingProduct == null)
+        //    if (existingProduct == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    _productRepository.Delete(id);
+
+        //    bool result = _productRepository.Save();
+
+        //    if (!result)
+        //    {
+        //        // return new StatusCodeResult(500);
+        //        throw new Exception($"something went wrong when deleting the subcategory with id: {id}");
+        //    }
+            
+        //    return NoContent();
+        //}
+
+        [HttpDelete]
+        public IActionResult Delete([FromBody]int[] ids)
+        {
+            try
+            {
+                if (ids.Contains(0))
+                {
+                    return BadRequest();
+                }
+                var filePath = _hostingEnvironment.WebRootPath + "\\images\\products";
+                foreach (var id in ids)
+                {
+                    var product = _productRepository.GetSingleProduct(id);
+                    if (System.IO.File.Exists(Path.Combine(filePath, product.Image)))
+                    {
+                        try
+                        {
+                            System.IO.File.Delete(Path.Combine(filePath, product.Image));
+                        }
+                        catch (System.IO.IOException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                    }
+                    _productRepository.Delete(id);
+                }
+                _productRepository.Save();
+
+                return NoContent();
+            }
+            catch (Exception ex)
             {
                 return NotFound();
             }
-
-            _productRepository.Delete(id);
-
-            bool result = _productRepository.Save();
-
-            if (!result)
-            {
-                // return new StatusCodeResult(500);
-                throw new Exception($"something went wrong when deleting the subcategory with id: {id}");
-            }
-            
-            return NoContent();
         }
     }
 }

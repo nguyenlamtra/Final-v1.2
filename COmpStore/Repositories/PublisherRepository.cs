@@ -13,7 +13,7 @@ namespace COmpStore.Repositories
     public interface IPublisherRepository
     {
         IEnumerable<PublisherDto> GetAll();
-        bool Delete(int id);
+        bool Delete(int[] ids);
         bool Create(PublisherDto dto);
         bool Update(PublisherDto dto);
         PublisherDto GetById(int Id);
@@ -44,18 +44,20 @@ namespace COmpStore.Repositories
             }
         }
 
-        public bool Delete(int id)
+        public bool Delete(int[] ids)
         {
             try
             {
-                var publisher = DbContext.Publishers.FirstOrDefault(c => c.Id == id);
-                if (publisher != null)
+                foreach (int id in ids)
                 {
-                    DbContext.Publishers.Remove(publisher);
-                    DbContext.SaveChanges();
-                    return true;
+                    var publisher = DbContext.Publishers.FirstOrDefault(c => c.Id == id);
+                    if (publisher != null)
+                    {
+                        DbContext.Publishers.Remove(publisher);
+                    }
                 }
-                return false;
+                DbContext.SaveChanges();
+                return true;
             }
             catch (Exception e)
             {
@@ -66,7 +68,7 @@ namespace COmpStore.Repositories
 
         public IEnumerable<PublisherDto> GetAll()
         {
-            return Mapper.Map<IEnumerable<PublisherDto>>(DbContext.Publishers);
+            return Mapper.Map<IEnumerable<PublisherDto>>(DbContext.Publishers.Include(x=>x.Products));
         }
 
         public PublisherDto GetById(int id)

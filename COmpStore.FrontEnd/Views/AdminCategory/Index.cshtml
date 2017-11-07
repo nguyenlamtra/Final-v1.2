@@ -37,12 +37,12 @@
                                 <tr data-id="@category.Id">
                                     <td>@category.Id</td>
                                     <td>@category.CategoryName</td>
-                                    <td>1</td>
+                                    <td>@category.SubCategories.Count()</td>
                                     <td class="text-center">
-                                        <a asp-action="Details" asp-controller="AdminCategory" asp-route-categoryId="@category.Id" class="text-primary" title="Chi tiết">
+                                        <a asp-action="Details" asp-controller="AdminCategory" asp-route-id="@category.Id" class="text-primary" title="Chi tiết">
                                             <span class="glyphicon glyphicon-info-sign"></span>
                                         </a>
-                                        <a asp-action="Update" asp-controller="AdminCategory" asp-route-categoryId="@category.Id" class="text-primary" title="Chỉnh sửa">
+                                        <a asp-action="Update" asp-controller="AdminCategory" asp-route-id="@category.Id" class="text-primary" title="Chỉnh sửa">
                                             &nbsp;<span class="glyphicon glyphicon-edit"></span>
                                         </a>
                                     </td>

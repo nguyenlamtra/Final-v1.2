@@ -8,6 +8,7 @@ using COmpStore.Schema.Entities;
 using COmpStore.Dto;
 using Microsoft.AspNetCore.Authorization;
 using COmpStore.Repositories;
+using TokenAuthWebApiCore.Server.Filters;
 
 namespace COmpStore.Controllers
 {
@@ -26,66 +27,59 @@ namespace COmpStore.Controllers
         {
             var category = _categoryRepository.GetById(id);
             if (category != null)
-            {
                 return Ok(category);
-            }
-                
             else
-                return BadRequest();
+                return NotFound();
         }
 
         [HttpGet]
         public IActionResult Get()
         {
             var categories = _categoryRepository.GetAll();
-
             return Ok(categories);
         }
 
         [HttpPut]
+        [ValidateFormAttribute]
         public IActionResult Put([FromBody] CategoryDto dto)
         {
             if (_categoryRepository.Update(dto))
-            {
-                return Ok();
-            }
+                return Ok(dto);
             else
-            {
-                return BadRequest();
-            }
+                return NotFound();
         }
 
         [HttpPost]
+        [ValidateFormAttribute]
         [ProducesResponseType(typeof(bool), 200)]
         [ProducesResponseType(typeof(bool), 400)]
         public IActionResult Create([FromBody] CategoryDto dto)
         {
             if (dto == null || dto.Id != 0)
-            {
                 return BadRequest();
-            }
 
             if (_categoryRepository.Create(dto))
-            {
-                return Ok();
-            }
+                return Ok(dto);
             else
-            {
                 return BadRequest();
-            }
-
-
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int categoryId)
-        {
+        //[HttpDelete("{id}")]
+        //public IActionResult Delete(int id)
+        //{
+        //    if (_categoryRepository.Delete(id))
+        //        return NoContent();
+        //    else
+        //        return NotFound();
+        //}
 
-            if (_categoryRepository.Delete(categoryId))
-            {
-                return Ok();
-            }
-            return NotFound();
+        [HttpDelete]
+        public IActionResult Delete([FromBody]int[] ids)
+        {
+            if (_categoryRepository.Delete(ids))
+                return NoContent();
+            else
+                return NotFound();
         }
     }
 }

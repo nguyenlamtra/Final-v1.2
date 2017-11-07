@@ -16,7 +16,6 @@ namespace COmpStore.FrontEnd.Models
 
         [Display(Name = "Price")]
         [Required]
-        [MaxLength(10)]
         public decimal Price { get; set; }
 
         [Display(Name = "Publisher")]

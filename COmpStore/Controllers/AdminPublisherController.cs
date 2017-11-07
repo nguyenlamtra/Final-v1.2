@@ -71,11 +71,11 @@ namespace COmpStore.Controllers
 
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete]
+        public IActionResult Delete(int[] ids)
         {
 
-            if (_publisherRepository.Delete(id))
+            if (_publisherRepository.Delete(ids))
             {
                 return Ok();
             }

@@ -13,7 +13,8 @@ namespace COmpStore.Repositories
     public interface ICategoryRepository
     {
         IEnumerable<CategoryDto> GetAll();
-        bool Delete(int id);
+       // bool Delete(int id);
+        bool Delete(int[] ids);
         bool Create(CategoryDto dto);
         bool Update(CategoryDto dto);
         CategoryDto GetById(int id);
@@ -44,20 +45,43 @@ namespace COmpStore.Repositories
             }
         }
 
-        public bool Delete(int id)
+        //public bool Delete(int id)
+        //{
+        //    try
+        //    {
+        //        var category = DbContext.Categories.FirstOrDefault(c => c.Id == id);
+        //        if (category != null)
+        //        {
+        //            DbContext.Categories.Remove(category);
+        //            DbContext.SaveChanges();
+        //            return true;
+        //        }
+        //        return false;
+        //    }
+        //    catch(Exception e)
+        //    {
+        //        Console.WriteLine(e.ToString());
+        //        return false;
+        //    }
+        //}
+
+        public bool Delete(int[] ids)
         {
+           
             try
             {
-                var category = DbContext.Categories.FirstOrDefault(c => c.Id == id);
-                if (category != null)
+                foreach (int i in ids)
                 {
-                    DbContext.Categories.Remove(category);
-                    DbContext.SaveChanges();
-                    return true;
+                    var category = DbContext.Categories.FirstOrDefault(c => c.Id == i);
+                    if (category != null)
+                    {
+                        DbContext.Categories.Remove(category);
+                    }
                 }
-                return false;
+                DbContext.SaveChanges();
+                return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
                 return false;
@@ -66,7 +90,7 @@ namespace COmpStore.Repositories
 
         public IEnumerable<CategoryDto> GetAll()
         {
-            return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories);
+            return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories.Include(x=>x.SubCategories));
         }
 
         public CategoryDto GetById(int id)

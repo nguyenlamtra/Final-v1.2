@@ -66,6 +66,17 @@ namespace COmpStore.FrontEnd.Builder
         public static async Task<HttpResponseMessage> Delete(string requestUri)
             => await Delete(requestUri, "");
 
+        public static async Task<HttpResponseMessage> Delete(string requestUri, int[] values)
+        {
+            var a = new JsonContent(values);
+            var builder = new HttpRequestBuilder()
+                                .AddMethod(HttpMethod.Delete)
+                                .AddRequestUri(requestUri)
+                                .AddContent(new JsonContent(values));
+
+            return await builder.SendAsync();
+        }
+
         public static async Task<HttpResponseMessage> Delete(
             string requestUri, string bearerToken)
         {

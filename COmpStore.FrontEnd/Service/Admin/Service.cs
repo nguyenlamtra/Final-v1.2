@@ -1,5 +1,6 @@
 ﻿using COmpStore.FrontEnd.Builder;
 using COmpStore.FrontEnd.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,10 @@ namespace COmpStore.FrontEnd.Service.Admin
     public interface IService<T> where T : class
     {
         Task<List<T>> GetAll();
-        Task<bool> Create(T model);
-        Task<bool> Update(T model);
-        Task<bool> Delete(int id);
+        Task<object> Create(T model);
+        Task<object> Update(T model);
+        //Task<bool> Delete(int id);
+        Task<bool> Delete(int[] ids);
         Task<T> GetById(int id);
     }
 
@@ -32,49 +34,51 @@ namespace COmpStore.FrontEnd.Service.Admin
             return outputModel;
         }
 
-        public async Task<bool> Create(T model)
+        public async Task<object> Create(T model)
         {
             var response = await HttpRequestFactory.Post(URI, model);
             if ((int)response.StatusCode == 200)
-            {
-                return true;
-            }
+                return response.ContentAsType<T>();
             else
-            {
-                return false;
-            }
+                return response.ContentAsType<ModelStateDictionary>();
         }
 
-        public async Task<bool> Update(T model)
+        public async Task<object> Update(T model)
         {
             var response = await HttpRequestFactory.Put(URI, model);
             if ((int)response.StatusCode == 200)
-            {
-                return true;
-            }
+                return response.ContentAsType<T>();
             else
-            {
-                return false;
-            }
-        }
-
-        public async Task<bool> Delete(int id)
-        {
-            var response = await HttpRequestFactory.Delete(URI + "/" + id);
-            if ((int)response.StatusCode == 204)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+                return response.ContentAsType<ModelStateDictionary>();
         }
 
         public async Task<T> GetById(int id)
         {
             var response = await HttpRequestFactory.Get(URI + "/" + id);
-            return response.ContentAsType<T>();
+            if ((int)response.StatusCode == 200)
+                return response.ContentAsType<T>();
+            else
+                return null;
         }
+
+        public async Task<bool> Delete(int[] ids)
+        {
+            var response = await HttpRequestFactory.Delete(URI, ids);
+
+            if ((int)response.StatusCode == 204)
+                return true;
+            else
+                return false;
+        }
+
+        //public async Task<bool> Delete(int id)
+        //{
+        //    var response = await HttpRequestFactory.Delete(URI + "/" + id);
+
+        //    if ((int)response.StatusCode == 204)
+        //        return true;
+        //    else
+        //        return false;
+        //}
     }
 }

@@ -31,7 +31,7 @@ namespace COmpStore.FrontEnd.Controllers
         public async Task<IActionResult> Create(PublisherModel model)
         {
             var result = await _publisherService.Create(model);
-            if (result)
+            if (result!=null)
             {
                 ViewBag.IsSuccess = true;
                 return View();
@@ -56,7 +56,7 @@ namespace COmpStore.FrontEnd.Controllers
         public async Task<IActionResult> Update(PublisherModel model)
         {
             var result = await _publisherService.Update(model);
-            if (result)
+            if (result!=null)
             {
                 ViewBag.IsSuccess = true;
                 return View();
@@ -64,5 +64,14 @@ namespace COmpStore.FrontEnd.Controllers
             else
                 return View();
         }
+
+        //[HttpPost]
+        //public async Task<bool> Delete(int id)
+        //{
+        //    if (await _publisherService.Delete(id))
+        //        return true;
+        //    else
+        //        return false;
+        //}
     }
 }
