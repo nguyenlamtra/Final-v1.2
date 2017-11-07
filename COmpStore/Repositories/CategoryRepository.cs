@@ -66,6 +66,7 @@ namespace COmpStore.Repositories
 
         public IEnumerable<CategoryDto> GetAll()
         {
+           
             return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories);
         }
 

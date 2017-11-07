@@ -169,7 +169,7 @@ namespace COmpStore
 
             app.UseMvc();
 
-            SampleData.InitializeMusicStoreDatabaseAsync(app.ApplicationServices).Wait();
+            //SampleData.InitializeMusicStoreDatabaseAsync(app.ApplicationServices).Wait();
         }
     }
 }
