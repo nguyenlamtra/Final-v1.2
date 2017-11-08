@@ -12,8 +12,10 @@
         imageBackground: true,
         imageBackgroundBorderWidth: 20,
         width: 200,
-        height: 200
+        height: 200,
+        
     });
+
 
     $('.rotate-cw').click(function () {
         $('.image-editor').cropit('rotateCW');

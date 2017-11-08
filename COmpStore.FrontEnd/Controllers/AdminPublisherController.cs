@@ -65,6 +65,15 @@ namespace COmpStore.FrontEnd.Controllers
                 return View();
         }
 
+        [HttpPost]
+        public async Task<bool> Delete(int[] ids)
+        {
+            if (await _publisherService.Delete(ids))
+                return true;
+            else
+                return false;
+        }
+
         //[HttpPost]
         //public async Task<bool> Delete(int id)
         //{

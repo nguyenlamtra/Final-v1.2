@@ -11,6 +11,7 @@ namespace TokenAuthWebApiCore.Server.Filters
 
             if (!context.ModelState.IsValid)
             {
+                var a = context.ModelState;
                 context.Result = new BadRequestObjectResult(context.ModelState);
             }
         }

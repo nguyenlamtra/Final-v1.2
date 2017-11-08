@@ -41,7 +41,7 @@ namespace COmpStore.Controllers
         {
             if (_publisherRepository.Update(dto))
             {
-                return Ok();
+                return Ok(dto);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace COmpStore.Controllers
 
             if (_publisherRepository.Create(dto))
             {
-                return Ok();
+                return Ok(dto);
             }
             else
             {
@@ -72,12 +72,12 @@ namespace COmpStore.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete(int[] ids)
+        public IActionResult Delete([FromBody]int[] ids)
         {
 
             if (_publisherRepository.Delete(ids))
             {
-                return Ok();
+                return NoContent();
             }
             return NotFound();
         }

@@ -41,9 +41,7 @@ namespace COmpStore.FrontEnd.Controllers
             else
             {
                 var modelState = (ModelStateDictionary)result;
-                foreach (var error in modelState.Values)
-                {
-                }
+
                 return View(model);
             }
                 

@@ -90,12 +90,7 @@ namespace COmpStore.Repositories
 
         public IEnumerable<CategoryDto> GetAll()
         {
-<<<<<<< HEAD
             return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories.Include(x=>x.SubCategories));
-=======
-           
-            return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories);
->>>>>>> e5c5a4ce4fe470c6c0c2a608d2379ab605ce64c3
         }
 
         public CategoryDto GetById(int id)

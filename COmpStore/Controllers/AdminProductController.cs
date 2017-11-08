@@ -102,7 +102,8 @@ namespace COmpStore.Controllers
             if (base64String.IsBase64())
             {
                 var imageName = _productRepository.GetImage(product.Id);
-                FileHelper.DeleteFile(filePath, imageName);
+                if (imageName == "") 
+                    FileHelper.DeleteFile(filePath, imageName);
                 product.Image = Guid.NewGuid() + ".jpg";
                 _productRepository.Update(product);
                 if (!_productRepository.Save())
