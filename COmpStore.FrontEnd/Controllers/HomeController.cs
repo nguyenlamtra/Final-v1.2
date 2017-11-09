@@ -8,32 +8,56 @@ using COmpStore.FrontEnd.Models;
 using COmpStore.FrontEnd.Builder;
 using System.Net.Http;
 using COmpStore.FrontEnd.Service;
+using COmpStore.FrontEnd.Service.Admin;
 
 namespace COmpStore.FrontEnd.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IService<ProductModel> _productService;
+        private readonly IService<PublisherModel> _publisherService;
+        private readonly IService<SubCategoryModel> _subCategoryService;
+        private readonly IService<CategoryModel> _categoryService;
+       
 
-
-        // public async Task<IActionResult> Index()
-        public IActionResult Index()
+        public HomeController(IService<ProductModel> productService,
+                                IService<SubCategoryModel> subCategoryService,
+                                IService<PublisherModel> publisherService,
+                                IService<CategoryModel> categoryService)
         {
-            //var temp = await CategoryService.GetList();
-            return View();
+            _productService = productService;
+            _publisherService = publisherService;
+            _subCategoryService = subCategoryService;
+            _categoryService = categoryService;
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> Index()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            ViewData["categories"] = await _categoryService.GetAll();
+            ViewData["publishers"] = await _publisherService.GetAll();
+            var products = await _productService.GetAll();
+            return View(products);
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
 
+        public async  Task<IActionResult> SlideBarMenu()
+        {
+            ViewData["categories"] = await _categoryService.GetAll();
+            ViewData["publishers"] = await _publisherService.GetAll();
             return View();
+        }
+       
+
+        public async Task<IActionResult> SearchBySubCategory(int id)
+        {
+            
+            var subCategory = await _subCategoryService.GetById(id);
+            var products = await _productService.GetAll();
+            ViewData["categories"] = await _categoryService.GetAll();
+            ViewData["publishers"] = await _publisherService.GetAll();
+            var items = products.Where(p => p.SubCategoryId == id).OrderBy(p => p.Id).ToList();
+            ViewBag.Products = items;
+            return View("Product");
         }
 
         public IActionResult Error()

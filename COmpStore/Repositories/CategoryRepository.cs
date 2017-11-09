@@ -13,7 +13,7 @@ namespace COmpStore.Repositories
     public interface ICategoryRepository
     {
         IEnumerable<CategoryDto> GetAll();
-       // bool Delete(int id);
+        // bool Delete(int id);
         bool Delete(int[] ids);
         bool Create(CategoryDto dto);
         bool Update(CategoryDto dto);
@@ -67,7 +67,7 @@ namespace COmpStore.Repositories
 
         public bool Delete(int[] ids)
         {
-           
+
             try
             {
                 foreach (int i in ids)
@@ -90,17 +90,13 @@ namespace COmpStore.Repositories
 
         public IEnumerable<CategoryDto> GetAll()
         {
-<<<<<<< HEAD
-            return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories.Include(x=>x.SubCategories));
-=======
-           
-            return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories);
->>>>>>> e5c5a4ce4fe470c6c0c2a608d2379ab605ce64c3
+            return Mapper.Map<IEnumerable<CategoryDto>>(DbContext.Categories.Include(x => x.SubCategories));
+
         }
 
         public CategoryDto GetById(int id)
         {
-            var category = DbContext.Categories.Include(x=>x.SubCategories).ThenInclude(x=>x.Products).SingleOrDefault(x => x.Id == id);
+            var category = DbContext.Categories.Include(x => x.SubCategories).ThenInclude(x => x.Products).SingleOrDefault(x => x.Id == id);
             if (category != null)
                 return Mapper.Map<CategoryDto>(category);
             else
@@ -116,12 +112,13 @@ namespace COmpStore.Repositories
                 DbContext.Entry(category).State = EntityState.Modified;
                 DbContext.SaveChanges();
                 return true;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
                 return false;
             }
-            
+
         }
     }
 }
