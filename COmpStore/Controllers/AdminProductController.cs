@@ -102,7 +102,11 @@ namespace COmpStore.Controllers
             if (base64String.IsBase64())
             {
                 var imageName = _productRepository.GetImage(product.Id);
+<<<<<<< HEAD
                 if (imageName == "") 
+=======
+                if (imageName != null) 
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
                     FileHelper.DeleteFile(filePath, imageName);
                 product.Image = Guid.NewGuid() + ".jpg";
                 _productRepository.Update(product);
@@ -177,7 +181,7 @@ namespace COmpStore.Controllers
 
                 return NoContent();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return NotFound();
             }

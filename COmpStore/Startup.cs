@@ -29,7 +29,7 @@ namespace COmpStore
 
         private void ConfigureAuth(IServiceCollection services)
         {
-            ///////gddfg
+           
         }
 
         public IConfiguration Configuration { get; }

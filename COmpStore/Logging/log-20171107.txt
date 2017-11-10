@@ -9934,6 +9934,7 @@ FROM [Categories] AS [c]"
 2017-11-07 17:05:14.830 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
 2017-11-07 17:05:14.849 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
 >>>>>>> e5c5a4ce4fe470c6c0c2a608d2379ab605ce64c3
+<<<<<<< HEAD
 2017-11-07 17:13:38.526 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
 2017-11-07 17:13:38.949 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 17:13:39.178 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
@@ -10237,10 +10238,17 @@ ORDER BY [t1].[Id0], [t1].[Id]"
 2017-11-07 17:20:32.542 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 17:20:32.548 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 17:20:32.566 +07:00 [Information] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:17:45.072 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:17:45.336 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:17:45.476 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:17:45.714 +07:00 [Information] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:20:32.571 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:20:32.580 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 43.7374ms
 2017-11-07 17:20:32.587 +07:00 [Information] Request finished in 61.121ms 200 application/json; charset=utf-8
@@ -10252,6 +10260,19 @@ INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCat
 FROM [Categories] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:20:32.622 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:17:45.779 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:17:45.821 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 616.5386ms
+2017-11-07 17:17:45.826 +07:00 [Information] Request finished in 777.5743ms 200 application/json; charset=utf-8
+2017-11-07 17:17:45.898 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/admincategory  
+2017-11-07 17:17:45.919 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:17:45.928 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:17:46.003 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryName]
+FROM [Categories] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:17:46.034 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.SubCategories].[Id], [x.SubCategories].[CategoryId], [x.SubCategories].[SubCategoryName]
 FROM [SubCategories] AS [x.SubCategories]
 INNER JOIN (
@@ -10259,6 +10280,7 @@ INNER JOIN (
     FROM [Categories] AS [x0]
 ) AS [t] ON [x.SubCategories].[CategoryId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:20:32.627 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:20:32.633 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 27.4952ms
 2017-11-07 17:20:32.640 +07:00 [Information] Request finished in 38.7899ms 200 application/json; charset=utf-8
@@ -10571,6 +10593,19 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:32:13.734 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:17:46.043 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:17:46.053 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 146.3295ms
+2017-11-07 17:17:46.056 +07:00 [Information] Request finished in 157.4777ms 200 application/json; charset=utf-8
+2017-11-07 17:17:46.073 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:17:46.090 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:17:46.093 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:17:46.139 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:17:46.161 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -10578,6 +10613,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:32:13.738 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:32:13.745 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 27.2802ms
 2017-11-07 17:32:13.751 +07:00 [Information] Request finished in 38.3754ms 200 application/json; charset=utf-8
@@ -10603,10 +10639,20 @@ SELECT @@ROWCOUNT;"
 2017-11-07 17:32:16.772 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 17:32:16.777 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 17:32:16.788 +07:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:17:46.165 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:17:46.172 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 93.7176ms
+2017-11-07 17:17:46.175 +07:00 [Information] Request finished in 100.789ms 200 application/json; charset=utf-8
+2017-11-07 17:27:09.284 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:27:09.549 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:27:09.692 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:27:09.922 +07:00 [Information] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:32:16.795 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:32:16.810 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 31.8594ms
 2017-11-07 17:32:16.835 +07:00 [Information] Request finished in 49.6462ms 200 application/json; charset=utf-8
@@ -10617,11 +10663,23 @@ INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCat
 2017-11-07 17:33:09.468 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["24"]) - ModelState is Valid
 2017-11-07 17:33:09.472 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 17:33:09.484 +07:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:27:09.990 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:27:10.034 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 606.9357ms
+2017-11-07 17:27:10.038 +07:00 [Information] Request finished in 777.5237ms 200 application/json; charset=utf-8
+2017-11-07 17:27:13.361 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:27:13.372 +07:00 [Information] Request finished in 11.2515ms 404 
+2017-11-07 17:27:28.157 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/1  
+2017-11-07 17:27:28.203 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-07 17:27:28.218 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:27:28.290 +07:00 [Information] Executed DbCommand ("45"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
 WHERE [s].[Id] = @__id_0"
+<<<<<<< HEAD
 2017-11-07 17:33:09.493 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:33:09.501 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 30.1203ms
 2017-11-07 17:33:09.511 +07:00 [Information] Request finished in 43.6188ms 200 application/json; charset=utf-8
@@ -10840,6 +10898,29 @@ ORDER BY [t].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:39:30.734 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:27:28.295 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:27:28.299 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 123.8675ms
+2017-11-07 17:27:28.302 +07:00 [Information] Request finished in 144.6095ms 200 application/json; charset=utf-8
+2017-11-07 17:27:28.333 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:27:28.349 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:27:28.353 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:27:28.388 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:27:28.401 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:27:28.421 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 83.9227ms
+2017-11-07 17:27:28.424 +07:00 [Information] Request finished in 90.872ms 200 application/json; charset=utf-8
+2017-11-07 17:27:28.455 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:27:28.472 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:27:28.475 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:27:28.535 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:27:28.560 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -10847,6 +10928,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:39:30.740 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:39:30.747 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 35.1202ms
 2017-11-07 17:39:30.753 +07:00 [Information] Request finished in 60.1899ms 200 application/json; charset=utf-8
@@ -10930,6 +11012,31 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:42:27.589 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:27:28.567 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:27:28.574 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 114.5196ms
+2017-11-07 17:27:28.577 +07:00 [Information] Request finished in 121.1767ms 200 application/json; charset=utf-8
+2017-11-07 17:27:29.265 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:27:29.269 +07:00 [Information] Request finished in 3.6685ms 404 
+2017-11-07 17:28:26.787 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:28:26.807 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:28:26.809 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:28:26.829 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:28:26.831 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:28:26.834 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 44.2618ms
+2017-11-07 17:28:26.836 +07:00 [Information] Request finished in 49.4341ms 200 application/json; charset=utf-8
+2017-11-07 17:28:26.844 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:28:26.860 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:28:26.864 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:28:26.881 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:28:26.901 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -10937,6 +11044,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:42:27.596 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:42:27.603 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 35.1077ms
 2017-11-07 17:42:27.613 +07:00 [Information] Request finished in 46.2986ms 200 application/json; charset=utf-8
@@ -10947,11 +11055,101 @@ ORDER BY [t].[Id]"
 2017-11-07 17:42:42.310 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["24"]) - ModelState is Valid
 2017-11-07 17:42:42.316 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 17:42:42.321 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:28:26.904 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:28:26.906 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 59.7669ms
+2017-11-07 17:28:26.909 +07:00 [Information] Request finished in 64.9859ms 200 application/json; charset=utf-8
+2017-11-07 17:28:26.931 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/adminproduct application/json; charset=utf-8 184
+2017-11-07 17:28:26.983 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" with arguments (["COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-07 17:28:27.063 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 124.0739ms
+2017-11-07 17:28:27.159 +07:00 [Error] An unhandled exception has occurred: Value cannot be null.
+Parameter name: input
+System.ArgumentNullException: Value cannot be null.
+Parameter name: input
+   at System.Text.RegularExpressions.Regex.Replace(String input, String replacement)
+   at System.Text.RegularExpressions.Regex.Replace(String input, String pattern, String replacement)
+   at COmpStore.Controllers.AdminProductController.<UpdateProduct>d__6.MoveNext() in C:\Users\phamh\Desktop\Final V2.1\COmpStore\Controllers\AdminProductController.cs:line 101
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-07 17:28:27.187 +07:00 [Information] Request finished in 255.7936ms 500 
+2017-11-07 17:29:36.171 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:29:36.432 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:29:36.572 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:29:36.797 +07:00 [Information] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-07 17:29:36.863 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:29:36.904 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 595.7564ms
+2017-11-07 17:29:36.909 +07:00 [Information] Request finished in 760.9148ms 200 application/json; charset=utf-8
+2017-11-07 17:29:39.734 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:29:39.743 +07:00 [Information] Request finished in 8.7537ms 404 
+2017-11-07 17:45:56.267 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:45:56.530 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:45:56.667 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:45:56.901 +07:00 [Information] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-07 17:45:56.972 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:45:57.013 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 602.2925ms
+2017-11-07 17:45:57.018 +07:00 [Information] Request finished in 778.1756ms 200 application/json; charset=utf-8
+2017-11-07 17:45:59.776 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:45:59.783 +07:00 [Information] Request finished in 7.445ms 404 
+2017-11-07 17:46:23.355 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/2  
+2017-11-07 17:46:23.416 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["2"]) - ModelState is Valid
+2017-11-07 17:46:23.447 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:46:23.516 +07:00 [Information] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
 WHERE [s].[Id] = @__id_0"
+<<<<<<< HEAD
 2017-11-07 17:42:42.326 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:42:42.332 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 20.0635ms
 2017-11-07 17:42:42.338 +07:00 [Information] Request finished in 31.2595ms 200 application/json; charset=utf-8
@@ -10973,6 +11171,29 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:42:42.409 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:46:23.521 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:46:23.523 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 152.0393ms
+2017-11-07 17:46:23.526 +07:00 [Information] Request finished in 170.428ms 200 application/json; charset=utf-8
+2017-11-07 17:46:23.559 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:46:23.575 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:46:23.579 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:46:23.614 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:46:23.627 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:46:23.647 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 83.6026ms
+2017-11-07 17:46:23.650 +07:00 [Information] Request finished in 90.295ms 200 application/json; charset=utf-8
+2017-11-07 17:46:23.679 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:46:23.699 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:46:23.703 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:46:23.768 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:46:23.792 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -10980,6 +11201,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:42:42.414 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:42:42.422 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 25.7345ms
 2017-11-07 17:42:42.433 +07:00 [Information] Request finished in 38.8806ms 200 application/json; charset=utf-8
@@ -11016,6 +11238,31 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:44:42.553 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:46:23.799 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:46:23.806 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 119.319ms
+2017-11-07 17:46:23.809 +07:00 [Information] Request finished in 128.9216ms 200 application/json; charset=utf-8
+2017-11-07 17:46:24.464 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:46:24.467 +07:00 [Information] Request finished in 3.613ms 404 
+2017-11-07 17:47:33.590 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:47:33.605 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:47:33.607 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:47:33.626 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:47:33.629 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:47:33.631 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 38.4308ms
+2017-11-07 17:47:33.635 +07:00 [Information] Request finished in 43.5057ms 200 application/json; charset=utf-8
+2017-11-07 17:47:33.651 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:47:33.666 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:47:33.669 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:47:33.687 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:47:33.704 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11023,6 +11270,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:44:42.558 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:44:42.565 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 32.6519ms
 2017-11-07 17:44:42.578 +07:00 [Information] Request finished in 44.222ms 200 application/json; charset=utf-8
@@ -11033,11 +11281,93 @@ ORDER BY [t].[Id]"
 2017-11-07 17:47:49.042 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["24"]) - ModelState is Valid
 2017-11-07 17:47:49.047 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 17:47:49.057 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:47:33.707 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:47:33.710 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 55.96ms
+2017-11-07 17:47:33.712 +07:00 [Information] Request finished in 66.7113ms 200 application/json; charset=utf-8
+2017-11-07 17:47:33.734 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/adminproduct application/json; charset=utf-8 327994
+2017-11-07 17:47:33.821 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" with arguments (["COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-07 17:47:33.850 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:47:33.882 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:47:33.935 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 192.4878ms
+2017-11-07 17:47:34.016 +07:00 [Error] An unhandled exception has occurred: Value cannot be null.
+Parameter name: path2
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path2
+   at System.IO.Path.Combine(String path1, String path2)
+   at COmpStore.Helper.FileHelper.DeleteFile(String filePath, String fileName) in C:\Users\phamh\Desktop\Final V2.1\COmpStore\Helper\FileHelper.cs:line 13
+   at COmpStore.Controllers.AdminProductController.<UpdateProduct>d__6.MoveNext() in C:\Users\phamh\Desktop\Final V2.1\COmpStore\Controllers\AdminProductController.cs:line 105
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-07 17:47:34.042 +07:00 [Information] Request finished in 307.8821ms 500 
+2017-11-07 17:48:00.190 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:48:00.459 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:48:00.597 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:48:00.827 +07:00 [Information] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-07 17:48:00.892 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:48:00.935 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 608.9344ms
+2017-11-07 17:48:00.941 +07:00 [Information] Request finished in 773.0953ms 200 application/json; charset=utf-8
+2017-11-07 17:48:03.694 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:48:03.698 +07:00 [Information] Request finished in 4.3268ms 404 
+2017-11-07 17:48:42.853 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/8  
+2017-11-07 17:48:43.000 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["8"]) - ModelState is Valid
+2017-11-07 17:48:43.038 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:48:43.219 +07:00 [Information] Executed DbCommand ("98"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
 WHERE [s].[Id] = @__id_0"
+<<<<<<< HEAD
 2017-11-07 17:47:49.061 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:47:49.070 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 23.8939ms
 2017-11-07 17:47:49.075 +07:00 [Information] Request finished in 37.0834ms 200 application/json; charset=utf-8
@@ -11059,6 +11389,29 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:47:49.155 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:48:43.228 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:48:43.237 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 352.8396ms
+2017-11-07 17:48:43.245 +07:00 [Information] Request finished in 386.5239ms 200 application/json; charset=utf-8
+2017-11-07 17:48:43.291 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:48:43.317 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:48:43.323 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:48:43.377 +07:00 [Information] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:48:43.394 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:48:43.416 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 119.9116ms
+2017-11-07 17:48:43.419 +07:00 [Information] Request finished in 128.3408ms 200 application/json; charset=utf-8
+2017-11-07 17:48:43.454 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:48:43.472 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:48:43.476 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:48:43.540 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:48:43.564 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11066,6 +11419,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:47:49.163 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:47:49.172 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 35.8871ms
 2017-11-07 17:47:49.183 +07:00 [Information] Request finished in 49.3907ms 200 application/json; charset=utf-8
@@ -11090,6 +11444,31 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 17:48:00.314 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:48:43.571 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:48:43.580 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 121.0565ms
+2017-11-07 17:48:43.583 +07:00 [Information] Request finished in 128.475ms 200 application/json; charset=utf-8
+2017-11-07 17:48:44.261 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:48:44.264 +07:00 [Information] Request finished in 3.8179ms 404 
+2017-11-07 17:50:18.116 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:50:18.139 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:50:18.141 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:50:18.162 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:50:18.165 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:50:18.169 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 48.5511ms
+2017-11-07 17:50:18.171 +07:00 [Information] Request finished in 54.4251ms 200 application/json; charset=utf-8
+2017-11-07 17:50:18.178 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:50:18.194 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:50:18.196 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:50:18.215 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:50:18.235 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11097,6 +11476,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:48:00.319 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:48:00.326 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 29.3215ms
 2017-11-07 17:48:00.336 +07:00 [Information] Request finished in 41.6921ms 200 application/json; charset=utf-8
@@ -11122,10 +11502,79 @@ SELECT @@ROWCOUNT;"
 2017-11-07 17:54:46.597 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 17:54:46.923 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 17:54:47.417 +07:00 [Information] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:50:18.239 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:50:18.243 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 61.2265ms
+2017-11-07 17:50:18.245 +07:00 [Information] Request finished in 67.3259ms 200 application/json; charset=utf-8
+2017-11-07 17:50:18.268 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/adminproduct application/json; charset=utf-8 328099
+2017-11-07 17:50:18.362 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" with arguments (["COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-07 17:50:29.557 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:50:29.585 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:50:30.327 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 12047.5544ms
+2017-11-07 17:50:30.407 +07:00 [Error] An unhandled exception has occurred: Value cannot be null.
+Parameter name: path2
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path2
+   at System.IO.Path.Combine(String path1, String path2)
+   at COmpStore.Helper.FileHelper.DeleteFile(String filePath, String fileName) in C:\Users\phamh\Desktop\Final V2.1\COmpStore\Helper\FileHelper.cs:line 13
+   at COmpStore.Controllers.AdminProductController.<UpdateProduct>d__6.MoveNext() in C:\Users\phamh\Desktop\Final V2.1\COmpStore\Controllers\AdminProductController.cs:line 105
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-07 17:50:30.493 +07:00 [Information] Request finished in 12225.811ms 500 
+2017-11-07 17:52:00.918 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:52:01.176 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:01.320 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:01.562 +07:00 [Information] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+<<<<<<< HEAD
 2017-11-07 17:54:47.578 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 17:54:47.668 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 1279.4923ms
 2017-11-07 17:54:47.680 +07:00 [Information] Request finished in 1739.9696ms 200 application/json; charset=utf-8
@@ -11179,11 +11628,23 @@ ORDER BY [t].[Id]"
 2017-11-07 18:01:22.163 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["24"]) - ModelState is Valid
 2017-11-07 18:01:22.168 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 18:01:22.180 +07:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:52:01.631 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:01.674 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 618.8463ms
+2017-11-07 17:52:01.679 +07:00 [Information] Request finished in 785.0071ms 200 application/json; charset=utf-8
+2017-11-07 17:52:04.496 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:52:04.505 +07:00 [Information] Request finished in 7.112ms 404 
+2017-11-07 17:52:08.167 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/1  
+2017-11-07 17:52:08.216 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-07 17:52:08.232 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:08.295 +07:00 [Information] Executed DbCommand ("41"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
 WHERE [s].[Id] = @__id_0"
+<<<<<<< HEAD
 2017-11-07 18:01:22.184 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:01:22.190 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 26.6394ms
 2017-11-07 18:01:22.197 +07:00 [Information] Request finished in 38.1633ms 200 application/json; charset=utf-8
@@ -11205,6 +11666,29 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:01:22.300 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:52:08.299 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:08.302 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 118.3843ms
+2017-11-07 17:52:08.305 +07:00 [Information] Request finished in 138.2737ms 200 application/json; charset=utf-8
+2017-11-07 17:52:08.334 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:52:08.350 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:08.354 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:08.390 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:52:08.404 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:08.426 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 87.3879ms
+2017-11-07 17:52:08.429 +07:00 [Information] Request finished in 94.2657ms 200 application/json; charset=utf-8
+2017-11-07 17:52:08.457 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:52:08.477 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:08.480 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:08.542 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:52:08.566 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11212,6 +11696,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:01:22.306 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:01:22.312 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 38.5288ms
 2017-11-07 18:01:22.322 +07:00 [Information] Request finished in 52.8739ms 200 application/json; charset=utf-8
@@ -11233,6 +11718,31 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:16:42.010 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:52:08.572 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:08.579 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 114.6086ms
+2017-11-07 17:52:08.582 +07:00 [Information] Request finished in 124.0462ms 200 application/json; charset=utf-8
+2017-11-07 17:52:09.265 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:52:09.270 +07:00 [Information] Request finished in 6.2419ms 404 
+2017-11-07 17:52:18.826 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:52:18.842 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:18.844 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:18.863 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:52:18.865 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:18.868 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 39.0454ms
+2017-11-07 17:52:18.871 +07:00 [Information] Request finished in 44.3352ms 200 application/json; charset=utf-8
+2017-11-07 17:52:18.877 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:52:18.892 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:18.895 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:18.913 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:52:18.938 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11240,6 +11750,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:16:42.015 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:16:42.021 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 32.6ms
 2017-11-07 18:16:42.027 +07:00 [Information] Request finished in 44.2272ms 200 application/json; charset=utf-8
@@ -11251,10 +11762,24 @@ ORDER BY [t].[Id]"
 FROM [Products] AS [s]
 WHERE [s].[Id] = @__id_0"
 2017-11-07 18:16:42.331 +07:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@p8='?', @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 50), @p6='?', @p7='?'"], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:52:18.941 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:18.944 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 63.4198ms
+2017-11-07 17:52:18.948 +07:00 [Information] Request finished in 69.8336ms 200 application/json; charset=utf-8
+2017-11-07 17:52:18.970 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/adminproduct application/json; charset=utf-8 328100
+2017-11-07 17:52:19.046 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" with arguments (["COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-07 17:52:26.988 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:27.015 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:52:32.942 +07:00 [Information] Executed DbCommand ("25"ms) [Parameters=["@p8='?', @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 50), @p6='?', @p7='?'"], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SET NOCOUNT ON;
 UPDATE [Products] SET [Description] = @p0, [Image] = @p1, [InStock] = @p2, [MadeIn] = @p3, [Price] = @p4, [ProductName] = @p5, [PublisherId] = @p6, [SubCategoryId] = @p7
 WHERE [Id] = @p8;
 SELECT @@ROWCOUNT;"
+<<<<<<< HEAD
 2017-11-07 18:16:42.371 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:16:42.390 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 304.1896ms
 2017-11-07 18:16:42.421 +07:00 [Information] Request finished in 336.2868ms 200 application/json; charset=utf-8
@@ -11279,6 +11804,41 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:18:16.021 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:52:36.699 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:36.720 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 17741.0193ms
+2017-11-07 17:52:36.725 +07:00 [Information] Request finished in 17754.9291ms 200 application/json; charset=utf-8
+2017-11-07 17:52:51.470 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/1  
+2017-11-07 17:52:51.487 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-07 17:52:51.489 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:51.510 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:52:51.512 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:51.515 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 41.6055ms
+2017-11-07 17:52:51.518 +07:00 [Information] Request finished in 47.2305ms 200 application/json; charset=utf-8
+2017-11-07 17:52:51.528 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:52:51.543 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:51.546 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:51.565 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:52:51.568 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:51.571 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 39.4328ms
+2017-11-07 17:52:51.574 +07:00 [Information] Request finished in 46.2244ms 200 application/json; charset=utf-8
+2017-11-07 17:52:51.578 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:52:51.593 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:51.595 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:51.615 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:52:51.636 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11286,6 +11846,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:18:16.031 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:18:16.038 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 35.7645ms
 2017-11-07 18:18:16.053 +07:00 [Information] Request finished in 50.6628ms 200 application/json; charset=utf-8
@@ -11325,6 +11886,44 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:18:23.762 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:52:51.639 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:51.643 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 61.1931ms
+2017-11-07 17:52:51.646 +07:00 [Information] Request finished in 67.1286ms 200 application/json; charset=utf-8
+2017-11-07 17:52:51.714 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/21940265-03e7-4aa3-978e-f62265e544e0.jpg  
+2017-11-07 17:52:51.719 +07:00 [Information] Sending file. Request path: '"/images/products/21940265-03e7-4aa3-978e-f62265e544e0.jpg"'. Physical path: '"C:\Users\phamh\Desktop\Final V2.1\COmpStore\wwwroot\images\products\21940265-03e7-4aa3-978e-f62265e544e0.jpg"'
+2017-11-07 17:52:51.742 +07:00 [Information] Request finished in 37.937ms 200 image/jpeg
+2017-11-07 17:52:55.994 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/1  
+2017-11-07 17:52:56.013 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["1"]) - ModelState is Valid
+2017-11-07 17:52:56.016 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:56.034 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:52:56.037 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:56.040 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 43.156ms
+2017-11-07 17:52:56.043 +07:00 [Information] Request finished in 50.0354ms 200 application/json; charset=utf-8
+2017-11-07 17:52:56.047 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:52:56.062 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:56.065 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:56.082 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:52:56.085 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:56.088 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 37.49ms
+2017-11-07 17:52:56.092 +07:00 [Information] Request finished in 43.3514ms 200 application/json; charset=utf-8
+2017-11-07 17:52:56.096 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:52:56.111 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:52:56.113 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:52:56.130 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:52:56.146 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11332,6 +11931,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:18:23.772 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:18:23.780 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 39.6161ms
 2017-11-07 18:18:23.794 +07:00 [Information] Request finished in 55.669ms 200 application/json; charset=utf-8
@@ -11371,6 +11971,32 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:18:28.165 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:52:56.149 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:52:56.152 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 52.7267ms
+2017-11-07 17:52:56.155 +07:00 [Information] Request finished in 58.308ms 200 application/json; charset=utf-8
+2017-11-07 17:52:56.209 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/21940265-03e7-4aa3-978e-f62265e544e0.jpg  
+2017-11-07 17:52:56.214 +07:00 [Information] The file "/images/products/21940265-03e7-4aa3-978e-f62265e544e0.jpg" was not modified
+2017-11-07 17:52:56.218 +07:00 [Information] Request finished in 9.2118ms 304 image/jpeg
+2017-11-07 17:53:12.608 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:53:12.623 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:53:12.626 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:53:12.644 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:53:12.647 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:53:12.650 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 39.0481ms
+2017-11-07 17:53:12.653 +07:00 [Information] Request finished in 44.775ms 200 application/json; charset=utf-8
+2017-11-07 17:53:12.657 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:53:12.672 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:53:12.675 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:53:12.692 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:53:12.710 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11378,6 +12004,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:18:28.171 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:18:28.181 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 32.3931ms
 2017-11-07 18:18:28.197 +07:00 [Information] Request finished in 47.6471ms 200 application/json; charset=utf-8
@@ -11389,10 +12016,24 @@ ORDER BY [t].[Id]"
 FROM [Products] AS [s]
 WHERE [s].[Id] = @__id_0"
 2017-11-07 18:18:28.310 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p8='?', @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 50), @p6='?', @p7='?'"], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:53:12.713 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:53:12.717 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 56.0326ms
+2017-11-07 17:53:12.720 +07:00 [Information] Request finished in 62.5919ms 200 application/json; charset=utf-8
+2017-11-07 17:53:12.727 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/adminproduct application/json; charset=utf-8 283932
+2017-11-07 17:53:12.766 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" with arguments (["COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-07 17:53:18.870 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:53:18.898 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:53:18.922 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=["@p8='?', @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 50), @p6='?', @p7='?'"], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SET NOCOUNT ON;
 UPDATE [Products] SET [Description] = @p0, [Image] = @p1, [InStock] = @p2, [MadeIn] = @p3, [Price] = @p4, [ProductName] = @p5, [PublisherId] = @p6, [SubCategoryId] = @p7
 WHERE [Id] = @p8;
 SELECT @@ROWCOUNT;"
+<<<<<<< HEAD
 2017-11-07 18:18:28.350 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:18:28.374 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 133.2649ms
 2017-11-07 18:18:28.423 +07:00 [Information] Request finished in 172.186ms 200 application/json; charset=utf-8
@@ -11403,10 +12044,23 @@ SELECT @@ROWCOUNT;"
 2017-11-07 18:18:31.406 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 18:18:31.422 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 18:18:31.521 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:53:18.958 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:53:18.963 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 6231.6545ms
+2017-11-07 17:53:18.968 +07:00 [Information] Request finished in 6241.4768ms 200 application/json; charset=utf-8
+2017-11-07 17:53:19.182 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/08860924-cf47-4c0f-86aa-a943e6d85a80.jpg  
+2017-11-07 17:53:19.186 +07:00 [Information] Sending file. Request path: '"/images/products/08860924-cf47-4c0f-86aa-a943e6d85a80.jpg"'. Physical path: '"C:\Users\phamh\Desktop\Final V2.1\COmpStore\wwwroot\images\products\08860924-cf47-4c0f-86aa-a943e6d85a80.jpg"'
+2017-11-07 17:53:19.194 +07:00 [Information] Request finished in 12.6096ms 200 image/jpeg
+2017-11-07 17:53:24.061 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:53:24.082 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:53:24.085 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:53:24.105 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:18:31.612 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:18:31.706 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 215.2118ms
 2017-11-07 18:18:31.748 +07:00 [Information] Request finished in 323.0427ms 200 application/json; charset=utf-8
@@ -11431,6 +12085,46 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:18:33.693 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:53:24.108 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:53:24.111 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 47.1336ms
+2017-11-07 17:53:24.116 +07:00 [Information] Request finished in 54.0389ms 200 application/json; charset=utf-8
+2017-11-07 17:53:24.166 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/08860924-cf47-4c0f-86aa-a943e6d85a80.jpg  
+2017-11-07 17:53:24.169 +07:00 [Information] The file "/images/products/08860924-cf47-4c0f-86aa-a943e6d85a80.jpg" was not modified
+2017-11-07 17:53:24.173 +07:00 [Information] Request finished in 6.5323ms 304 image/jpeg
+2017-11-07 17:53:24.178 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:53:24.181 +07:00 [Information] Request finished in 2.7501ms 404 
+2017-11-07 17:55:23.437 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/2  
+2017-11-07 17:55:23.453 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["2"]) - ModelState is Valid
+2017-11-07 17:55:23.456 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:23.476 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:55:23.479 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:23.481 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 41.7272ms
+2017-11-07 17:55:23.486 +07:00 [Information] Request finished in 46.7383ms 200 application/json; charset=utf-8
+2017-11-07 17:55:23.494 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:55:23.513 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:55:23.516 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:23.535 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:55:23.539 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:23.542 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 44.7092ms
+2017-11-07 17:55:23.548 +07:00 [Information] Request finished in 51.0671ms 200 application/json; charset=utf-8
+2017-11-07 17:55:23.556 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:55:23.573 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:55:23.576 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:23.596 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:55:23.615 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11438,6 +12132,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:18:33.728 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:18:33.741 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 117.6094ms
 2017-11-07 18:18:33.758 +07:00 [Information] Request finished in 140.4782ms 200 application/json; charset=utf-8
@@ -11459,6 +12154,31 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:21:23.568 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:55:23.618 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:23.621 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 61.4364ms
+2017-11-07 17:55:23.625 +07:00 [Information] Request finished in 68.5682ms 200 application/json; charset=utf-8
+2017-11-07 17:55:23.678 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:55:23.682 +07:00 [Information] Request finished in 3.5134ms 404 
+2017-11-07 17:55:34.088 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:55:34.107 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:55:34.110 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:34.131 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:55:34.135 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:34.138 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 46.5748ms
+2017-11-07 17:55:34.141 +07:00 [Information] Request finished in 53.0327ms 200 application/json; charset=utf-8
+2017-11-07 17:55:34.145 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:55:34.159 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:55:34.162 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:34.178 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:55:34.195 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11466,6 +12186,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:21:23.574 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:21:23.582 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 32.2973ms
 2017-11-07 18:21:23.595 +07:00 [Information] Request finished in 46.4189ms 200 application/json; charset=utf-8
@@ -11487,6 +12208,95 @@ INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:23:18.847 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:55:34.198 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:34.201 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 53.2722ms
+2017-11-07 17:55:34.204 +07:00 [Information] Request finished in 58.3403ms 200 application/json; charset=utf-8
+2017-11-07 17:55:34.209 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:2693/api/adminproduct application/json; charset=utf-8 190
+2017-11-07 17:55:34.225 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" with arguments (["COmpStore.Dto.ProductDto"]) - ModelState is Valid
+2017-11-07 17:55:34.262 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.UpdateProduct (COmpStore)" in 50.4904ms
+2017-11-07 17:55:34.337 +07:00 [Error] An unhandled exception has occurred: Value cannot be null.
+Parameter name: input
+System.ArgumentNullException: Value cannot be null.
+Parameter name: input
+   at System.Text.RegularExpressions.Regex.Replace(String input, String replacement)
+   at System.Text.RegularExpressions.Regex.Replace(String input, String pattern, String replacement)
+   at COmpStore.Controllers.AdminProductController.<UpdateProduct>d__6.MoveNext() in C:\Users\phamh\Desktop\Final V2.1\COmpStore\Controllers\AdminProductController.cs:line 101
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeInnerFilterAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>d__6.MoveNext()
+2017-11-07 17:55:34.362 +07:00 [Information] Request finished in 153.4784ms 500 
+2017-11-07 17:55:47.731 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct/2  
+2017-11-07 17:55:47.750 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" with arguments (["2"]) - ModelState is Valid
+2017-11-07 17:55:47.753 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:47.776 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]
+WHERE [s].[Id] = @__id_0"
+2017-11-07 17:55:47.779 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:47.783 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetSingleProduct (COmpStore)" in 48.797ms
+2017-11-07 17:55:47.787 +07:00 [Information] Request finished in 56.3564ms 200 application/json; charset=utf-8
+2017-11-07 17:55:47.793 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminsubcategory  
+2017-11-07 17:55:47.811 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:55:47.814 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:47.832 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[CategoryId], [s].[SubCategoryName], [s.Category].[Id], [s.Category].[CategoryName]
+FROM [SubCategories] AS [s]
+INNER JOIN [Categories] AS [s.Category] ON [s].[CategoryId] = [s.Category].[Id]"
+2017-11-07 17:55:47.835 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:47.838 +07:00 [Information] Executed action "COmpStore.Controllers.AdminSubCategoryController.GetAllSubCategory (COmpStore)" in 41.8306ms
+2017-11-07 17:55:47.841 +07:00 [Information] Request finished in 48.9069ms 200 application/json; charset=utf-8
+2017-11-07 17:55:47.845 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 17:55:47.861 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:55:47.865 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:55:47.885 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:55:47.903 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11494,6 +12304,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:23:18.852 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:23:18.859 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 31.9614ms
 2017-11-07 18:23:18.869 +07:00 [Information] Request finished in 45.6475ms 200 application/json; charset=utf-8
@@ -11590,10 +12401,202 @@ SELECT @@ROWCOUNT;"
 2017-11-07 18:27:33.289 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 18:27:33.297 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 18:27:33.308 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 17:55:47.905 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:55:47.909 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 60.7058ms
+2017-11-07 17:55:47.913 +07:00 [Information] Request finished in 66.2536ms 200 application/json; charset=utf-8
+2017-11-07 17:58:45.359 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 17:58:45.377 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:58:45.381 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:58:45.411 +07:00 [Information] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
 ""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-07 17:58:45.417 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:58:45.421 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 57.9841ms
+2017-11-07 17:58:45.425 +07:00 [Information] Request finished in 64.8582ms 200 application/json; charset=utf-8
+2017-11-07 17:58:45.517 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/  
+2017-11-07 17:58:45.523 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/08860924-cf47-4c0f-86aa-a943e6d85a80.jpg  
+2017-11-07 17:58:45.528 +07:00 [Information] Request finished in 7.1523ms 404 
+2017-11-07 17:58:45.534 +07:00 [Information] The file "/images/products/08860924-cf47-4c0f-86aa-a943e6d85a80.jpg" was not modified
+2017-11-07 17:58:45.542 +07:00 [Information] Request finished in 20.5279ms 304 image/jpeg
+2017-11-07 17:58:50.689 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/admincategory  
+2017-11-07 17:58:50.711 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:58:50.716 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:58:50.782 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryName]
+FROM [Categories] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:58:50.806 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x.SubCategories].[Id], [x.SubCategories].[CategoryId], [x.SubCategories].[SubCategoryName]
+FROM [SubCategories] AS [x.SubCategories]
+INNER JOIN (
+    SELECT [x0].[Id]
+    FROM [Categories] AS [x0]
+) AS [t] ON [x.SubCategories].[CategoryId] = [t].[Id]
+ORDER BY [t].[Id]"
+2017-11-07 17:58:50.810 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:58:50.817 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 123.0012ms
+2017-11-07 17:58:50.820 +07:00 [Information] Request finished in 131.5589ms 200 application/json; charset=utf-8
+2017-11-07 17:58:55.489 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/admincategory  
+2017-11-07 17:58:55.504 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 17:58:55.507 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 17:58:55.525 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryName]
+FROM [Categories] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 17:58:55.545 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x.SubCategories].[Id], [x.SubCategories].[CategoryId], [x.SubCategories].[SubCategoryName]
+FROM [SubCategories] AS [x.SubCategories]
+INNER JOIN (
+    SELECT [x0].[Id]
+    FROM [Categories] AS [x0]
+) AS [t] ON [x.SubCategories].[CategoryId] = [t].[Id]
+ORDER BY [t].[Id]"
+2017-11-07 17:58:55.548 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 17:58:55.551 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 59.245ms
+2017-11-07 17:58:55.555 +07:00 [Information] Request finished in 65.4306ms 200 application/json; charset=utf-8
+2017-11-07 23:34:21.886 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 23:34:22.148 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:34:22.288 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:34:22.553 +07:00 [Information] Executed DbCommand ("37"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-07 23:34:22.620 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:34:22.663 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 635.6275ms
+2017-11-07 23:34:22.668 +07:00 [Information] Request finished in 807.0016ms 200 application/json; charset=utf-8
+2017-11-07 23:34:25.934 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/DELL_Inspiron_5000.jpg  
+2017-11-07 23:34:25.934 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell_Inspiron_7460_i5_7200U.png  
+2017-11-07 23:34:25.956 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/APPLE_iMac_5K_27.jpg  
+2017-11-07 23:34:25.958 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell%20Inspiron_5378_i5_7200U.jpg  
+2017-11-07 23:34:25.965 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell_Vostro_3568_i3_7100U.jpg  
+2017-11-07 23:34:26.013 +07:00 [Information] Request finished in 136.486ms 404 
+2017-11-07 23:34:26.077 +07:00 [Information] Request finished in 133.515ms 404 
+2017-11-07 23:34:26.082 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell_Xps_2015.jpg  
+2017-11-07 23:34:26.116 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/HP_Envy_13_ad074TU_i7_7500U.jpg  
+2017-11-07 23:34:26.125 +07:00 [Information] Request finished in 21.1547ms 404 
+2017-11-07 23:34:26.143 +07:00 [Information] Request finished in 160.7463ms 404 
+2017-11-07 23:34:26.156 +07:00 [Information] Request finished in 103.4297ms 404 
+2017-11-07 23:34:26.181 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/HP_260_a104na_Desktop.jpg  
+2017-11-07 23:34:26.217 +07:00 [Information] Request finished in 87.4715ms 404 
+2017-11-07 23:34:26.242 +07:00 [Information] Request finished in 223.926ms 404 
+2017-11-07 23:34:26.242 +07:00 [Information] Request finished in 28.293ms 404 
+2017-11-07 23:34:26.283 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/HP_24_g080na_24.jpg  
+2017-11-07 23:34:26.284 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Macbook_12_MLH82_Core_M_1.2GHz.jpg  
+2017-11-07 23:34:26.331 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Iphone_7_Plus%20.jpg  
+2017-11-07 23:34:26.334 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Pro_10.5_inch_Wifi_64GB.png  
+2017-11-07 23:34:26.358 +07:00 [Information] Request finished in 36.2386ms 404 
+2017-11-07 23:34:26.405 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Laptop_HP_15_bs578TU_N3710.jpg  
+2017-11-07 23:34:26.431 +07:00 [Information] Request finished in 111.3114ms 404 
+2017-11-07 23:34:26.432 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Macbook_12_MMGM2_Core_M_1.2GHz.jpg  
+2017-11-07 23:34:26.454 +07:00 [Information] Request finished in 146.3539ms 404 
+2017-11-07 23:34:26.454 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/iPad_Wifi_Cellular_32GB_2017.png  
+2017-11-07 23:34:26.521 +07:00 [Information] Request finished in 153.8437ms 404 
+2017-11-07 23:34:26.522 +07:00 [Information] Request finished in 49.8708ms 404 
+2017-11-07 23:34:26.591 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%A0n_h%C3%ACnh_IPS_LG_38.jpg  
+2017-11-07 23:34:26.592 +07:00 [Information] Request finished in 217.7513ms 404 
+2017-11-07 23:34:26.642 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Macbook_Pro_Touch_MLH32SA_i7.jpg  
+2017-11-07 23:34:26.654 +07:00 [Information] Request finished in 76.2564ms 404 
+2017-11-07 23:34:26.681 +07:00 [Information] Request finished in 140.9432ms 404 
+2017-11-07 23:34:26.711 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Ram_ADATA_8GB_XPG_GAMMIX.jpg  
+2017-11-07 23:34:26.711 +07:00 [Information] Request finished in 94.6307ms 404 
+2017-11-07 23:34:26.735 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%80N_H%C3%8CNH_VIT%C3%8DNH_HP_23ES.jpg  
+2017-11-07 23:34:26.758 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%80N_H%C3%8CNH_VI%20T%C3%8DNH_SAMSUNG_qm.jpg  
+2017-11-07 23:34:26.765 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Samsung_Galaxy_J3_Pro.jpg  
+2017-11-07 23:34:26.769 +07:00 [Information] Request finished in 161.5149ms 404 
+2017-11-07 23:34:26.798 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Samsung_Galaxy_Book_10.6_inch.png  
+2017-11-07 23:34:26.799 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%80N_H%C3%8CNH_VI_T%C3%8DNH_DELLE-2016H.jpg  
+2017-11-07 23:34:26.846 +07:00 [Information] Request finished in 63.3905ms 404 
+2017-11-07 23:34:26.893 +07:00 [Information] Request finished in 84.4587ms 404 
+2017-11-07 23:34:26.895 +07:00 [Information] Request finished in 102.4976ms 404 
+2017-11-07 23:34:26.917 +07:00 [Information] Request finished in 64.9677ms 404 
+2017-11-07 23:34:26.964 +07:00 [Information] Request finished in 93.3831ms 404 
+2017-11-07 23:34:26.987 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/SSD_Samsung_850_EVO_120GB.jpg  
+2017-11-07 23:34:26.987 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/SSD_Samsung_960_EVO_PCIe.jpg  
+2017-11-07 23:34:27.097 +07:00 [Information] Request finished in 71.4875ms 404 
+2017-11-07 23:34:27.098 +07:00 [Information] Request finished in 213.3609ms 404 
+2017-11-07 23:34:27.121 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Sony_Xperia_X.png  
+2017-11-07 23:34:27.146 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/RAM_Kingston_HyperX_4GB.jpg  
+2017-11-07 23:34:27.147 +07:00 [Information] Request finished in 134.0152ms 404 
+2017-11-07 23:34:27.171 +07:00 [Information] Request finished in 182.9514ms 404 
+2017-11-07 23:37:39.142 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 23:37:39.403 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:37:39.544 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:37:39.831 +07:00 [Information] Executed DbCommand ("38"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+2017-11-07 23:37:39.899 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:37:39.942 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 664.87ms
+2017-11-07 23:37:39.947 +07:00 [Information] Request finished in 828.9368ms 200 application/json; charset=utf-8
+2017-11-07 23:37:42.743 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/APPLE_iMac_5K_27.jpg  
+2017-11-07 23:37:42.748 +07:00 [Information] Request finished in 5.9515ms 404 
+2017-11-07 23:37:42.757 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell_Inspiron_7460_i5_7200U.png  
+2017-11-07 23:37:42.860 +07:00 [Information] Request finished in 6.1244ms 404 
+2017-11-07 23:37:42.864 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell_Vostro_3568_i3_7100U.jpg  
+2017-11-07 23:37:42.870 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell_Xps_2015.jpg  
+2017-11-07 23:37:42.874 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/DELL_Inspiron_5000.jpg  
+2017-11-07 23:37:42.914 +07:00 [Information] Request finished in 112.846ms 404 
+2017-11-07 23:37:42.927 +07:00 [Information] Request finished in 102.7017ms 404 
+2017-11-07 23:37:42.927 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Dell%20Inspiron_5378_i5_7200U.jpg  
+2017-11-07 23:37:42.929 +07:00 [Information] Request finished in 116.8999ms 404 
+2017-11-07 23:37:42.932 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/HP_24_g080na_24.jpg  
+2017-11-07 23:37:42.958 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/HP_260_a104na_Desktop.jpg  
+2017-11-07 23:37:42.958 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Pro_10.5_inch_Wifi_64GB.png  
+2017-11-07 23:37:42.966 +07:00 [Information] Request finished in 116.9858ms 404 
+2017-11-07 23:37:42.979 +07:00 [Information] Request finished in 40.5948ms 404 
+2017-11-07 23:37:43.002 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/HP_Envy_13_ad074TU_i7_7500U.jpg  
+2017-11-07 23:37:43.102 +07:00 [Information] Request finished in 173.0052ms 404 
+2017-11-07 23:37:43.103 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/iPad_Wifi_Cellular_32GB_2017.png  
+2017-11-07 23:37:43.106 +07:00 [Information] Request finished in 46.0696ms 404 
+2017-11-07 23:37:43.129 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Laptop_HP_15_bs578TU_N3710.jpg  
+2017-11-07 23:37:43.130 +07:00 [Information] Request finished in 27.7449ms 404 
+2017-11-07 23:37:43.194 +07:00 [Information] Request finished in 133.9141ms 404 
+2017-11-07 23:37:43.196 +07:00 [Information] Request finished in 115.1552ms 404 
+2017-11-07 23:37:43.218 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Macbook_12_MMGM2_Core_M_1.2GHz.jpg  
+2017-11-07 23:37:43.264 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Macbook_12_MLH82_Core_M_1.2GHz.jpg  
+2017-11-07 23:37:43.264 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Iphone_7_Plus%20.jpg  
+2017-11-07 23:37:43.288 +07:00 [Information] Request finished in 213.7201ms 404 
+2017-11-07 23:37:43.353 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%A0n_h%C3%ACnh_IPS_LG_38.jpg  
+2017-11-07 23:37:43.377 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Macbook_Pro_Touch_MLH32SA_i7.jpg  
+2017-11-07 23:37:43.424 +07:00 [Information] Request finished in 135.1582ms 404 
+2017-11-07 23:37:43.430 +07:00 [Information] Request finished in 160.3084ms 404 
+2017-11-07 23:37:43.456 +07:00 [Information] Request finished in 135.8002ms 404 
+2017-11-07 23:37:43.514 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%80N_H%C3%8CNH_VI_T%C3%8DNH_DELLE-2016H.jpg  
+2017-11-07 23:37:43.562 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Ram_ADATA_8GB_XPG_GAMMIX.jpg  
+2017-11-07 23:37:43.586 +07:00 [Information] Request finished in 90.6873ms 404 
+2017-11-07 23:37:43.589 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%80N_H%C3%8CNH_VI%20T%C3%8DNH_SAMSUNG_qm.jpg  
+2017-11-07 23:37:43.611 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/M%C3%80N_H%C3%8CNH_VIT%C3%8DNH_HP_23ES.jpg  
+2017-11-07 23:37:43.635 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Samsung_Galaxy_Book_10.6_inch.png  
+2017-11-07 23:37:43.658 +07:00 [Information] Request finished in 304.2205ms 404 
+2017-11-07 23:37:43.681 +07:00 [Information] Request finished in 155.7842ms 404 
+2017-11-07 23:37:43.704 +07:00 [Information] Request finished in 198.0106ms 404 
+2017-11-07 23:37:43.796 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/SSD_Samsung_960_EVO_PCIe.jpg  
+2017-11-07 23:37:43.796 +07:00 [Information] Request finished in 147.8869ms 404 
+2017-11-07 23:37:43.842 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Sony_Xperia_X.png  
+2017-11-07 23:37:43.843 +07:00 [Information] Request finished in 125.2747ms 404 
+2017-11-07 23:37:43.871 +07:00 [Information] Request finished in 115.79ms 404 
+2017-11-07 23:37:43.895 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/Samsung_Galaxy_J3_Pro.jpg  
+2017-11-07 23:37:43.988 +07:00 [Information] Request finished in 328.8252ms 404 
+2017-11-07 23:37:43.989 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/SSD_Samsung_850_EVO_120GB.jpg  
+2017-11-07 23:37:43.992 +07:00 [Information] Request finished in 92.8646ms 404 
+2017-11-07 23:37:44.036 +07:00 [Information] Request finished in 123.1791ms 404 
+2017-11-07 23:37:44.039 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/RAM_Kingston_HyperX_4GB.jpg  
+2017-11-07 23:37:44.043 +07:00 [Information] Request finished in 145.4842ms 404 
+2017-11-07 23:40:05.698 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 23:40:05.950 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:40:06.089 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:40:06.351 +07:00 [Information] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
+""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
+FROM [Products] AS [s]
+INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
+INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:27:33.314 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:27:33.322 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 35.8455ms
 2017-11-07 18:27:33.331 +07:00 [Information] Request finished in 62.9992ms 200 application/json; charset=utf-8
@@ -11605,6 +12608,19 @@ INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCat
 FROM [Categories] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:27:33.450 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:40:06.418 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:40:06.459 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 625.563ms
+2017-11-07 23:40:06.464 +07:00 [Information] Request finished in 789.3051ms 200 application/json; charset=utf-8
+2017-11-07 23:40:06.534 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/admincategory  
+2017-11-07 23:40:06.551 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:40:06.560 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:40:06.636 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryName]
+FROM [Categories] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 23:40:06.665 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.SubCategories].[Id], [x.SubCategories].[CategoryId], [x.SubCategories].[SubCategoryName]
 FROM [SubCategories] AS [x.SubCategories]
 INNER JOIN (
@@ -11612,6 +12628,7 @@ INNER JOIN (
     FROM [Categories] AS [x0]
 ) AS [t] ON [x.SubCategories].[CategoryId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:27:33.457 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:27:33.476 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 123.7183ms
 2017-11-07 18:27:33.489 +07:00 [Information] Request finished in 141.7303ms 200 application/json; charset=utf-8
@@ -11623,6 +12640,19 @@ ORDER BY [t].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:27:33.550 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:40:06.674 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:40:06.684 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 145.3082ms
+2017-11-07 23:40:06.687 +07:00 [Information] Request finished in 153.1352ms 200 application/json; charset=utf-8
+2017-11-07 23:40:06.704 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 23:40:06.721 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:40:06.724 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:40:06.769 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 23:40:06.792 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11630,6 +12660,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:27:33.556 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:27:33.565 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 48.6563ms
 2017-11-07 18:27:33.573 +07:00 [Information] Request finished in 63.7638ms 200 application/json; charset=utf-8
@@ -11637,10 +12668,20 @@ ORDER BY [t].[Id]"
 2017-11-07 18:30:50.928 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 18:30:50.933 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 18:30:50.943 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:40:06.796 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:40:06.803 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 94.0951ms
+2017-11-07 23:40:06.805 +07:00 [Information] Request finished in 100.8578ms 200 application/json; charset=utf-8
+2017-11-07 23:41:25.015 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 23:41:25.268 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:41:25.405 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:41:25.674 +07:00 [Information] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:30:50.948 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:30:50.955 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 26.6548ms
 2017-11-07 18:30:50.963 +07:00 [Information] Request finished in 37.4426ms 200 application/json; charset=utf-8
@@ -11652,6 +12693,19 @@ INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCat
 FROM [Categories] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:30:50.997 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:41:25.750 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:41:25.791 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 639.1033ms
+2017-11-07 23:41:25.795 +07:00 [Information] Request finished in 803.4718ms 200 application/json; charset=utf-8
+2017-11-07 23:41:25.864 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/admincategory  
+2017-11-07 23:41:25.881 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:41:25.891 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:41:25.967 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryName]
+FROM [Categories] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 23:41:25.996 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.SubCategories].[Id], [x.SubCategories].[CategoryId], [x.SubCategories].[SubCategoryName]
 FROM [SubCategories] AS [x.SubCategories]
 INNER JOIN (
@@ -11659,6 +12713,7 @@ INNER JOIN (
     FROM [Categories] AS [x0]
 ) AS [t] ON [x.SubCategories].[CategoryId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:30:51.003 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:30:51.012 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 32.291ms
 2017-11-07 18:30:51.019 +07:00 [Information] Request finished in 47.5103ms 200 application/json; charset=utf-8
@@ -11670,6 +12725,19 @@ ORDER BY [t].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 18:30:51.061 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:41:26.006 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:41:26.015 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 146.3371ms
+2017-11-07 23:41:26.018 +07:00 [Information] Request finished in 154.0672ms 200 application/json; charset=utf-8
+2017-11-07 23:41:26.036 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 23:41:26.054 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:41:26.058 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:41:26.105 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 23:41:26.128 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11677,6 +12745,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 18:30:51.066 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 18:30:51.074 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 38.0093ms
 2017-11-07 18:30:51.088 +07:00 [Information] Request finished in 58.4492ms 200 application/json; charset=utf-8
@@ -11684,10 +12753,20 @@ ORDER BY [t].[Id]"
 2017-11-07 19:02:32.886 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
 2017-11-07 19:02:32.891 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
 2017-11-07 19:02:32.907 +07:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:41:26.132 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:41:26.140 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 99.1107ms
+2017-11-07 23:41:26.142 +07:00 [Information] Request finished in 106.2201ms 200 application/json; charset=utf-8
+2017-11-07 23:47:32.148 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminproduct  
+2017-11-07 23:47:32.401 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:47:32.538 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:47:32.803 +07:00 [Information] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [s].[Id], [s].[Description], [s].[Image], [s].[InStock], [s].[MadeIn], [s].[Price], [s].[ProductName], [s].[PublisherId], [s].[SubCategoryId], [s.Publisher].[Id], [s.Publisher].[PublisherName], [s.SubCategory].[Id], [s.SubCategory].[CategoryId], [s.SubCategory].[SubCategoryName]
 FROM [Products] AS [s]
 INNER JOIN [Publishers] AS [s.Publisher] ON [s].[PublisherId] = [s.Publisher].[Id]
 INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCategory].[Id]"
+<<<<<<< HEAD
 2017-11-07 19:02:32.911 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 19:02:32.919 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 31.6233ms
 2017-11-07 19:02:32.925 +07:00 [Information] Request finished in 44.6901ms 200 application/json; charset=utf-8
@@ -11699,6 +12778,19 @@ INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCat
 FROM [Categories] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 19:02:32.963 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:47:32.868 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:47:32.909 +07:00 [Information] Executed action "COmpStore.Controllers.AdminProductController.GetAllProducts (COmpStore)" in 628.2509ms
+2017-11-07 23:47:32.914 +07:00 [Information] Request finished in 789.9757ms 200 application/json; charset=utf-8
+2017-11-07 23:47:32.987 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/admincategory  
+2017-11-07 23:47:33.006 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:47:33.015 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:47:33.087 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryName]
+FROM [Categories] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 23:47:33.116 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.SubCategories].[Id], [x.SubCategories].[CategoryId], [x.SubCategories].[SubCategoryName]
 FROM [SubCategories] AS [x.SubCategories]
 INNER JOIN (
@@ -11706,6 +12798,7 @@ INNER JOIN (
     FROM [Categories] AS [x0]
 ) AS [t] ON [x.SubCategories].[CategoryId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 19:02:32.969 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 19:02:32.976 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 34.98ms
 2017-11-07 19:02:32.984 +07:00 [Information] Request finished in 47.9407ms 200 application/json; charset=utf-8
@@ -11717,6 +12810,19 @@ ORDER BY [t].[Id]"
 FROM [Publishers] AS [x]
 ORDER BY [x].[Id]"
 2017-11-07 19:02:33.021 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+=======
+2017-11-07 23:47:33.125 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:47:33.134 +07:00 [Information] Executed action "COmpStore.Controllers.AdminCategoryController.Get (COmpStore)" in 141.8456ms
+2017-11-07 23:47:33.136 +07:00 [Information] Request finished in 149.136ms 200 application/json; charset=utf-8
+2017-11-07 23:47:33.149 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/api/adminpublisher  
+2017-11-07 23:47:33.167 +07:00 [Information] Executing action method "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" with arguments (null) - ModelState is Valid
+2017-11-07 23:47:33.170 +07:00 [Information] Entity Framework Core "2.0.0-rtm-26452" initialized '"StoreDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2017-11-07 23:47:33.224 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[PublisherName]
+FROM [Publishers] AS [x]
+ORDER BY [x].[Id]"
+2017-11-07 23:47:33.252 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2
 ""SELECT [x.Products].[Id], [x.Products].[Description], [x.Products].[Image], [x.Products].[InStock], [x.Products].[MadeIn], [x.Products].[Price], [x.Products].[ProductName], [x.Products].[PublisherId], [x.Products].[SubCategoryId]
 FROM [Products] AS [x.Products]
 INNER JOIN (
@@ -11724,6 +12830,7 @@ INNER JOIN (
     FROM [Publishers] AS [x0]
 ) AS [t] ON [x.Products].[PublisherId] = [t].[Id]
 ORDER BY [t].[Id]"
+<<<<<<< HEAD
 2017-11-07 19:02:33.026 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
 2017-11-07 19:02:33.038 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 33.5539ms
 2017-11-07 19:02:33.052 +07:00 [Information] Request finished in 50.5533ms 200 application/json; charset=utf-8
@@ -11755,3 +12862,8 @@ INNER JOIN [SubCategories] AS [s.SubCategory] ON [s].[SubCategoryId] = [s.SubCat
 2017-11-07 22:12:34.661 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:2693/images/products/4505a024-de2e-4a60-9a17-eff85377550f.jpg  
 2017-11-07 22:12:34.676 +07:00 [Information] The file "/images/products/4505a024-de2e-4a60-9a17-eff85377550f.jpg" was not modified
 2017-11-07 22:12:34.685 +07:00 [Information] Request finished in 45.4228ms 304 image/jpeg
+=======
+2017-11-07 23:47:33.255 +07:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-11-07 23:47:33.262 +07:00 [Information] Executed action "COmpStore.Controllers.AdminPublisherController.Get (COmpStore)" in 108.8452ms
+2017-11-07 23:47:33.265 +07:00 [Information] Request finished in 115.5741ms 200 application/json; charset=utf-8
+>>>>>>> 1d0bfa58f7de88ebda201218ff4bf2506565f1b2

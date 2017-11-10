@@ -27,6 +27,7 @@ namespace COmpStore.Repositories
                                     .Include(s => s.Publisher)
                                     .ToList();
         }
+        
 
         public Product GetSingleProduct(int id)
         {
@@ -75,6 +76,7 @@ namespace COmpStore.Repositories
         void Add(Product product);
         void Delete(int id);
         IList<Product> GetAllProducts();
+       
         Product GetSingleProduct(int id);
         string GetImage(int id);
         bool Save();
