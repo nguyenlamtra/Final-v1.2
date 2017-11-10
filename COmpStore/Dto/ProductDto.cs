@@ -11,12 +11,19 @@ namespace COmpStore.Dto
     {
         [Required]
         public string ProductName { get; set; }
+        [Required]
         public decimal Price { get; set; }
+        [Required]
         public int PublisherId { get; set; }
+        [Required]
         public int SubCategoryId { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string MadeIn { get; set; }
+        [Required]
         public int InStock { get; set; }
+        [Required]
         public string Image { get; set; }
 
         //public PublisherDto Publisher { get; set; }

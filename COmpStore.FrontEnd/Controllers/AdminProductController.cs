@@ -7,6 +7,7 @@ using COmpStore.FrontEnd.Models;
 using COmpStore.FrontEnd.Service.Admin;
 using COmpStore.FrontEnd.Service;
 using COmpStore.FrontEnd.Const;
+using COmpStore.FrontEnd.Helper;
 
 namespace COmpStore.FrontEnd.Controllers
 {
@@ -16,7 +17,7 @@ namespace COmpStore.FrontEnd.Controllers
         private readonly IService<PublisherModel> _publisherService;
         private readonly IService<SubCategoryModel> _subCategoryService;
 
-        public AdminProductController(IService<ProductModel> productService,IService<SubCategoryModel> subCategoryService, IService<PublisherModel> publisherService)
+        public AdminProductController(IService<ProductModel> productService, IService<SubCategoryModel> subCategoryService, IService<PublisherModel> publisherService)
         {
             _productService = productService;
             _publisherService = publisherService;
@@ -26,7 +27,7 @@ namespace COmpStore.FrontEnd.Controllers
         public async Task<IActionResult> Index()
         {
             var products = await _productService.GetAll();
-            foreach(var product in products)
+            foreach (var product in products)
             {
                 product.Image = WebCommon.API_IMAGE_URL + product.Image;
             }
@@ -51,13 +52,15 @@ namespace COmpStore.FrontEnd.Controllers
             ViewBag.SubCategories = await _subCategoryService.GetAll();
             ViewBag.Publishers = await _publisherService.GetAll();
             var result = await _productService.Create(model);
-            if (result.GetType() == typeof(ProductModel))
+            if (result != null)
             {
                 ViewBag.IsSuccess = true;
-                return View(model);
+                return View(result);
             }
             else
+            {
                 return View(model);
+            }
         }
 
         public async Task<IActionResult> Update(int id)
@@ -81,13 +84,13 @@ namespace COmpStore.FrontEnd.Controllers
             ViewBag.PublisherId = model.PublisherId;
 
             var result = await _productService.Update(model);
-            if (result.GetType() == typeof(ProductModel))
+            if (result != null)
             {
                 ViewBag.IsSuccess = true;
                 return View(result);
             }
             else
-                return View();
+                return View(model);
         }
 
         [HttpPost]

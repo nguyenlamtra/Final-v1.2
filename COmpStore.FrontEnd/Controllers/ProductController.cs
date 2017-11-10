@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using COmpStore.FrontEnd.Models;
 using COmpStore.FrontEnd.Service.Admin;
+using COmpStore.FrontEnd.Helper;
 
 namespace COmpStore.FrontEnd.Controllers
 {
@@ -24,6 +25,14 @@ namespace COmpStore.FrontEnd.Controllers
             _categoryService = categoryService;
         }
 
+        [HttpPost]
+        public IActionResult SaveProduct(int productId)
+        {
+            var selectedProducts = HttpContext.Session.GetSelectedProducts();
+            selectedProducts.Add(new SelectedProduct { ProductId = productId, Quantity = 1 });
+            HttpContext.Session.SetSelectedProducts(selectedProducts);
+            return Json(true);
+        }
         
         public async Task<IActionResult> Index()
         {

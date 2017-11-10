@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 namespace COmpStore.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ValuesController : Controller
     {
         // GET api/values
+        [Authorize(Policy = "Founders", Roles = "Admin")]
         [HttpGet("")]
         public IEnumerable<string> Get()
         {
@@ -18,6 +18,7 @@ namespace COmpStore.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
+        [Authorize(Policy = "ABC", Roles = "Admin")]
         public string Get(int id)
         {
             return "value";

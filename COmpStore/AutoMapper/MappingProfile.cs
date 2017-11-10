@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using COmpStore.Dto;
+using COmpStore.Models;
 using COmpStore.Schema.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace COmpStore.AutoMapper
             CreateMap<Product, ProductDto>().ReverseMap();
 
             CreateMap<Publisher, PublisherDto>().ReverseMap();
+
+            CreateMap<Product, CartDto>()
+                .ForMember(x=>x.ProductId,map=>map.MapFrom(x=>x.Id));
+
+            CreateMap <SelectedProductViewModel,OrderDetail>().ReverseMap();
         }
     }
 }

@@ -56,7 +56,7 @@ namespace COmpStore.Controllers
         //    // POST api/customers
 
         [HttpPost]
-        [ValidateFormAttribute]
+        [ValidateModel]
         //[ProducesResponseType(typeof(CategoryDto), 201)]
         //[ProducesResponseType(typeof(CategoryDto), 400)]
         public async Task<IActionResult> AddProduct([FromBody] ProductDto productDto)

@@ -8,12 +8,9 @@
         });
     });
     $('.image-editor').cropit({
-        exportZoom: 2,
-        imageBackground: true,
-        imageBackgroundBorderWidth: 20,
-        width: 200,
-        height: 200,
-        
+        exportZoom: 1,
+        width: 268,
+        height: 249,
     });
 
 

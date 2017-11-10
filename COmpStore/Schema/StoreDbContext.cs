@@ -8,7 +8,7 @@ using System;
 
 namespace COmpStore.Schema
 {
-    public class StoreDbContext : IdentityDbContext<User>
+    public class StoreDbContext : IdentityDbContext<User,Role,int>
     {
         public StoreDbContext(DbContextOptions options) : base(options)
         { }
@@ -17,6 +17,8 @@ namespace COmpStore.Schema
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +26,8 @@ namespace COmpStore.Schema
             new SubCategoryConfiguration(modelBuilder.Entity<SubCategory>());
             new CategoryConfiguration(modelBuilder.Entity<Category>());
             new ProductConfiguration(modelBuilder.Entity<Product>());
+            new OrderDetailConfiguration(modelBuilder.Entity<OrderDetail>());
+            new OrderConfiguration(modelBuilder.Entity<Order>());
 
             base.OnModelCreating(modelBuilder);
         }

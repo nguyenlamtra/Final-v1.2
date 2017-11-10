@@ -1,0 +1,112 @@
+﻿@model OrderModel
+@using COmpStore.FrontEnd.Const
+@{
+    ViewData["Title"] = "Chi tiết";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Loại sản phẩm - Chi tiết</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="col-md-6">
+            @if (ViewData["IsSuccess"] != null)
+            {
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Lưu thành công. Nhấn vào <a asp-action="Index" asp-controller="Category" class="alert-link">đây</a> để trở về trang trước.
+                </div>
+            }
+            <div class="form-group">
+                <label>Mã: </label><span> @Model.Id</span>
+            </div>
+            <div class="form-group">
+                <label>Tên người đặt: </label><span> @Model.User.Name</span>
+            </div>
+            <div class="form-group">
+                <label>Ngày đặt: </label><span> @Model.CreateDate</span>
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại: </label><span> @Model.Phone</span>
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ: </label><span> @Model.Address</span>
+            </div>
+            <div class="form-group">
+                <label>Tình trạng: </label>
+                @switch (Model.Status)
+                {
+                    case OrderStatus.NotProcessYet:
+                        <span>Chưa xử lí</span>
+                        break;
+                    case OrderStatus.Processing:
+                        <span>Đang xử lí</span>
+                        break;
+                    case OrderStatus.Processed:
+                        <span>Đã hoàn tất</span>
+                        break;
+                    case OrderStatus.Denied:
+                        <span>Đã bị từ chối</span>
+                        break;
+
+                }
+
+
+            </div>
+            <div class="form-group">
+                <label>Số lượng sản phẩm đặt: </label><span> @Model.OrderDetails.Count()</span>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.col-lg-12 -->
+    <div class="col-md-12">
+        <div class="panel-body">
+            @if (Model.Status == OrderStatus.Processing)
+            {
+                <div class="form-group">
+                    <a asp-action="CompleteOrder" asp-controller="Order" asp-route-categoryId="@Model.Id" class="btn btn-primary btn-sm">Hoàn tất</a>
+                    <a asp-action="DeniedOrder" asp-controller="Order" asp-route-categoryId="@Model.Id" class="btn btn-danger btn-sm">Hủy</a>
+
+                </div>
+            }
+
+            <div class="table-responsive">
+                <table id="content_table" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var orderDetail in Model.OrderDetails)
+                        {
+                            <tr data-id="@orderDetail.Product.Id">
+                                <td>@orderDetail.Product.Id</td>
+                                <td>@orderDetail.Product.ProductName</td>
+                                <td>@orderDetail.Quantity</td>
+                                <td class="text-center">
+                                    <a asp-action="Details" asp-controller="Product" asp-route-id="@orderDetail.ProductId" class="text-primary" title="Chi tiết">
+                                        <span class="glyphicon glyphicon-info-sign"></span>
+                                    </a>
+                                    <a asp-action="Update" asp-controller="Product" asp-route-id="@orderDetail.ProductId" class="text-primary" title="Chỉnh sửa">
+                                        &nbsp;<span class="glyphicon glyphicon-edit"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->

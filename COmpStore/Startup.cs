@@ -19,6 +19,7 @@ using System.IO;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using COmpStore.Repositories;
+using System.Security.Claims;
 
 namespace COmpStore
 {
@@ -96,6 +97,37 @@ namespace COmpStore
             //        _tokenValidationParameters);
             //});
 
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = "JwtBearer";
+                options.DefaultChallengeScheme = "JwtBearer";
+            })
+            .AddJwtBearer("JwtBearer", jwtBearerOptions =>
+            {
+                jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("a secret that needs to be at least 16 characters long")),
+
+                    ValidateIssuer = true,
+                    ValidIssuer = "your app",
+
+                    ValidateAudience = true,
+                    ValidAudience = "the client of your app",
+
+                    ValidateLifetime = true, //validate the expiration and not before values in the token
+
+                    ClockSkew = TimeSpan.FromMinutes(5) //5 minute tolerance for the expiration date
+                };
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Founders", policy =>
+                                  policy.RequireClaim(ClaimTypes.Role, "Admin", "User"));
+                options.AddPolicy("ABC", policy =>
+                                  policy.RequireClaim(ClaimTypes.Role, "Admin"));
+            });
+
             // CORS
             services.AddCors(options =>
             {
@@ -165,7 +197,7 @@ namespace COmpStore
 
             //app.UseAuthentication();
             app.UseStaticFiles();
-           
+            app.UseAuthentication();
 
             app.UseMvc();
 

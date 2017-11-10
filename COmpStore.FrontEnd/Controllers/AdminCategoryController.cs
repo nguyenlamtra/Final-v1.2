@@ -40,8 +40,6 @@ namespace COmpStore.FrontEnd.Controllers
             }
             else
             {
-                var modelState = (ModelStateDictionary)result;
-
                 return View(model);
             }
                 

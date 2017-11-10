@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using COmpStore.FrontEnd.Service.Admin;
 using COmpStore.FrontEnd.Models;
+using COmpStore.FrontEnd.Service.User;
 
 namespace COmpStore.FrontEnd
 {
@@ -28,6 +29,13 @@ namespace COmpStore.FrontEnd
             services.AddTransient<IService<SubCategoryModel>, Service<SubCategoryModel>>();
             services.AddTransient<IService<ProductModel>, Service<ProductModel>>();
             services.AddTransient<IService<CategoryModel>, Service<CategoryModel>>();
+            services.AddTransient<IHomeService, HomeService>();
+            
+            //Session
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +50,8 @@ namespace COmpStore.FrontEnd
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseSession();
 
             app.UseStaticFiles();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COmpStore.Schema.IdentityEntities
 {
-    public class Role : IdentityRole
+    public class Role : IdentityRole<int>
     {
     }
 }

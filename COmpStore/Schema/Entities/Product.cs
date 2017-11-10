@@ -17,5 +17,6 @@ namespace COmpStore.Schema.Entities
 
         public virtual Publisher Publisher { get; set; }
         public virtual SubCategory SubCategory { get; set; }
+        public virtual IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }

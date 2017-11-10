@@ -1,5 +1,6 @@
 ﻿@model ProductModel
-
+@using COmpStore.FrontEnd.Helper
+@using COmpStore.FrontEnd.Const
 @{
     ViewData["Title"] = "Thêm mới";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -27,7 +28,7 @@
             <div class="panel-body">
                 <form asp-action="Create" asp-controller="AdminProduct" class="form-horizontal" method="post" enctype="multipart/form-data">
 
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
                     <div class="form-group">
                         <label asp-for="ProductName"></label>
                         <input asp-for="ProductName" type="text" class="form-control" />
@@ -52,7 +53,10 @@
                         <label asp-for="Price"></label>
                         <input asp-for="Price" type="text" class="form-control" />
                     </div>
-
+                    <div class="form-group">
+                        <label asp-for="InStock"></label>
+                        <input asp-for="InStock" type="text" class="form-control" />
+                    </div>
                     <div class="form-group">
                         <label asp-for="Description"></label>
                         <textarea asp-for="Description" type="text" class="form-control"></textarea>
@@ -91,7 +95,7 @@
 
                         </fieldset>
                     </div>
-
+                    
                     <div class="form-group pull-right">
                         <button type="submit" class="btn btn-primary">Lưu</button>
                         <a asp-action="Index" asp-controller="AdminProduct" class="btn btn-default">Hủy</a>

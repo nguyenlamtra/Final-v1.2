@@ -9,4 +9,12 @@ namespace COmpStore.FrontEnd.Const
     {
         public const string API_IMAGE_URL = "http://localhost:2693/images/products/";
     }
+
+    public enum OrderStatus
+    {
+        NotProcessYet,
+        Processing,
+        Processed,
+        Denied
+    }
 }

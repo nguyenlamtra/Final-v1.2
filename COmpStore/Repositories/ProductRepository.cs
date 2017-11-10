@@ -16,6 +16,11 @@ namespace COmpStore.Repositories
             _context = context;
         }
 
+        public IEnumerable<Product> GetMany(int[] productIds)
+        {
+            return _context.Products.Where(x => productIds.Contains(x.Id));
+        }
+
         public IList<Product> GetAllProducts()
         {
             return _context.Products.Include(s => s.SubCategory)
@@ -75,6 +80,7 @@ namespace COmpStore.Repositories
         bool Save();
         void Update(Product product);
         void UpdateExceptImage(Product product);
+        IEnumerable<Product> GetMany(int[] productIds);
     }
 }
 

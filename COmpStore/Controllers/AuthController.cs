@@ -65,6 +65,51 @@ namespace TokenAuthWebApiCore.Server.Controllers.Web
             return BadRequest(result.Errors);
         }
 
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("Test")]
+        public IActionResult Test()
+        {
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("a secret that needs to be at least 16 characters long"));
+
+            var claims = new Claim[] {
+            new Claim(ClaimTypes.Name, "John"),
+            new Claim(JwtRegisteredClaimNames.Email, "john.doe@blinkingcaret.com"),
+            new Claim(ClaimTypes.Role, "Admin")
+            };
+            var a = DateTime.Now.AddDays(20);
+            var token = new JwtSecurityToken(
+                issuer: "your app",
+                audience: "the client of your app",
+                claims: claims,
+                notBefore: DateTime.Now,
+                expires: a,
+                signingCredentials: new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256)
+            );
+
+           
+            string jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+            return Ok(jwtToken);
+        }
+
+        public IActionResult Testt()
+        {
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("a secret that needs to be at least 16 characters long"));
+
+            var claimss = new Claim[]
+           {
+                new Claim(ClaimTypes.Name, "John"),
+                new Claim(JwtRegisteredClaimNames.Email, "john.doe@blinkingcaret.com"),
+                new Claim(JwtRegisteredClaimNames.Exp, $"{new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds()}"),
+                new Claim(JwtRegisteredClaimNames.Nbf, $"{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}")
+           };
+
+            var tokenn = new JwtSecurityToken(new JwtHeader(new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256)), new JwtPayload(claimss));
+
+            string jwtToken = new JwtSecurityTokenHandler().WriteToken(tokenn);
+            return new ObjectResult(jwtToken);
+        }
+
         [ValidateForm]
         [HttpPost("CreateToken")]
         [Route("token")]
